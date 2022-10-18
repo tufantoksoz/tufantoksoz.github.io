@@ -1,0 +1,17 @@
+// app global css in SCSS form
+
+.pageContainer {
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.bannerSizeDesktop {
+  min-height: 400px;
+  max-height: 500px;
+}
+
+.bannerSizeMobile {
+  min-height: 400px;
+  max-height: 700px;
+  min-width: 350px;
+}
