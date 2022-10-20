@@ -61,7 +61,8 @@ module.exports = configure(function (/* ctx */) {
 
       // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
 
-      // publicPath: '/',
+      publicPath:
+        process.env.NODE_ENV === 'production' ? '/tufantoksoz.github.io/' : '/',
       // analyze: true,
       // env: {},
       // rawDefine: {}
