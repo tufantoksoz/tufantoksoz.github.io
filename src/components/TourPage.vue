@@ -1,17 +1,17 @@
 <template>
   <q-img
-    v-if="$q.platform.is.desktop"
-    class="bannerSizeDesktop"
+    class="bannerSizeDesktop desktop-only"
     :src="imgDesktop"
+    fit="fill"
   ></q-img>
   <q-img
-    v-if="$q.platform.is.mobile"
-    class="bannerSizeMobile"
+    class="bannerSizeMobile mobile-only"
     :src="imgMobile"
+    fit="fill"
   ></q-img>
 
   <div class="pageContainer">
-    <q-breadcrumbs class="text-brown q-pa-md q-gutter-sm">
+    <q-breadcrumbs class="text-brown q-pa-md q-gutter-sm desktop-only">
       <template v-slot:separator>
         <q-icon size="1.5em" name="chevron_right" color="primary" />
       </template>
@@ -28,8 +28,10 @@
     <q-separator />
 
     <div>
-      <h1>{{ articleTitle }}</h1>
-      <p>{{ articleSummaryText }}</p>
+      <div class="q-px-md">
+        <h1>{{ articleTitle }}</h1>
+        <p>{{ articleSummaryText }}</p>
+      </div>
 
       <q-expansion-item
         expand-separator
@@ -46,11 +48,39 @@
 
       <q-separator class="q-mb-lg" />
 
-      <q-img class="q-mb-lg" :src="articleImg"></q-img>
+      <div class="q-pa-sm">
+        <q-carousel
+          swipeable
+          animated
+          v-model="slide"
+          navigation
+          infinite
+          :autoplay="autoplay"
+          transition-prev="slide-right"
+          transition-next="slide-left"
+          @mouseenter="autoplay = false"
+          @mouseleave="autoplay = true"
+        >
+          <q-carousel-slide
+            :name="1"
+            img-src="https://cdn.quasar.dev/img/mountains.jpg"
+          />
+          <q-carousel-slide
+            :name="2"
+            img-src="https://cdn.quasar.dev/img/parallax1.jpg"
+          />
+          <q-carousel-slide
+            :name="3"
+            img-src="https://cdn.quasar.dev/img/parallax2.jpg"
+          />
+        </q-carousel>
+      </div>
+
+      <q-separator class="q-mt-lg" />
 
       <q-expansion-item
         icon="info"
-        label="TOUR INFO"
+        label="Tour Info"
         header-class="text-primary"
         class="expansion"
         expand-separator
@@ -144,50 +174,7 @@
 
     <q-separator class="q-my-lg" />
 
-    <div class="q-pa-md q-mr-none" style="max-width: 600px">
-      <h3 class="text-center">Booking Form</h3>
-      <q-form
-        @submit="onSubmit"
-        @reset="onReset"
-        class="q-pa-md q-gutter-md shadow-5"
-      >
-        <q-input
-          filleds
-          v-model="name"
-          label="Your name *"
-          hint="Name and surname"
-          lazy-rules
-          :rules="[
-            (val) => (val && val.length > 0) || 'Please type name and surname',
-          ]"
-        />
-
-        <q-input
-          filleds
-          type="date"
-          v-model="date"
-          label="Select Date"
-          lazy-rules
-          :rules="[
-            (val) => (val !== null && val !== '') || 'Please select date',
-            (val) => (val > 0 && val < 100) || 'Please type a real age',
-          ]"
-        />
-
-        <q-toggle v-model="accept" label="I accept the license and terms" />
-
-        <div>
-          <q-btn label="Submit" type="submit" color="primary" />
-          <q-btn
-            label="Reset"
-            type="reset"
-            color="primary"
-            flat
-            class="q-ml-sm"
-          />
-        </div>
-      </q-form>
-    </div>
+    <booking-form></booking-form>
   </div>
 </template>
 
@@ -210,14 +197,20 @@ p
 
 .expansion
   font-size: large
+
+@media (max-width: 1000px)
+    .pageContainer
+      padding-left: 0%
+      padding-right: 0%
 </style>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import { useQuasar } from 'quasar';
+import BookingForm from './BookingForm.vue';
 
 export default defineComponent({
   name: 'TourPage',
+  components: { 'booking-form': BookingForm },
   props: {
     imgDesktop: String,
     imgMobile: String,
@@ -238,12 +231,6 @@ export default defineComponent({
   setup() {
     let expansionText = ref('Read More...');
 
-    const $q = useQuasar();
-
-    const name = ref(null);
-    const date = ref(Date);
-    const accept = ref(false);
-
     const toggle = (e: boolean) => {
       if (e == true) {
         expansionText.value = 'Read Less';
@@ -255,32 +242,8 @@ export default defineComponent({
     return {
       toggle,
       expansionText,
-      name,
-      date,
-      accept,
-
-      onSubmit() {
-        if (accept.value !== true) {
-          $q.notify({
-            color: 'red-5',
-            textColor: 'white',
-            icon: 'warning',
-            message: 'You need to accept the license and terms first',
-          });
-        } else {
-          $q.notify({
-            color: 'green-4',
-            textColor: 'white',
-            icon: 'cloud_done',
-            message: 'Submitted',
-          });
-        }
-      },
-
-      onReset() {
-        name.value = null;
-        accept.value = false;
-      },
+      slide: ref(1),
+      autoplay: ref(true),
     };
   },
 });

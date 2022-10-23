@@ -4,13 +4,13 @@
       <q-toolbar inset>
         <q-toolbar-title> Excursions Office </q-toolbar-title>
 
-        <q-tabs shrink stretch v-if="$q.platform.is.desktop">
+        <q-tabs class="desktop-only" shrink stretch>
           <q-route-tab :to="toExcursions" label="Excursions" />
           <q-route-tab :to="toContact" label="Contact" />
         </q-tabs>
       </q-toolbar>
 
-      <q-tabs shrink stretch v-if="$q.platform.is.mobile">
+      <q-tabs class="mobile-only" shrink stretch>
         <q-route-tab :to="toExcursions" label="Excursions" />
         <q-route-tab :to="toContact" label="Contact" />
       </q-tabs>

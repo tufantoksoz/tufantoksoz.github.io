@@ -1,12 +1,7 @@
 <template>
-  <div class="justify-center q-pa-md q-gutter-md">
+  <div class="q-pa-md q-gutter-md">
     <q-intersection once transition="scale" class="card-item">
-      <q-card
-        class="my-card cursor-pointer"
-        flat
-        @click="method"
-        v-ripple.early
-      >
+      <q-card class="cursor-pointer" flat @click="method" v-ripple>
         <img :src="image" />
         <q-card-section>
           <div class="row no-wrap items-center">
@@ -53,13 +48,9 @@
 </template>
 
 <style lang="sass" scoped>
-.my-card
-  width: 400px
-  max-width: 400px
-
 .card-item
-  height: 490px
-  width: 400px
+  height: 430px
+  width: 300px
 
 .q-item__section--avatar
   min-width: 0px

@@ -1,15 +1,14 @@
 <template>
   <q-img
-    v-if="$q.platform.is.desktop"
-    class="bannerSizeDesktop"
+    class="bannerSizeDesktop desktop-only"
     src="https://via.placeholder.com/1500x500"
   ></q-img>
   <q-img
-    v-if="$q.platform.is.mobile"
-    class="bannerSizeMobile"
+    class="bannerSizeMobile mobile-only"
     src="https://via.placeholder.com/400x300"
   ></q-img>
-  <q-page class="pageContainer justify-evenly q-pb-md">
+
+  <q-page class="justify-evenly q-pb-md q-px-lg">
     <div class="text-center">
       <h1 class="q-mb-sm">H1 TITLE</h1>
       <p class="q-mt-sm">
@@ -17,10 +16,10 @@
       </p>
     </div>
 
-    <div class="row justify-center">
+    <div class="pageContainer row justify-center">
       <div class="justify-center q-pa-md q-gutter-md">
         <q-intersection once transition="scale" class="card-item">
-          <q-card class="my-card cursor-pointer">
+          <q-card class="cursor-pointer" v-ripple>
             <q-img
               src="https://via.placeholder.com/400x267.png.png?text=Destinations+Img"
             >
@@ -34,7 +33,7 @@
 
       <div class="justify-center q-pa-md q-gutter-md">
         <q-intersection once transition="scale" class="card-item">
-          <q-card class="my-card cursor-pointer">
+          <q-card class="cursor-pointer" v-ripple>
             <q-img
               src="https://via.placeholder.com/400x267.png.png?text=Destinations+Img"
             >
@@ -48,7 +47,7 @@
 
       <div class="justify-center q-pa-md q-gutter-md">
         <q-intersection once transition="scale" class="card-item">
-          <q-card class="my-card cursor-pointer">
+          <q-card class="cursor-pointer" v-ripple>
             <q-img
               src="https://via.placeholder.com/400x267.png.png?text=Destinations+Img"
             >
@@ -62,7 +61,7 @@
 
       <div class="justify-center q-pa-md q-gutter-md">
         <q-intersection once transition="scale" class="card-item">
-          <q-card class="my-card cursor-pointer">
+          <q-card class="cursor-pointer" v-ripple>
             <q-img
               src="https://via.placeholder.com/400x267.png.png?text=Destinations+Img"
             >
@@ -76,7 +75,7 @@
 
       <div class="justify-center q-pa-md q-gutter-md">
         <q-intersection once transition="scale" class="card-item">
-          <q-card class="my-card cursor-pointer">
+          <q-card class="cursor-pointer" v-ripple>
             <q-img
               src="https://via.placeholder.com/400x267.png.png?text=Destinations+Img"
             >
@@ -90,7 +89,7 @@
 
       <div class="justify-center q-pa-md q-gutter-md">
         <q-intersection once transition="scale" class="card-item">
-          <q-card class="my-card cursor-pointer">
+          <q-card class="cursor-pointer">
             <q-img
               src="https://via.placeholder.com/400x267.png.png?text=Destinations+Img"
             >
@@ -107,7 +106,7 @@
       <h4 style="margin-bottom: 0; font-weight: bold">Excursions List</h4>
     </div>
 
-    <div class="row justify-center">
+    <div class="pageContainer row justify-center">
       <tour-card
         image="https://via.placeholder.com/400x300"
         title="Quad Safari"
@@ -116,6 +115,7 @@
         price="30"
         :method="test"
       ></tour-card>
+
       <tour-card
         image="https://via.placeholder.com/400x300"
         title="Quad Safari"
@@ -124,6 +124,7 @@
         price="30"
         :method="test"
       ></tour-card>
+
       <tour-card
         image="https://via.placeholder.com/400x300"
         title="Quad Safari"
@@ -132,6 +133,7 @@
         price="30"
         :method="test"
       ></tour-card>
+
       <tour-card
         image="https://via.placeholder.com/400x300"
         title="Quad Safari"
@@ -145,13 +147,10 @@
 </template>
 
 <style lang="sass" scoped>
-.my-card
-  width: 400px
-  max-width: 400px
 
 .card-item
-  height: 200
-  width: 400px
+  width: 300px
+  height: 200px
 
 h1
   font-size: 32px
@@ -171,7 +170,7 @@ export default defineComponent({
   components: { 'tour-card': TourCard },
   setup() {
     const router = useRouter();
-    console.log(process.env.bannerUrl);
+
     const test = () => {
       router.push({ path: '/testPost' });
     };
