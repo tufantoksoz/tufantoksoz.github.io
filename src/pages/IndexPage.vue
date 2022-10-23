@@ -89,7 +89,7 @@
 
       <div class="justify-center q-pa-md q-gutter-md">
         <q-intersection once transition="scale" class="card-item">
-          <q-card class="cursor-pointer">
+          <q-card class="cursor-pointer" v-ripple>
             <q-img
               src="https://via.placeholder.com/400x267.png.png?text=Destinations+Img"
             >
