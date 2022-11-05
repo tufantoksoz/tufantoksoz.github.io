@@ -115,33 +115,6 @@
         price="30"
         :method="test"
       ></tour-card>
-
-      <tour-card
-        image="https://via.placeholder.com/400x300"
-        title="Quad Safari"
-        date="Every Day"
-        hours="8 Hours"
-        price="30"
-        :method="test"
-      ></tour-card>
-
-      <tour-card
-        image="https://via.placeholder.com/400x300"
-        title="Quad Safari"
-        date="Every Day"
-        hours="8 Hours"
-        price="30"
-        :method="test"
-      ></tour-card>
-
-      <tour-card
-        image="https://via.placeholder.com/400x300"
-        title="Quad Safari"
-        date="Every Day"
-        hours="8 Hours"
-        price="30"
-        :method="test"
-      ></tour-card>
     </div>
   </q-page>
 </template>
