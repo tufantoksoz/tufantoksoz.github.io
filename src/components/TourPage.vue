@@ -82,8 +82,6 @@
         icon="info"
         label="Tour Info"
         header-class="text-primary"
-        class="expansion"
-        expand-separator
       >
         <q-card>
           <q-card-section>
@@ -98,8 +96,6 @@
         icon="star"
         label="Includes / Excludes"
         header-class="text-primary"
-        class="expansion"
-        expand-separator
       >
         <div class="row">
           <div class="col">
@@ -148,7 +144,6 @@
         icon="event"
         label="Days & Time"
         header-class="text-primary"
-        class="expansion"
       >
         <q-card>
           <q-card-section>
@@ -196,7 +191,7 @@ p
   max-width: 350px
 
 .expansion
-  font-size: large
+  font-size: medium
 
 @media (max-width: 1000px)
     .pageContainer
