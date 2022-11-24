@@ -191,7 +191,7 @@
 
       <div class="row justify-center">
         <tour-card
-          image="src\assets\popular-excursions\adrasan-suluada-boat-tour.jpg"
+          :image="adrasanImage"
           title="Adrasan Suluada Island Boat Tour"
           date="Every Day"
           hours="8 Hours"
@@ -285,6 +285,7 @@ p
 import { defineComponent, ref } from 'vue';
 import TourCard from 'components/TourCard.vue';
 import { useRouter } from 'vue-router';
+import adrasanImage from 'assets/popular-excursions/adrasan-suluada-boat-tour.jpg';
 
 export default defineComponent({
   name: 'IndexPage',
@@ -299,6 +300,7 @@ export default defineComponent({
     return {
       adrasanSuluadaBoatTour,
       slide: ref(1),
+      adrasanImage,
     };
   },
 });

@@ -119,9 +119,7 @@
         <p class="q-mt-md q-px-md articleFont">{{ articleFullText }}</p>
 
         <div class="q-pa-sm">
-          <q-img
-            src="src\assets\posts\adrasan-suluada\adrasan-suluada-slider-3.jpg"
-          />
+          <q-img :src="articleImg" />
         </div>
 
         <q-separator class="q-mt-lg" />
