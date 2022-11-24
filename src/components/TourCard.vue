@@ -1,46 +1,97 @@
 <template>
   <div class="q-pa-md q-gutter-md">
     <q-intersection once transition="scale" class="card-item">
-      <q-card class="cursor-pointer" flat @click="method" v-ripple>
+      <q-card class="cursor-pointer" @click="method" v-ripple bordered>
         <img :src="image" />
         <q-card-section>
           <div class="row no-wrap items-center">
-            <div class="col text-h5">{{ title }}</div>
-            <q-icon class="text-h5" color="green" name="euro" />
-            <p class="text-h5" style="margin: 0px">{{ price }}</p>
+            <div class="col-9 my-text-font text-h5" style="font-size: 18px">
+              {{ title }}
+            </div>
+            <div class="col-3">
+              <div class="row float-right">
+                <span class="text-body1 text-strike text-grey">
+                  €{{ oldPrice }}</span
+                >
+              </div>
+              <div class="row float-right items-center">
+                <q-icon color="green" size="24px" :name="currency" />
+                <span class="text-h5" style="margin: 0px">{{ price }}</span>
+              </div>
+            </div>
           </div>
 
-          <q-list>
-            <q-item>
-              <q-item-section avatar>
-                <q-icon color="primary" name="calendar_today" />
-              </q-item-section>
+          <div class="row">
+            <q-list class="col">
+              <q-item>
+                <q-item-section class="q-pr-sm" avatar>
+                  <q-icon color="primary" name="calendar_today" />
+                </q-item-section>
 
-              <q-item-section>
-                <q-item-label>{{ date }}</q-item-label>
-              </q-item-section>
-            </q-item>
+                <q-item-section>
+                  <q-item-label class="labelFont">{{ date }}</q-item-label>
+                </q-item-section>
+              </q-item>
 
-            <q-item>
-              <q-item-section avatar>
-                <q-icon color="red" name="schedule" />
-              </q-item-section>
+              <q-item>
+                <q-item-section class="q-pr-sm" avatar>
+                  <q-icon color="red" name="schedule" />
+                </q-item-section>
 
-              <q-item-section>
-                <q-item-label>{{ hours }}</q-item-label>
-              </q-item-section>
-            </q-item>
+                <q-item-section>
+                  <q-item-label class="labelFont">{{ hours }}</q-item-label>
+                </q-item-section>
+              </q-item>
 
-            <q-item>
-              <q-item-section avatar>
-                <q-icon color="green" name="payments" />
-              </q-item-section>
+              <q-item>
+                <q-item-section class="q-pr-sm" avatar>
+                  <q-icon color="green" name="payments" />
+                </q-item-section>
 
-              <q-item-section>
-                <q-item-label>Pay on the day</q-item-label>
-              </q-item-section>
-            </q-item>
-          </q-list>
+                <q-item-section>
+                  <q-item-label class="labelFont">Pay on the day</q-item-label>
+                </q-item-section>
+              </q-item>
+            </q-list>
+
+            <div class="col">
+              <q-list class="col">
+                <q-item>
+                  <q-item-section class="q-pr-sm" avatar>
+                    <q-icon color="yellow-7" name="restaurant" />
+                  </q-item-section>
+
+                  <q-item-section>
+                    <q-item-label class="labelFont">{{ food }}</q-item-label>
+                  </q-item-section>
+                </q-item>
+
+                <q-item>
+                  <q-item-section class="q-pr-sm" avatar>
+                    <q-icon color="brown-5" name="directions_bus" />
+                  </q-item-section>
+
+                  <q-item-section>
+                    <q-item-label class="labelFont">{{
+                      transfer
+                    }}</q-item-label>
+                  </q-item-section>
+                </q-item>
+
+                <q-item>
+                  <q-item-section class="q-pr-sm" avatar>
+                    <q-icon color="purple-9" name="location_on" />
+                  </q-item-section>
+
+                  <q-item-section>
+                    <q-item-label class="labelFont">{{
+                      location
+                    }}</q-item-label>
+                  </q-item-section>
+                </q-item>
+              </q-list>
+            </div>
+          </div>
         </q-card-section>
       </q-card>
     </q-intersection>
@@ -54,6 +105,10 @@
 
 .q-item__section--avatar
   min-width: 0px
+
+.labelFont
+  font-size: 13px
+  font-family: "Poppins", sans-serif
 </style>
 
 <script lang="ts">
@@ -64,9 +119,14 @@ export default defineComponent({
   props: {
     image: String,
     title: String,
+    currency: String,
+    oldPrice: String,
     price: String,
     date: String,
     hours: String,
+    food: String,
+    transfer: String,
+    location: String,
     method: { type: Function },
   },
 });

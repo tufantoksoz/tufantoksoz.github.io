@@ -14,3 +14,31 @@
   min-height: 300px;
   max-height: 400px;
 }
+
+@font-face {
+  font-family: myTitleFontBold;
+  src: url(./fonts/ArcaMajora3-Bold.otf);
+}
+
+@font-face {
+  font-family: myTitleFontHeavy;
+  src: url(./fonts/ArcaMajora3-Heavy.otf);
+}
+
+.my-title-font-bold {
+  font-family: 'myTitleFontBold';
+}
+
+.my-title-font-heavy {
+  font-family: 'myTitleFontHeavy';
+}
+
+.my-text-font {
+  font-family: 'Poppins', sans-serif;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');

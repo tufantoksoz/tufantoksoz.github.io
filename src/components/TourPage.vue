@@ -10,194 +10,143 @@
     fit="fill"
   ></q-img>
 
-  <div class="pageContainer">
-    <q-breadcrumbs class="text-brown q-pa-md q-gutter-sm desktop-only">
-      <template v-slot:separator>
-        <q-icon size="1.5em" name="chevron_right" color="primary" />
-      </template>
+  <div class="row pageContainer">
+    <div class="col-md-8 col-sm-12">
+      <q-breadcrumbs class="text-brown q-pa-md q-gutter-sm desktop-only">
+        <template v-slot:separator>
+          <q-icon size="1.5em" name="chevron_right" color="primary" />
+        </template>
 
-      <q-breadcrumbs-el label="Home" icon="home" to="/" />
-      <q-breadcrumbs-el
-        :label="breadCrumbsCategory"
-        icon="category"
-        :to="breadCrumbsCategoryRoute"
-      />
-      <q-breadcrumbs-el :label="breadCrumbsTourLabel" icon="tour" />
-    </q-breadcrumbs>
-
-    <q-separator />
-
-    <div>
-      <div class="q-px-md">
-        <h1>{{ articleTitle }}</h1>
-        <p>{{ articleSummaryText }}</p>
-      </div>
-
-      <q-expansion-item
-        expand-separator
-        header-class="text-primary text-center"
-        :label="expansionText"
-        @update:model-value="toggle"
-      >
-        <q-card>
-          <q-card-section>
-            <p>{{ articleFullText }}</p>
-          </q-card-section>
-        </q-card>
-      </q-expansion-item>
-
-      <q-separator class="q-mb-lg" />
-
-      <div class="q-pa-sm">
-        <q-carousel
-          swipeable
-          animated
-          v-model="slide"
-          navigation
-          infinite
-          :autoplay="autoplay"
-          transition-prev="slide-right"
-          transition-next="slide-left"
-          @mouseenter="autoplay = false"
-          @mouseleave="autoplay = true"
-        >
-          <q-carousel-slide
-            :name="1"
-            img-src="https://cdn.quasar.dev/img/mountains.jpg"
-          />
-          <q-carousel-slide
-            :name="2"
-            img-src="https://cdn.quasar.dev/img/parallax1.jpg"
-          />
-          <q-carousel-slide
-            :name="3"
-            img-src="https://cdn.quasar.dev/img/parallax2.jpg"
-          />
-        </q-carousel>
-      </div>
-
-      <q-separator class="q-mt-lg" />
-
-      <q-expansion-item
-        icon="info"
-        label="Tour Info"
-        header-class="text-primary"
-      >
-        <q-card>
-          <q-card-section>
-            {{ tourInfoText }}
-          </q-card-section>
-        </q-card>
-      </q-expansion-item>
+        <q-breadcrumbs-el label="Home" icon="home" to="/" />
+        <q-breadcrumbs-el
+          :label="breadCrumbsCategory"
+          icon="category"
+          :to="breadCrumbsCategoryRoute"
+        />
+        <q-breadcrumbs-el :label="breadCrumbsTourLabel" icon="tour" />
+      </q-breadcrumbs>
 
       <q-separator />
 
-      <q-expansion-item
-        icon="star"
-        label="Includes / Excludes"
-        header-class="text-primary"
-      >
-        <div class="row">
-          <div class="col">
-            <q-card
-              class="my-card q-pl-md q-pt-md"
-              flat
+      <div>
+        <div class="q-px-md">
+          <h1
+            class="my-title-font-heavy"
+            style="line-height: 3rem; font-size: 6vw; font-size: 3vh"
+          >
+            {{ articleTitle }}
+          </h1>
+          <p class="articleFont">
+            {{ articleSummaryText }}
+          </p>
+        </div>
+
+        <q-separator class="q-mb-lg" />
+
+        <div class="q-pa-sm">
+          <q-carousel
+            class="rounded-borders"
+            swipeable
+            animated
+            v-model="slide"
+            navigation
+            infinite
+            :autoplay="autoplay"
+            transition-prev="slide-right"
+            transition-next="slide-left"
+            @mouseenter="autoplay = false"
+            @mouseleave="autoplay = true"
+          >
+            <q-carousel-slide
+              v-for="(item, index) in sliderImages"
+              :key="index"
+              :name="index"
+              :img-src="item"
+            />
+          </q-carousel>
+        </div>
+
+        <q-separator class="q-mt-lg" />
+
+        <div class="q-px-md">
+          <h3 class="my-title-font-heavy q-my-xs" style="font-size: 20px">
+            Price Includes
+          </h3>
+
+          <div class="row">
+            <div
+              class="col-12 q-my-sm"
               v-for="(item, index) in includes"
               :key="index"
             >
-              <q-card-section horizontal>
-                <q-icon
-                  class="q-pa-md q-gutter-md"
-                  name="check_circle"
-                  color="positive"
-                  size="24px"
-                ></q-icon>
-                {{ item }}
-              </q-card-section>
-            </q-card>
+              <q-icon
+                class="q-px-md"
+                name="check_circle"
+                color="positive"
+                size="24px"
+              ></q-icon>
+              <span class="my-text-font"> {{ item }}</span>
+            </div>
           </div>
+        </div>
 
-          <div class="col">
-            <q-card
-              class="my-card q-pl-md q-pt-md"
-              flat
+        <q-separator class="q-mt-lg" />
+
+        <div class="q-px-md">
+          <h3 class="my-title-font-heavy q-my-xs" style="font-size: 20px">
+            Price Excludes
+          </h3>
+
+          <div class="row">
+            <div
+              class="col-12 q-my-sm"
               v-for="(item, index) in excludes"
               :key="index"
             >
-              <q-card-section horizontal>
-                <q-icon
-                  class="q-pa-md q-gutter-md"
-                  name="cancel"
-                  color="negative"
-                  size="24px"
-                ></q-icon>
-                {{ item }}
-              </q-card-section>
-            </q-card>
+              <q-icon
+                class="q-px-md"
+                name="cancel"
+                color="negative"
+                size="24px"
+              />
+              <span class="my-text-font"> {{ item }}</span>
+            </div>
           </div>
         </div>
-      </q-expansion-item>
 
-      <q-separator />
+        <q-separator class="q-mt-lg" />
 
-      <q-expansion-item
-        icon="event"
-        label="Days & Time"
-        header-class="text-primary"
-      >
-        <q-card>
-          <q-card-section>
-            {{ daysTimeText }}
-          </q-card-section>
-        </q-card>
-      </q-expansion-item>
+        <p class="q-mt-md q-px-md articleFont">{{ articleFullText }}</p>
 
-      <q-separator />
+        <div class="q-pa-sm">
+          <q-img
+            src="src\assets\posts\adrasan-suluada\adrasan-suluada-slider-3.jpg"
+          />
+        </div>
 
-      <h3 class="q-pl-lg q-mb-none">F.A.Q</h3>
+        <q-separator class="q-mt-lg" />
 
-      <div v-for="(item, index) in faq" :key="index">
-        <q-expansion-item expand-separator icon="add" :label="item.label">
-          <q-card>
-            <q-card-section>
-              {{ item.text }}
-            </q-card-section>
-          </q-card>
-        </q-expansion-item>
+        <h3 class="q-mb-none q-px-md">F.A.Q</h3>
+
+        <div v-for="(item, index) in faq" :key="index">
+          <q-expansion-item expand-separator icon="add" :label="item.label">
+            <q-card>
+              <q-card-section>
+                {{ item.text }}
+              </q-card-section>
+            </q-card>
+          </q-expansion-item>
+        </div>
       </div>
+
+      <q-separator class="q-my-md" />
     </div>
 
-    <q-separator class="q-my-lg" />
-
-    <booking-form></booking-form>
+    <div class="col-md-4 col-sm-12">
+      <booking-form :bookingForm="bookingForm"></booking-form>
+    </div>
   </div>
 </template>
-
-<style lang="sass" scoped>
-
-h1
-  font-size: 28px
-  font-weight: bold
-
-h3
-  font-size: 24px
-  font-weight: bold
-
-p
-  font-size: 22px
-
-.my-card
-  width: 100%
-  max-width: 350px
-
-.expansion
-  font-size: medium
-
-@media (max-width: 1000px)
-    .pageContainer
-      padding-left: 0%
-      padding-right: 0%
-</style>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
@@ -212,34 +161,43 @@ export default defineComponent({
     breadCrumbsCategory: String,
     breadCrumbsCategoryRoute: String,
     breadCrumbsTourLabel: String,
+    sliderImages: Object,
     articleTitle: String,
     articleSummaryText: String,
     articleFullText: String,
     articleImg: String,
-    tourInfoText: String,
     includes: Array,
     excludes: Array,
-    daysTimeText: String,
     faq: Object,
-    price: Number,
+    bookingForm: Object,
   },
   setup() {
-    let expansionText = ref('Read More...');
-
-    const toggle = (e: boolean) => {
-      if (e == true) {
-        expansionText.value = 'Read Less';
-      } else {
-        expansionText.value = 'Read More...';
-      }
-    };
-
     return {
-      toggle,
-      expansionText,
       slide: ref(1),
       autoplay: ref(true),
     };
   },
 });
 </script>
+
+<style lang="sass" scoped>
+h1
+  font-size: 28px
+  font-weight: bold
+
+h3
+  font-size: 24px
+  font-weight: bold
+
+p
+  font-size: 22px
+
+.articleFont
+  font-size: 18px
+  font-weight: 300
+
+@media (max-width: 1024px)
+    .pageContainer
+      padding-left: 0%
+      padding-right: 0%
+</style>
