@@ -27,7 +27,7 @@
             class="text-grey-9"
           />
 
-          <!-- <q-btn-dropdown auto-close stretch flat label="EXCURSIONS">
+          <!-- <q-btn-dropdown auto-close stretch flat label="EXCURSIONSSSS">
             <q-list>
               <q-item clickable @click="tab = 'belek'">
                 <q-item-section>Belek</q-item-section>
