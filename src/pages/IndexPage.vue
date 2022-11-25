@@ -91,128 +91,138 @@
     </q-item>
   </div>
 
-  <div>
-    <q-page class="justify-evenly q-pb-md q-px-lg">
-      <div class="text-center">
-        <h1 class="q-ma-xs my-title-font-bold">Popular Destinations</h1>
-      </div>
+  <div class="text-center">
+    <h1 class="q-ma-xs my-title-font-bold">Popular Destinations</h1>
+  </div>
 
-      <div class="q-pa-md row justify-center q-gutter-md">
-        <q-card class="my-card">
-          <q-img
-            class="imgSize zoom"
-            src="../assets/popular-destinations/belek.jpg"
-          >
-          </q-img>
-          <span
-            class="absolute-bottom text-center text-white text-overline q-pb-sm text-bold"
-            style="font-size: 18px"
-          >
-            Belek
-          </span>
-        </q-card>
+  <div class="myContainer row justify-center">
+    <div class="col-md-4 q-ma-sm colSize">
+      <q-card class="my-card">
+        <q-img
+          class="imgSize zoom"
+          src="../assets/popular-destinations/belek.jpg"
+        >
+        </q-img>
+        <span
+          class="absolute-bottom text-center text-white text-overline q-pb-sm text-bold"
+          style="font-size: 18px"
+        >
+          Belek
+        </span>
+      </q-card>
+    </div>
 
-        <q-card class="my-card">
-          <q-img
-            class="imgSize zoom"
-            src="../assets/popular-destinations/kemer.jpg"
-          >
-          </q-img>
-          <span
-            class="absolute-bottom text-center text-white text-overline q-pb-sm text-bold"
-            style="font-size: 18px"
-          >
-            Kemer
-          </span>
-        </q-card>
+    <div class="col-md-4 q-ma-sm colSize">
+      <q-card class="my-card">
+        <q-img
+          class="imgSize zoom"
+          src="../assets/popular-destinations/kemer.jpg"
+        >
+        </q-img>
+        <span
+          class="absolute-bottom text-center text-white text-overline q-pb-sm text-bold"
+          style="font-size: 18px"
+        >
+          Kemer
+        </span>
+      </q-card>
+    </div>
 
-        <q-card class="my-card">
-          <q-img
-            class="imgSize zoom"
-            src="../assets/popular-destinations/alanya.jpg"
-          >
-          </q-img>
-          <span
-            class="absolute-bottom text-center text-white text-overline q-pb-sm text-bold"
-            style="font-size: 18px"
-          >
-            Alanya
-          </span>
-        </q-card>
+    <div class="col-md-4 q-ma-sm colSize">
+      <q-card class="my-card">
+        <q-img
+          class="imgSize zoom"
+          src="../assets/popular-destinations/alanya.jpg"
+        >
+        </q-img>
+        <span
+          class="absolute-bottom text-center text-white text-overline q-pb-sm text-bold"
+          style="font-size: 18px"
+        >
+          Alanya
+        </span>
+      </q-card>
+    </div>
 
-        <q-card class="my-card">
-          <q-img
-            class="imgSize zoom"
-            src="../assets/popular-destinations/manavgat.jpg"
-          >
-          </q-img>
-          <span
-            class="absolute-bottom text-center text-white text-overline q-pb-sm text-bold"
-            style="font-size: 18px"
-          >
-            Manavgat
-          </span>
-        </q-card>
+    <div class="col-md-4 q-ma-sm colSize">
+      <q-card class="my-card">
+        <q-img
+          class="imgSize zoom"
+          src="../assets/popular-destinations/manavgat.jpg"
+        >
+        </q-img>
+        <span
+          class="absolute-bottom text-center text-white text-overline q-pb-sm text-bold"
+          style="font-size: 18px"
+        >
+          Manavgat
+        </span>
+      </q-card>
+    </div>
 
-        <q-card class="my-card">
-          <q-img
-            class="imgSize zoom"
-            src="../assets/popular-destinations/side.jpg"
-          >
-          </q-img>
-          <span
-            class="absolute-bottom text-center text-white text-overline q-pb-sm text-bold"
-            style="font-size: 18px"
-          >
-            Side
-          </span>
-        </q-card>
+    <div class="col-md-4 q-ma-sm colSize">
+      <q-card class="my-card">
+        <q-img
+          class="imgSize zoom"
+          src="../assets/popular-destinations/side.jpg"
+        >
+        </q-img>
+        <span
+          class="absolute-bottom text-center text-white text-overline q-pb-sm text-bold"
+          style="font-size: 18px"
+        >
+          Side
+        </span>
+      </q-card>
+    </div>
 
-        <q-card class="my-card">
-          <q-img
-            class="imgSize zoom"
-            src="../assets/popular-destinations/adrasan.jpg"
-          >
-          </q-img>
-          <span
-            class="absolute-bottom text-center text-white text-overline q-pb-sm text-bold"
-            style="font-size: 18px"
-          >
-            Adrasan
-          </span>
-        </q-card>
-      </div>
+    <div class="col-md-4 q-ma-sm colSize">
+      <q-card class="my-card">
+        <q-img
+          class="imgSize zoom"
+          src="../assets/popular-destinations/adrasan.jpg"
+        >
+        </q-img>
+        <span
+          class="absolute-bottom text-center text-white text-overline q-pb-sm text-bold"
+          style="font-size: 18px"
+        >
+          Adrasan
+        </span>
+      </q-card>
+    </div>
+  </div>
 
-      <div class="text-center q-gutter-md q-pt-xl q-mb-none">
-        <h4 class="my-title-font-bold" style="margin-bottom: 0">
-          Popular Excursions
-        </h4>
-      </div>
+  <div class="text-center q-gutter-md q-pt-xl q-mb-none">
+    <h4 class="my-title-font-bold" style="margin-bottom: 0">
+      Popular Excursions
+    </h4>
+  </div>
 
-      <div class="row justify-center">
-        <tour-card
-          :image="adrasanImage"
-          title="Adrasan Suluada Island Boat Tour"
-          date="Every Day"
-          hours="8 Hours"
-          currency="euro"
-          oldPrice="38"
-          price="30"
-          food="Dinner"
-          transfer="Transfer"
-          location="Adrasan"
-          :method="adrasanSuluadaBoatTour"
-        ></tour-card>
-      </div>
-    </q-page>
+  <div class="row justify-center">
+    <tour-card
+      :image="adrasanImage"
+      title="Adrasan Suluada Island Boat Tour"
+      date="Every Day"
+      hours="8 Hours"
+      currency="euro"
+      oldPrice="38"
+      price="30"
+      food="Dinner"
+      transfer="Transfer"
+      location="Adrasan"
+      :method="adrasanSuluadaBoatTour"
+    ></tour-card>
   </div>
 </template>
 
 <style lang="sass" scoped>
 .my-card
   overflow: hidden
+  height: 200px
   width: 100%
   max-width: 300px
+  margin: auto
 
 .imgSize
   transition: transform .3s
@@ -262,11 +272,25 @@ p
   font-size: 7vh
   background: rgba(0, 0, 0, 0.47)
 
-@media screen and (max-width: 600px)
+.colSize
+  width: 300px
+  height: 200px
+
+.myContainer
+  width: 1000px
+  margin-left: auto
+  margin-right: auto
+
+@media screen and (max-width: 1000px)
   .infoBox
     top: 0
     width: 100%
     height: 300px
+
+  .myContainer
+    width: auto
+    margin-left: auto
+    margin-right: auto
 
 @keyframes thing
   from
