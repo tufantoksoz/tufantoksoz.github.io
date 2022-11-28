@@ -37,28 +37,38 @@
           </span>
         </div>
 
-        <q-input
-          readonly
-          filled
-          v-model="date"
-          input-class="cursor-pointer"
-          mask="##/##/####"
-        >
-          <q-popup-proxy ref="qDateProxy" :breakpoint="0" behavior="menu">
-            <q-date
+        <div class="row items-center">
+          <div class="col-4">
+            <span class="my-text-font items-center vertical-middle flex"
+              >Tour Date :
+            </span>
+          </div>
+          <div class="col-8">
+            <q-input
+              readonly
+              outlined
+              dense=""
               v-model="date"
-              minimal
-              no-unset
-              mask="DD/MM/YYYY"
-              :options="options"
-              @update:model-value="$refs.qDateProxy.hide()"
+              input-class="cursor-pointer"
+              mask="##/##/####"
             >
-            </q-date>
-          </q-popup-proxy>
-          <template v-slot:append>
-            <q-icon name="event" class="cursor-pointer"></q-icon>
-          </template>
-        </q-input>
+              <q-popup-proxy ref="qDateProxy" :breakpoint="0" behavior="menu">
+                <q-date
+                  v-model="date"
+                  minimal
+                  no-unset
+                  mask="DD/MM/YYYY"
+                  :options="options"
+                  @update:model-value="$refs.qDateProxy.hide()"
+                >
+                </q-date>
+              </q-popup-proxy>
+              <template v-slot:append>
+                <q-icon name="event" class="cursor-pointer"></q-icon>
+              </template>
+            </q-input>
+          </div>
+        </div>
 
         <div class="row items-center">
           <div class="col-8">
