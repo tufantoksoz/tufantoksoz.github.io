@@ -44,51 +44,80 @@
   </div>
 
   <div
-    class="infoBox row rounded-borders relative-position items-center shadow-3"
+    class="infoBox row relative-position items-center my-text-font text-center q-my-lg q-mx-auto"
+    style="font-size: 1.2em"
   >
-    <q-item class="col-sm-4">
-      <q-item-section avatar>
-        <q-icon color="white" name="credit_score" size="5em" />
-      </q-item-section>
+    <div class="col-xs-6 col-sm-4 col-md-4 q-pa-md">
+      <div>
+        <q-img
+          class="iconSize"
+          src="../assets/homepage-icons/customer-service.png"
+        />
+      </div>
 
-      <q-item-section>
-        <q-item-label class="text-white my-title-font-bold"
-          >BEST PRICE GUARANTEE</q-item-label
-        >
-        <q-item-label class="labelFont my-text-font" overline
-          >Price match within 48 hours of order confirmation</q-item-label
-        >
-      </q-item-section>
-    </q-item>
-    <q-item class="col-sm-4">
-      <q-item-section avatar>
-        <q-icon color="white" name="support_agent" size="5em" />
-      </q-item-section>
+      <div class="q-pt-sm">
+        <span>7/24 Support</span>
+      </div>
+    </div>
 
-      <q-item-section>
-        <q-item-label class="text-white my-title-font-bold"
-          >7/24 SUPPORT</q-item-label
-        >
-        <q-item-label class="labelFont my-text-font" overline
-          >We are here to help, before, during, and even after your
-          trip</q-item-label
-        >
-      </q-item-section>
-    </q-item>
-    <q-item class="col-sm-4">
-      <q-item-section avatar>
-        <q-icon color="white" name="star" size="5em" />
-      </q-item-section>
+    <div class="col-xs-6 col-sm-4 col-md-4 q-pa-md">
+      <div>
+        <q-img class="iconSize" src="../assets/homepage-icons/insurance.png" />
+      </div>
 
-      <q-item-section>
-        <q-item-label class="text-white my-title-font-bold"
-          >NO PREPAYMENT</q-item-label
-        >
-        <q-item-label class="labelFont my-text-font" overline
-          >Book without prepayment. Pay on the day</q-item-label
-        >
-      </q-item-section>
-    </q-item>
+      <div class="q-pt-sm">
+        <span>Free Insurance</span>
+      </div>
+    </div>
+
+    <div class="col-xs-6 col-sm-4 col-md-4 q-pa-md">
+      <div>
+        <q-img
+          class="iconSize"
+          src="../assets/homepage-icons/pay-on-the-day.png"
+        />
+      </div>
+
+      <div class="q-pt-sm">
+        <span>Pay On The Day</span>
+      </div>
+    </div>
+
+    <div class="col-xs-6 col-sm-4 col-md-4 q-pa-md">
+      <div>
+        <q-img class="iconSize" src="../assets/homepage-icons/transfer.png" />
+      </div>
+
+      <div class="q-pt-sm">
+        <span>Free Transfer</span>
+      </div>
+    </div>
+
+    <div class="col-xs-6 col-sm-4 col-md-4 q-pa-md">
+      <div>
+        <q-img
+          class="iconSize"
+          src="../assets/homepage-icons/no-prepaid-booking.png"
+        />
+      </div>
+
+      <div class="q-pt-sm">
+        <span>No Pre-paid Booking</span>
+      </div>
+    </div>
+
+    <div class="col-xs-6 col-sm-4 col-md-4 q-pa-md">
+      <div>
+        <q-img
+          class="iconSize"
+          src="../assets/homepage-icons/cheap-price.png"
+        />
+      </div>
+
+      <div class="q-pt-sm">
+        <span>Best Price Guarantee</span>
+      </div>
+    </div>
   </div>
 
   <div class="text-center">
@@ -251,14 +280,7 @@ p
   font-size: 1em
 
 .infoBox
-  background: #f2994a
-  background: -webkit-linear-gradient(to right, #f2c94c, #f2994a)
-  background: linear-gradient(to right, #f2c94c, #f2994a)
-  max-width: 1200px
-  margin: auto
-  height: 200px
-  z-index: 1
-  top: -50px
+  max-width: 1000px
 
 .sliderContainer
   height: 500px
@@ -276,6 +298,10 @@ p
   width: 300px
   height: 200px
 
+.iconSize
+  width: 6em
+  height: 6em
+
 .myContainer
   width: 1000px
   margin-left: auto
@@ -283,9 +309,7 @@ p
 
 @media screen and (max-width: 1000px)
   .infoBox
-    top: 0
-    width: 100%
-    height: 300px
+    width: auto
 
   .myContainer
     width: auto
