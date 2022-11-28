@@ -13,6 +13,7 @@
       :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
+      :tourDetails="tourDetails"
       :faq="faq"
       :bookingForm="bookingForm"
     >
@@ -75,6 +76,34 @@ export default defineComponent({
       babyPrice: 0,
     };
 
+    const tourDetails = {
+      tourCost:
+        "This tour is €30 for adults. It's €15 for childs ages 6-12. It is free for babies 0-6 years old.",
+      itemsBring:
+        'It is recommended to bring a camera, sunscreen, towel, swimsuit, sunglasses when coming to the tour.',
+      departureTimes: [
+        "Saat 07:00'de Kundu otellerinden",
+        "Saat 07:10'da Lara otellerinden",
+        "Saat 07:30'da Kaleiçi otellerinden",
+        "Saat 07:50'de Konyaaltı otellerinden",
+      ],
+      returnTimes: [
+        '18:30 – 19:30 saatleri arasında Konyaaltı otellerinden',
+        '18:30 - 19:30 saatleri arasında Kaleiçi otellerinden',
+        '18:30 - 19:30 saatleri arasında Kaleiçi otellerinden',
+        '18:30 - 19:30 saatleri arasında Kundu otellerinden',
+      ],
+      distance: {
+        headerTitle: 'How far is the Antalya regions and the port of Adrasan?',
+        content: [
+          "Konyaaltı'ndan Adrasan Limanı'na olan mesafe: 82 km",
+          "Kaleiçi'nden Adrasan Limanı'na uzaklık: 91 km",
+          "Lara'dan Port Adrasan'a olan mesafe: 102 km",
+          'Kundu-Adrasan Limanı arası mesafe: 117 km',
+        ],
+      },
+    };
+
     return {
       imgDesktop,
       imgMobile,
@@ -90,6 +119,7 @@ export default defineComponent({
       excludes,
       faq,
       bookingForm,
+      tourDetails,
     };
   },
 });

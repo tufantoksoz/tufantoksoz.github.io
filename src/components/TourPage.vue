@@ -116,6 +116,99 @@
 
         <q-separator class="q-mt-lg" />
 
+        <!-- Tour Details Expansion Section Start -->
+        <div class="q-px-md">
+          <h3 class="my-title-font-heavy q-my-xs" style="font-size: 20px">
+            Tour Details
+          </h3>
+
+          <q-expansion-item
+            class="q-pb-sm"
+            icon="info"
+            label="Tour Cost"
+            header-class="bg-info text-white"
+            expand-icon-class="text-white"
+          >
+            <q-card class="bg-grey-3 my-text-font">
+              <q-card-section>
+                {{ tourDetails.tourCost }}
+              </q-card-section>
+            </q-card>
+          </q-expansion-item>
+
+          <q-expansion-item
+            class="q-pb-sm"
+            icon="info"
+            label="What should you bring with you on the tour?"
+            header-class="bg-info text-white"
+            expand-icon-class="text-white"
+          >
+            <q-card class="bg-grey-3 my-text-font">
+              <q-card-section>
+                {{ tourDetails.itemsBring }}
+              </q-card-section>
+            </q-card>
+          </q-expansion-item>
+
+          <q-expansion-item
+            class="q-pb-sm"
+            icon="info"
+            label="Tour departure times (approximately)"
+            header-class="bg-info text-white"
+            expand-icon-class="text-white"
+          >
+            <q-card class="bg-grey-3 my-text-font">
+              <q-card-section>
+                <div
+                  v-for="(item, index) in tourDetails.departureTimes"
+                  :key="index"
+                >
+                  <q-icon name="chevron_right" size="24px" /> {{ item }}
+                </div>
+              </q-card-section>
+            </q-card>
+          </q-expansion-item>
+
+          <q-expansion-item
+            class="q-pb-sm"
+            icon="info"
+            label="Return times from the tour (approximately)"
+            header-class="bg-info text-white"
+            expand-icon-class="text-white"
+          >
+            <q-card class="bg-grey-3 my-text-font">
+              <q-card-section>
+                <div
+                  v-for="(item, index) in tourDetails.returnTimes"
+                  :key="index"
+                >
+                  <q-icon name="chevron_right" size="24px" /> {{ item }}
+                </div>
+              </q-card-section>
+            </q-card>
+          </q-expansion-item>
+
+          <q-expansion-item
+            class="q-pb-sm"
+            icon="info"
+            :label="tourDetails.distance.headerTitle"
+            header-class="bg-info text-white"
+            expand-icon-class="text-white"
+          >
+            <q-card class="bg-grey-3 my-text-font">
+              <q-card-section>
+                <div
+                  v-for="(item, index) in tourDetails.distance.content"
+                  :key="index"
+                >
+                  <q-icon name="chevron_right" size="24px" /> {{ item }}
+                </div>
+              </q-card-section>
+            </q-card>
+          </q-expansion-item>
+        </div>
+        <!-- Tour Details Expansion Section End -->
+
         <p class="q-mt-md q-px-md articleFont">{{ articleFullText }}</p>
 
         <div class="q-pa-sm">
@@ -127,7 +220,11 @@
         <h3 class="q-mb-none q-px-md">F.A.Q</h3>
 
         <div v-for="(item, index) in faq" :key="index">
-          <q-expansion-item expand-separator icon="add" :label="item.label">
+          <q-expansion-item
+            expand-separator
+            switch-toggle-side
+            :label="item.label"
+          >
             <q-card>
               <q-card-section>
                 {{ item.text }}
@@ -166,6 +263,7 @@ export default defineComponent({
     articleImg: String,
     includes: Array,
     excludes: Array,
+    tourDetails: { type: Object, required: true },
     faq: Object,
     bookingForm: Object,
   },
