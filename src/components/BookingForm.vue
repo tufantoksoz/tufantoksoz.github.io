@@ -154,6 +154,7 @@
           v-model="fullName"
           label="Your name and surname *"
           hint="Please type your name and surname"
+          maxlength="500"
           :rules="[
             (val) =>
               (val && val.length > 0) || 'Please type your name and surname',
@@ -167,6 +168,7 @@
           type="email"
           label="E-mail *"
           hint="Please type your email"
+          maxlength="500"
           :rules="[
             (val) => (val && val.length > 0) || 'Please type your e-mail',
           ]"
@@ -191,6 +193,7 @@
           v-model="hotelName"
           label="Hotel Name"
           hint="If you are staying at the hotel, please type the hotel name"
+          maxlength="500"
         />
 
         <q-input
@@ -199,6 +202,18 @@
           v-model="roomNumber"
           label="Room Number"
           hint="If you are staying at the hotel, please type your room number"
+          maxlength="100"
+        />
+
+        <q-input
+          outlined
+          dense
+          input-style="height: 70px;"
+          type="textarea"
+          v-model="clientName"
+          label="First and last names"
+          maxlength="1000"
+          hint="Type the first and last names of the people who will participate in the tour."
         />
 
         <div
@@ -206,7 +221,7 @@
           style="font-size: 18px"
         >
           <span class="q-mr-md">Total : </span>
-          <q-icon :name="bookingForm.currency" size="20px" />
+          <q-icon :name="bookingForm.currency" size="18px" />
           <span> {{ totalPrice }}</span>
         </div>
 
@@ -221,6 +236,7 @@
           />
         </div>
 
+        <!-- Booking Summary Start -->
         <q-dialog class="text-no-wrap" v-model="showSummary" persistent>
           <q-card style="width: -webkit-fill-available">
             <div class="row justify-center q-ma-md my-title-font-bold">
@@ -360,6 +376,19 @@
               </div>
             </div>
 
+            <div class="row my-text-font">
+              <div class="col-5">
+                <div class="row q-ml-md q-mt-md">
+                  <span class="q-mr-md">Names and surnames :</span>
+                </div>
+              </div>
+              <div class="col-7" style="white-space: normal !important">
+                <div class="row q-ml-md q-mt-md">
+                  <span>{{ clientName }}</span>
+                </div>
+              </div>
+            </div>
+
             <div
               class="row q-py-sm text-bold items-center justify-center text-orange-8"
               style="font-size: 24px"
@@ -389,6 +418,7 @@
             </q-card-actions>
           </q-card>
         </q-dialog>
+        <!-- Booking Summary End -->
       </q-form>
     </q-card>
   </div>
@@ -422,6 +452,7 @@ export default defineComponent({
     const babyCount = ref(0);
     const hotelName = ref(null);
     const roomNumber = ref(null);
+    const clientName = ref(null);
 
     const showSummary = ref(false);
 
@@ -464,6 +495,7 @@ export default defineComponent({
       babyCount,
       hotelName,
       roomNumber,
+      clientName,
       date: ref(date.formatDate(timeStamp, 'DD/MM/YYYY')),
       calcAdult,
       calcChild,
