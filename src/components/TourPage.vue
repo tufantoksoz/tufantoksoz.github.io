@@ -28,6 +28,64 @@
 
       <q-separator />
 
+      <div class="q-pa-md q-gutter-y-md">
+        <div class="q-gutter-sm text-center">
+          <q-chip
+            :ripple="false"
+            color="red"
+            icon="payments"
+            text-color="white"
+            :label="currency + ' ' + bookingForm.adultPrice"
+          >
+          </q-chip>
+
+          <q-chip
+            :ripple="false"
+            color="red"
+            icon="verified_user"
+            text-color="white"
+            label="Insurance"
+          >
+          </q-chip>
+
+          <q-chip
+            :ripple="false"
+            color="red"
+            icon="restaurant"
+            text-color="white"
+            label="Dinner"
+          >
+          </q-chip>
+
+          <q-chip
+            :ripple="false"
+            color="red"
+            icon="directions_bus"
+            text-color="white"
+            label="Transfer"
+          >
+          </q-chip>
+
+          <q-chip
+            :ripple="false"
+            color="red"
+            icon="schedule"
+            text-color="white"
+            :label="tourDetails.hours"
+          >
+          </q-chip>
+
+          <q-chip
+            :ripple="false"
+            color="red"
+            icon="event_available"
+            text-color="white"
+            label="Every Day"
+          >
+          </q-chip>
+        </div>
+      </div>
+
       <div>
         <div class="q-px-md">
           <h1
@@ -237,7 +295,7 @@
       <q-separator class="q-my-md" />
     </div>
 
-    <div class="col-md-4 col-sm-12">
+    <div class="col-md-4" style="margin: 0 auto">
       <booking-form :bookingForm="bookingForm"></booking-form>
     </div>
   </div>
@@ -265,12 +323,14 @@ export default defineComponent({
     excludes: Array,
     tourDetails: { type: Object, required: true },
     faq: Object,
-    bookingForm: Object,
+    bookingForm: { type: Object, required: true },
   },
-  setup() {
+  setup(props) {
+    const currency = ref(props.bookingForm.currency == 'euro' ? '€' : '$');
     return {
       slide: ref(1),
       autoplay: ref(true),
+      currency,
     };
   },
 });

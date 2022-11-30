@@ -102,6 +102,7 @@ export default defineComponent({
           'Kundu-Adrasan Limanı arası mesafe: 117 km',
         ],
       },
+      hours: '8 Hours',
     };
 
     return {
