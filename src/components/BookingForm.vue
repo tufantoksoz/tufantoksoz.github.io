@@ -221,7 +221,7 @@
           style="font-size: 18px"
         >
           <span class="q-mr-md">Total : </span>
-          <q-icon :name="bookingForm.currency" size="18px" />
+          <q-icon :name="bookingForm.currency" />
           <span> {{ totalPrice }}</span>
         </div>
 
