@@ -5,6 +5,13 @@
   padding-right: 15%;
 }
 
+@media (max-width: 1024px) {
+  .pageContainer {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+}
+
 .bannerSizeDesktop {
   min-height: 400px;
   max-height: 500px;

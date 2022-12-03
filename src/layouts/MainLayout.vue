@@ -21,23 +21,43 @@
         <q-tabs class="desktop-only" shrink stretch>
           <q-route-tab :to="toHome" label="Home" class="text-grey-9" />
 
-          <q-route-tab
-            :to="toExcursions"
-            label="Excursions"
-            class="text-grey-9"
-          />
+          <QMenuHover>
+            <template #default="{ activatorAttr, menuAttr }">
+              <q-btn v-bind="activatorAttr" flat label="EXCURSIONS">
+                <q-menu v-bind="menuAttr" auto-close fit>
+                  <q-list class="my-text-font">
+                    <q-item clickable :to="{ name: 'antalya' }">
+                      <q-item-section>Antalya</q-item-section>
+                    </q-item>
 
-          <!-- <q-btn-dropdown auto-close stretch flat label="EXCURSIONSSSS">
-            <q-list>
-              <q-item clickable @click="tab = 'belek'">
-                <q-item-section>Belek</q-item-section>
-              </q-item>
+                    <q-item clickable :to="{ name: 'belek' }">
+                      <q-item-section>Belek</q-item-section>
+                    </q-item>
 
-              <q-item clickable @click="tab = 'kemer'">
-                <q-item-section>Kemer</q-item-section>
-              </q-item>
-            </q-list>
-          </q-btn-dropdown> -->
+                    <q-item clickable :to="{ name: 'kemer' }">
+                      <q-item-section>Kemer</q-item-section>
+                    </q-item>
+
+                    <q-item clickable :to="{ name: 'alanya' }">
+                      <q-item-section>Alanya</q-item-section>
+                    </q-item>
+
+                    <q-item clickable :to="{ name: 'manavgat' }">
+                      <q-item-section>Manavgat</q-item-section>
+                    </q-item>
+
+                    <q-item clickable :to="{ name: 'side' }">
+                      <q-item-section>Side</q-item-section>
+                    </q-item>
+
+                    <q-item clickable :to="{ name: 'adrasan' }">
+                      <q-item-section>Adrasan</q-item-section>
+                    </q-item>
+                  </q-list></q-menu
+                >
+              </q-btn>
+            </template>
+          </QMenuHover>
 
           <q-route-tab :to="toContact" label="Contact" class="text-grey-9" />
         </q-tabs>
@@ -54,17 +74,53 @@
     >
       <q-scroll-area class="fit">
         <q-list>
-          <template v-for="(menuItem, index) in menuList" :key="index">
-            <q-item clickable v-ripple :to="menuItem.to">
-              <q-item-section avatar>
-                <q-icon :name="menuItem.icon" />
-              </q-item-section>
-              <q-item-section>
-                {{ menuItem.label }}
-              </q-item-section>
-            </q-item>
-            <q-separator :key="'sep' + index" v-if="menuItem.separator" />
-          </template>
+          <q-item clickable v-ripple to="/">
+            <q-item-section avatar>
+              <q-icon name="home" />
+            </q-item-section>
+            <q-item-section> Home </q-item-section>
+          </q-item>
+
+          <q-separator size="1.5px" />
+
+          <q-expansion-item icon="tour" label="Excursions">
+            <q-list class="my-text-font" separator>
+              <q-item clickable :to="{ name: 'antalya' }">
+                <q-item-section>Antalya</q-item-section>
+              </q-item>
+
+              <q-item clickable :to="{ name: 'belek' }">
+                <q-item-section>Belek</q-item-section>
+              </q-item>
+
+              <q-item clickable :to="{ name: 'kemer' }">
+                <q-item-section>Kemer</q-item-section>
+              </q-item>
+
+              <q-item clickable :to="{ name: 'alanya' }">
+                <q-item-section>Alanya</q-item-section>
+              </q-item>
+
+              <q-item clickable :to="{ name: 'manavgat' }">
+                <q-item-section>Manavgat</q-item-section>
+              </q-item>
+
+              <q-item clickable :to="{ name: 'side' }">
+                <q-item-section>Side</q-item-section>
+              </q-item>
+
+              <q-item clickable :to="{ name: 'adrasan' }">
+                <q-item-section>Adrasan</q-item-section>
+              </q-item>
+            </q-list>
+          </q-expansion-item>
+
+          <q-item clickable v-ripple to="/contact">
+            <q-item-section avatar>
+              <q-icon name="call" />
+            </q-item-section>
+            <q-item-section> Contact </q-item-section>
+          </q-item>
         </q-list>
       </q-scroll-area>
     </q-drawer>
@@ -85,45 +141,23 @@
 
 <script>
 import { ref } from 'vue';
+import MenuHover from 'components/MenuHover.vue';
 
 export default {
+  components: { QMenuHover: MenuHover },
   setup() {
     const leftDrawerOpen = ref(false);
 
     const toHome = '/';
-    const toExcursions = '/test';
     const toContact = '/test';
 
-    const menuList = [
-      {
-        icon: 'home',
-        label: 'Home',
-        separator: true,
-        to: '/',
-      },
-      {
-        icon: 'tour',
-        label: 'Excursions',
-        separator: false,
-        to: '/test',
-      },
-      {
-        icon: 'call',
-        label: 'Contact',
-        separator: false,
-        to: '/test',
-      },
-    ];
-
     return {
-      toExcursions,
       toContact,
       toHome,
       leftDrawerOpen,
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
       },
-      menuList,
     };
   },
 };
