@@ -1,38 +1,58 @@
 import { RouteRecordRaw } from 'vue-router';
 import MainLayout from 'layouts/MainLayout.vue';
-import IndexPage from 'pages/IndexPage.vue';
-import testPage from 'pages/testPage.vue';
-import AdrasanSuluada from 'pages/posts/adrasanSuluadaBoatTour.vue';
-import AntalyaCategory from 'pages/category/antalya/AntalyaCategory.vue';
-import BelekCategory from 'pages/category/antalya/BelekCategory.vue';
-import KemerCategory from 'pages/category/antalya/KemerCategory.vue';
-import AlanyaCategory from 'pages/category/antalya/AlanyaCategory.vue';
-import ManavgatCategory from 'pages/category/antalya/ManavgatCategory.vue';
-import SideCategory from 'pages/category/antalya/SideCategory.vue';
-import AdrasanCategory from 'pages/category/antalya/AdrasanCategory.vue';
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => MainLayout,
     children: [
-      { path: '', component: IndexPage },
-      { path: 'test', component: testPage },
+      { path: '', component: () => import('pages/IndexPage.vue') },
+      { path: 'test', component: () => import('pages/testPage.vue') },
       {
         path: 'adrasan-suluada-boat-tour',
-        component: AdrasanSuluada,
+        component: () => import('pages/posts/adrasanSuluadaBoatTour.vue'),
       },
-      { path: 'antalya', name: 'antalya', component: AntalyaCategory },
-      { path: 'antalya/belek', name: 'belek', component: BelekCategory },
-      { path: 'antalya/kemer', name: 'kemer', component: KemerCategory },
-      { path: 'antalya/alanya', name: 'alanya', component: AlanyaCategory },
+    ],
+  },
+  {
+    path: '/antalya',
+    component: MainLayout,
+    children: [
       {
-        path: 'antalya/manavgat',
-        name: 'manavgat',
-        component: ManavgatCategory,
+        path: '',
+        name: 'antalya',
+        component: () => import('pages/category/antalya/AntalyaCategory.vue'),
       },
-      { path: 'antalya/side', name: 'side', component: SideCategory },
-      { path: 'antalya/adrasan', name: 'adrasan', component: AdrasanCategory },
+      {
+        path: 'belek',
+        name: 'belek',
+        component: () => import('pages/category/antalya/BelekCategory.vue'),
+      },
+      {
+        path: 'kemer',
+        name: 'kemer',
+        component: () => import('pages/category/antalya/KemerCategory.vue'),
+      },
+      {
+        path: 'alanya',
+        name: 'alanya',
+        component: () => import('pages/category/antalya/AlanyaCategory.vue'),
+      },
+      {
+        path: 'manavgat',
+        name: 'manavgat',
+        component: () => import('pages/category/antalya/ManavgatCategory.vue'),
+      },
+      {
+        path: 'side',
+        name: 'side',
+        component: () => import('pages/category/antalya/SideCategory.vue'),
+      },
+      {
+        path: 'adrasan',
+        name: 'adrasan',
+        component: () => import('pages/category/antalya/AdrasanCategory.vue'),
+      },
     ],
   },
 
