@@ -83,7 +83,7 @@
 
           <q-separator size="1.5px" />
 
-          <q-expansion-item icon="tour" label="Excursions">
+          <!-- <q-expansion-item icon="tour" label="Excursions">
             <q-list class="my-text-font" separator>
               <q-item clickable :to="{ name: 'antalya' }">
                 <q-item-section>Antalya</q-item-section>
@@ -113,7 +113,7 @@
                 <q-item-section>Adrasan</q-item-section>
               </q-item>
             </q-list>
-          </q-expansion-item>
+          </q-expansion-item> -->
 
           <q-item clickable v-ripple to="/contact">
             <q-item-section avatar>
