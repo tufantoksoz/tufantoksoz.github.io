@@ -22,20 +22,17 @@ const routes: RouteRecordRaw[] = [
         path: 'adrasan-suluada-boat-tour',
         component: AdrasanSuluada,
       },
-    ],
-  },
-
-  {
-    path: '/antalya',
-    component: MainLayout,
-    children: [
-      { path: '', name: 'antalya', component: AntalyaCategory },
-      { path: 'belek', name: 'belek', component: BelekCategory },
-      { path: 'kemer', name: 'kemer', component: KemerCategory },
-      { path: 'alanya', name: 'alanya', component: AlanyaCategory },
-      { path: 'manavgat', name: 'manavgat', component: ManavgatCategory },
-      { path: 'side', name: 'side', component: SideCategory },
-      { path: 'adrasan', name: 'adrasan', component: AdrasanCategory },
+      { path: 'antalya', name: 'antalya', component: AntalyaCategory },
+      { path: 'antalya/belek', name: 'belek', component: BelekCategory },
+      { path: 'antalya/kemer', name: 'kemer', component: KemerCategory },
+      { path: 'antalya/alanya', name: 'alanya', component: AlanyaCategory },
+      {
+        path: 'antalya/manavgat',
+        name: 'manavgat',
+        component: ManavgatCategory,
+      },
+      { path: 'antalya/side', name: 'side', component: SideCategory },
+      { path: 'antalya/adrasan', name: 'adrasan', component: AdrasanCategory },
     ],
   },
 
