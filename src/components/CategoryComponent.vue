@@ -60,8 +60,5 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'CategoryComponent',
   props: { categoryName: String },
-  setup() {
-    return {};
-  },
 });
 </script>
