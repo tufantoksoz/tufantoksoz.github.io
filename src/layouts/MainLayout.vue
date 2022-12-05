@@ -129,6 +129,30 @@
       <router-view />
     </q-page-container>
 
+    <!-- Sticky Button Start -->
+    <q-page-sticky class="stickyBtn" position="bottom-right" :offset="[18, 50]">
+      <q-btn
+        padding="0px"
+        size="32px"
+        round
+        icon="img:src\assets\contact-icons\whatsapp.svg"
+      />
+    </q-page-sticky>
+
+    <q-page-sticky
+      class="stickyBtn"
+      position="bottom-right"
+      :offset="[18, 115]"
+    >
+      <q-btn
+        padding="0px"
+        size="32px"
+        round
+        icon="img:src\assets\contact-icons\viber.svg"
+      />
+    </q-page-sticky>
+    <!-- Sticky Button End -->
+
     <q-footer elevated class="bg-grey-8 text-white">
       <q-toolbar>
         <q-toolbar-title>
@@ -142,7 +166,6 @@
 <script>
 import { ref } from 'vue';
 import MenuHover from 'components/MenuHover.vue';
-
 export default {
   components: { QMenuHover: MenuHover },
   setup() {
@@ -162,3 +185,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.stickyBtn {
+  z-index: 2;
+}
+</style>

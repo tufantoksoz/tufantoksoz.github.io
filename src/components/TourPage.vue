@@ -296,8 +296,27 @@
     </div>
 
     <div class="col-md-4" style="margin: 0 auto">
-      <booking-form :bookingForm="bookingForm"></booking-form>
+      <booking-form id="bookingForm" :bookingForm="bookingForm"></booking-form>
     </div>
+
+    <!-- Sticky Button Start -->
+    <q-page-sticky
+      class="stickyBtn"
+      position="bottom"
+      expand
+      v-if="$q.platform.is.mobile"
+    >
+      <q-btn
+        @click="scrollToBookingForm"
+        style="font-weight: 600; letter-spacing: 4px"
+        size="16px"
+        class="full-width my-text-font"
+        color="light-blue-13"
+        label="Book Now!"
+        square
+      />
+    </q-page-sticky>
+    <!-- Sticky Button End -->
   </div>
 </template>
 
@@ -327,10 +346,18 @@ export default defineComponent({
   },
   setup(props) {
     const currency = ref(props.bookingForm.currency == 'euro' ? '€' : '$');
+
+    const scrollToBookingForm = () => {
+      document
+        .getElementById('bookingForm')
+        ?.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return {
       slide: ref(1),
       autoplay: ref(true),
       currency,
+      scrollToBookingForm,
     };
   },
 });
