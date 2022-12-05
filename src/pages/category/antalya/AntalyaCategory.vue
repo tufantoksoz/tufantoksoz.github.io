@@ -14,8 +14,8 @@
         :food="food"
         :transfer="transfer"
         :location="location"
-        :method="method"
-      ></tour-card>
+        :method="adrasanSuluadaBoatTour"
+      />
     </div>
   </div>
 </template>
@@ -46,7 +46,6 @@ export default {
     const food = 'Dinner';
     const transfer = 'Transfer';
     const location = 'Adrasan';
-    const method = 'adrasanSuluadaBoatTour';
 
     const adrasanSuluadaBoatTour = () => {
       router.push({ path: '/adrasan-suluada-boat-tour' });
@@ -63,7 +62,6 @@ export default {
       food,
       transfer,
       location,
-      method,
       adrasanSuluadaBoatTour,
     };
   },
