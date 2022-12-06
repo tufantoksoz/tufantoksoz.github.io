@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="pageContainer">
     <div class="text-center q-pa-md">
       <h1 class="my-title-font-bold text-h4">{{ categoryName }} Excursions</h1>
@@ -61,4 +61,4 @@ export default defineComponent({
   name: 'CategoryComponent',
   props: { categoryName: String },
 });
-</script>
+</script> -->
