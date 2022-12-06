@@ -248,17 +248,16 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import TourCard from 'components/TourCard.vue';
-import { useRouter } from 'vue-router';
+// import { useRouter } from 'vue-router';
 import adrasanImage from 'assets/popular-excursions/adrasan-suluada-boat-tour.jpg';
 
 export default defineComponent({
   name: 'IndexPage',
   components: { 'tour-card': TourCard },
   setup() {
-    const router = useRouter();
-
+    // const router = useRouter();
     const adrasanSuluadaBoatTour = () => {
-      router.push({ path: '/adrasan-suluada-boat-tour' });
+      // router.push({ path: '/adrasan-suluada-boat-tour' });
     };
 
     return {
