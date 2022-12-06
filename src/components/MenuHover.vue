@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <slot :activatorAttr="activatorAttr" :menuAttr="menuAttr" />
 </template>
 
@@ -39,4 +39,4 @@ const menuAttr = ref({
   onMouseenter: () => (menuHover.value = true),
   onMouseleave: () => (menuHover.value = false),
 });
-</script> -->
+</script>
