@@ -130,7 +130,7 @@
     </q-page-container>
 
     <!-- Sticky Button Start -->
-    <q-page-sticky class="stickyBtn" position="bottom-right" :offset="[18, 50]">
+    <!-- <q-page-sticky class="stickyBtn" position="bottom-right" :offset="[18, 50]">
       <q-btn
         padding="0px"
         size="32px"
@@ -150,7 +150,7 @@
         round
         icon="img:/src/assets/contact-icons/viber.svg"
       />
-    </q-page-sticky>
+    </q-page-sticky> -->
     <!-- Sticky Button End -->
 
     <q-footer elevated class="bg-grey-8 text-white">
@@ -190,8 +190,8 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<!-- <style lang="scss">
 .stickyBtn {
   z-index: 2;
 }
-</style>
+</style> -->
