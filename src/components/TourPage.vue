@@ -296,11 +296,11 @@
     </div>
 
     <div class="col-md-4" style="margin: 0 auto">
-      <booking-form id="bookingForm" :bookingForm="bookingForm"></booking-form>
+      <booking-form :bookingForm="bookingForm"></booking-form>
     </div>
 
     <!-- Sticky Button Start -->
-    <q-page-sticky
+    <!-- <q-page-sticky
       class="stickyBtn"
       position="bottom"
       expand
@@ -315,7 +315,7 @@
         label="Book Now!"
         square
       />
-    </q-page-sticky>
+    </q-page-sticky> -->
     <!-- Sticky Button End -->
   </div>
 </template>
@@ -347,17 +347,10 @@ export default defineComponent({
   setup(props) {
     const currency = ref(props.bookingForm.currency == 'euro' ? '€' : '$');
 
-    const scrollToBookingForm = () => {
-      document
-        .getElementById('bookingForm')
-        ?.scrollIntoView({ behavior: 'smooth' });
-    };
-
     return {
       slide: ref(1),
       autoplay: ref(true),
       currency,
-      scrollToBookingForm,
     };
   },
 });
