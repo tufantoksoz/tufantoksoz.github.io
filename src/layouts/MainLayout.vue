@@ -21,7 +21,7 @@
         <q-tabs class="desktop-only" shrink stretch>
           <q-route-tab :to="toHome" label="Home" class="text-grey-9" />
 
-          <QMenuHover>
+          <!-- <QMenuHover>
             <template #default="{ activatorAttr, menuAttr }">
               <q-btn v-bind="activatorAttr" flat label="EXCURSIONS">
                 <q-menu v-bind="menuAttr" auto-close fit>
@@ -57,7 +57,7 @@
                 >
               </q-btn>
             </template>
-          </QMenuHover>
+          </QMenuHover> -->
 
           <q-route-tab :to="toContact" label="Contact" class="text-grey-9" />
         </q-tabs>
@@ -83,7 +83,7 @@
 
           <q-separator size="1.5px" />
 
-          <q-expansion-item icon="tour" label="Excursions">
+          <!-- <q-expansion-item icon="tour" label="Excursions">
             <q-list class="my-text-font" separator>
               <q-item clickable :to="{ name: 'antalya' }">
                 <q-item-section>Antalya</q-item-section>
@@ -113,7 +113,7 @@
                 <q-item-section>Adrasan</q-item-section>
               </q-item>
             </q-list>
-          </q-expansion-item>
+          </q-expansion-item> -->
 
           <q-item clickable v-ripple to="/contact">
             <q-item-section avatar>
@@ -165,11 +165,11 @@
 
 <script>
 import { ref } from 'vue';
-import MenuHover from 'components/MenuHover.vue';
+// import MenuHover from 'components/MenuHover.vue';
 import viberLogo from 'assets/contact-icons/viber.svg';
 import wpLogo from 'assets/contact-icons/whatsapp.svg';
 export default {
-  components: { QMenuHover: MenuHover },
+  // components: { QMenuHover: MenuHover },
   setup() {
     const leftDrawerOpen = ref(false);
 
