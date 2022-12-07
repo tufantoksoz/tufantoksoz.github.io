@@ -1,16 +1,19 @@
 import { RouteRecordRaw } from 'vue-router';
 import MainLayout from 'layouts/MainLayout.vue';
+import IndexPage from 'pages/IndexPage.vue';
+import TestPage from 'pages/testPage.vue';
+import Adrasan from 'pages/posts/adrasanSuluadaBoatTour.vue';
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => MainLayout,
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') },
-      { path: 'test', component: () => import('pages/testPage.vue') },
+      { path: '', component: IndexPage },
+      { path: 'test', component: TestPage },
       {
         path: 'adrasan-suluada-boat-tour',
-        component: () => import('pages/posts/adrasanSuluadaBoatTour.vue'),
+        component: Adrasan,
       },
     ],
   },
