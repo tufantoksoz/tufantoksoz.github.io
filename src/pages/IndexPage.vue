@@ -256,6 +256,7 @@ export default defineComponent({
   components: { 'tour-card': TourCard },
   setup() {
     const router = useRouter();
+
     const adrasanSuluadaBoatTour = () => {
       router.push({ path: '/adrasan-suluada-boat-tour' });
     };
