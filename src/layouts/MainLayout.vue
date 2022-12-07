@@ -166,8 +166,6 @@
 <script>
 import { ref } from 'vue';
 // import MenuHover from 'components/MenuHover.vue';
-import viberLogo from 'assets/contact-icons/viber.svg';
-import wpLogo from 'assets/contact-icons/whatsapp.svg';
 export default {
   // components: { QMenuHover: MenuHover },
   setup() {
@@ -183,8 +181,6 @@ export default {
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
       },
-      viberLogo,
-      wpLogo,
     };
   },
 };
