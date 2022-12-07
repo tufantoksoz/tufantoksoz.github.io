@@ -60,5 +60,18 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'CategoryComponent',
   props: { categoryName: String },
+  errorCaptured(err, vm, info) {
+    console.log('err');
+    console.log(err);
+    console.log('*********************');
+
+    console.log('vm');
+    console.log(vm);
+    console.log('*********************');
+
+    console.log('info');
+    console.log(info);
+    console.log('*********************');
+  },
 });
 </script>

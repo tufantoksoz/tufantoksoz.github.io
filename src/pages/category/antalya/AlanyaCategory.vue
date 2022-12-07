@@ -31,6 +31,19 @@ export default {
     'category-component': CategoryComponent,
     'tour-card': TourCard,
   },
+  errorCaptured(err, vm, info) {
+    console.log('err');
+    console.log(err);
+    console.log('*********************');
+
+    console.log('vm');
+    console.log(vm);
+    console.log('*********************');
+
+    console.log('info');
+    console.log(info);
+    console.log('*********************');
+  },
   setup() {
     const router = useRouter();
 
