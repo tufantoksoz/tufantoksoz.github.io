@@ -1,7 +1,7 @@
 <template>
   <div class="q-pa-md q-gutter-md">
     <q-intersection once transition="scale" class="card-item">
-      <q-card class="cursor-pointer" @click="method" v-ripple bordered>
+      <q-card class="cursor-pointer" @click="routeTo" v-ripple bordered>
         <img :src="image" />
         <q-card-section>
           <div class="row no-wrap items-center">
@@ -113,6 +113,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { useRouter } from 'vue-router';
 
 export default defineComponent({
   name: 'TourCard',
@@ -127,7 +128,17 @@ export default defineComponent({
     food: String,
     transfer: String,
     location: String,
-    method: { type: Function },
+    path: { type: String, required: true },
+  },
+
+  setup(props) {
+    const router = useRouter();
+
+    const routeTo = () => {
+      router.push({ path: props.path });
+    };
+
+    return { routeTo };
   },
 });
 </script>

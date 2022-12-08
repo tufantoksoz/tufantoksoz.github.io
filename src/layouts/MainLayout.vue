@@ -130,7 +130,7 @@
     </q-page-container>
 
     <!-- Sticky Button Start -->
-    <q-page-sticky class="stickyBtn" position="bottom-right" :offset="[18, 50]">
+    <q-page-sticky class="z-top" position="bottom-right" :offset="[18, 50]">
       <q-btn
         padding="0px"
         size="32px"
@@ -139,11 +139,7 @@
       />
     </q-page-sticky>
 
-    <q-page-sticky
-      class="stickyBtn"
-      position="bottom-right"
-      :offset="[18, 115]"
-    >
+    <q-page-sticky class="z-top" position="bottom-right" :offset="[18, 115]">
       <q-btn
         padding="0px"
         size="32px"
@@ -189,9 +185,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.stickyBtn {
-  z-index: 2;
-}
-</style>

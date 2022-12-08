@@ -14,14 +14,13 @@
         :food="food"
         :transfer="transfer"
         :location="location"
-        :method="adrasanSuluadaBoatTour"
+        :path="path"
       ></tour-card>
     </div>
   </div>
 </template>
 
 <script>
-import { useRouter } from 'vue-router';
 import CategoryComponent from 'src/components/CategoryComponent.vue';
 import TourCard from 'src/components/TourCard.vue';
 import adrasanImage from 'assets/popular-excursions/adrasan-suluada-boat-tour.jpg';
@@ -32,8 +31,6 @@ export default {
     'tour-card': TourCard,
   },
   setup() {
-    const router = useRouter();
-
     const categoryName = 'Side';
 
     const title = 'Adrasan Suluada Island Boat Tour';
@@ -46,10 +43,8 @@ export default {
     const food = 'Dinner';
     const transfer = 'Transfer';
     const location = 'Adrasan';
+    const path = '/adrasan-suluada-boat-tour';
 
-    const adrasanSuluadaBoatTour = () => {
-      router.push({ path: '/adrasan-suluada-boat-tour' });
-    };
     return {
       categoryName,
       title,
@@ -62,7 +57,7 @@ export default {
       food,
       transfer,
       location,
-      adrasanSuluadaBoatTour,
+      path,
     };
   },
 };
