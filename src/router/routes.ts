@@ -4,7 +4,7 @@ import MainLayout from 'layouts/MainLayout.vue';
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: () => MainLayout,
+    component: MainLayout,
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
       { path: 'test', component: () => import('pages/testPage.vue') },
