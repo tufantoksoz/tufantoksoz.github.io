@@ -240,7 +240,7 @@
       food="Dinner"
       transfer="Transfer"
       location="Adrasan"
-      :method="adrasanSuluadaBoatTour"
+      :path="path"
     ></tour-card>
   </div>
 </template>
@@ -248,21 +248,16 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import TourCard from 'components/TourCard.vue';
-import { useRouter } from 'vue-router';
 import adrasanImage from 'assets/popular-excursions/adrasan-suluada-boat-tour.jpg';
 
 export default defineComponent({
   name: 'IndexPage',
   components: { 'tour-card': TourCard },
   setup() {
-    const router = useRouter();
-
-    const adrasanSuluadaBoatTour = () => {
-      router.push({ path: '/adrasan-suluada-boat-tour' });
-    };
+    const path = '/adrasan-suluada-boat-tour';
 
     return {
-      adrasanSuluadaBoatTour,
+      path,
       slide: ref(1),
       adrasanImage,
     };
