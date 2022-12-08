@@ -19,7 +19,7 @@
         </q-toolbar-title>
 
         <q-tabs class="desktop-only" shrink stretch>
-          <q-route-tab :to="toHome" label="Home" class="text-grey-9" />
+          <q-route-tab :to="{ path: '/' }" label="Home" class="text-grey-9" />
 
           <QMenuHover>
             <template #default="{ activatorAttr, menuAttr }">
@@ -59,7 +59,11 @@
             </template>
           </QMenuHover>
 
-          <q-route-tab :to="toContact" label="Contact" class="text-grey-9" />
+          <q-route-tab
+            :to="{ path: '/test' }"
+            label="Contact"
+            class="text-grey-9"
+          />
         </q-tabs>
       </q-toolbar>
     </q-header>
@@ -167,12 +171,7 @@ export default {
   setup() {
     const leftDrawerOpen = ref(false);
 
-    const toHome = '/';
-    const toContact = '/test';
-
     return {
-      toContact,
-      toHome,
       leftDrawerOpen,
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
