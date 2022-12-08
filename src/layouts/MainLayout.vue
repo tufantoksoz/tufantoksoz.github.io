@@ -135,21 +135,11 @@
 
     <!-- Sticky Button Start -->
     <q-page-sticky class="z-top" position="bottom-right" :offset="[18, 50]">
-      <q-btn
-        padding="0px"
-        size="32px"
-        round
-        icon="img:/src/assets/contact-icons/whatsapp.svg"
-      />
+      <q-btn padding="0px" size="32px" round :icon="wpPath" />
     </q-page-sticky>
 
     <q-page-sticky class="z-top" position="bottom-right" :offset="[18, 115]">
-      <q-btn
-        padding="0px"
-        size="32px"
-        round
-        icon="img:/src/assets/contact-icons/viber.svg"
-      />
+      <q-btn padding="0px" size="32px" round :icon="viberPath" />
     </q-page-sticky>
     <!-- Sticky Button End -->
 
@@ -166,16 +156,24 @@
 <script>
 import { ref } from 'vue';
 import MenuHover from 'components/MenuHover.vue';
+import viberLogo from 'assets/contact-icons/viber.svg';
+import wpLogo from 'assets/contact-icons/whatsapp.svg';
+
 export default {
   components: { QMenuHover: MenuHover },
   setup() {
     const leftDrawerOpen = ref(false);
+
+    const viberPath = 'img:' + viberLogo;
+    const wpPath = 'img:' + wpLogo;
 
     return {
       leftDrawerOpen,
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
       },
+      viberPath,
+      wpPath,
     };
   },
 };
