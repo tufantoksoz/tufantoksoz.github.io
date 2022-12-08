@@ -26,7 +26,7 @@
               <q-btn v-bind="activatorAttr" flat label="EXCURSIONS">
                 <q-menu v-bind="menuAttr" auto-close fit>
                   <q-list class="my-text-font">
-                    <!-- <q-item clickable :to="{ name: 'antalya' }">
+                    <q-item clickable :to="{ name: 'antalya' }">
                       <q-item-section>Antalya</q-item-section>
                     </q-item>
 
@@ -51,34 +51,6 @@
                     </q-item>
 
                     <q-item clickable :to="{ name: 'adrasan' }">
-                      <q-item-section>Adrasan</q-item-section>
-                    </q-item> -->
-
-                    <q-item>
-                      <q-item-section>Antalya</q-item-section>
-                    </q-item>
-
-                    <q-item>
-                      <q-item-section>Belek</q-item-section>
-                    </q-item>
-
-                    <q-item>
-                      <q-item-section>Kemer</q-item-section>
-                    </q-item>
-
-                    <q-item>
-                      <q-item-section>Alanya</q-item-section>
-                    </q-item>
-
-                    <q-item>
-                      <q-item-section>Manavgat</q-item-section>
-                    </q-item>
-
-                    <q-item>
-                      <q-item-section>Side</q-item-section>
-                    </q-item>
-
-                    <q-item>
                       <q-item-section>Adrasan</q-item-section>
                     </q-item>
                   </q-list></q-menu
@@ -113,7 +85,7 @@
 
           <q-expansion-item icon="tour" label="Excursions">
             <q-list class="my-text-font" separator>
-              <!-- <q-item clickable :to="{ name: 'antalya' }">
+              <q-item clickable :to="{ name: 'antalya' }">
                 <q-item-section>Antalya</q-item-section>
               </q-item>
 
@@ -138,34 +110,6 @@
               </q-item>
 
               <q-item clickable :to="{ name: 'adrasan' }">
-                <q-item-section>Adrasan</q-item-section>
-              </q-item> -->
-
-              <q-item>
-                <q-item-section>Antalya</q-item-section>
-              </q-item>
-
-              <q-item>
-                <q-item-section>Belek</q-item-section>
-              </q-item>
-
-              <q-item>
-                <q-item-section>Kemer</q-item-section>
-              </q-item>
-
-              <q-item>
-                <q-item-section>Alanya</q-item-section>
-              </q-item>
-
-              <q-item>
-                <q-item-section>Manavgat</q-item-section>
-              </q-item>
-
-              <q-item>
-                <q-item-section>Side</q-item-section>
-              </q-item>
-
-              <q-item>
                 <q-item-section>Adrasan</q-item-section>
               </q-item>
             </q-list>
@@ -218,8 +162,6 @@
 <script>
 import { ref } from 'vue';
 import MenuHover from 'components/MenuHover.vue';
-import viberLogo from 'assets/contact-icons/viber.svg';
-import wpLogo from 'assets/contact-icons/whatsapp.svg';
 export default {
   components: { QMenuHover: MenuHover },
   setup() {
@@ -235,8 +177,6 @@ export default {
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
       },
-      viberLogo,
-      wpLogo,
     };
   },
 };
