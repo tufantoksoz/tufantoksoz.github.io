@@ -126,7 +126,7 @@
 
   <div class="myContainer row justify-center">
     <div class="col-md-4 q-ma-sm colSize">
-      <q-card class="my-card">
+      <q-card class="my-card" @click="routeBelek">
         <q-img
           class="imgSize zoom"
           src="../assets/popular-destinations/belek.jpg"
@@ -142,7 +142,7 @@
     </div>
 
     <div class="col-md-4 q-ma-sm colSize">
-      <q-card class="my-card">
+      <q-card class="my-card" @click="routeKemer">
         <q-img
           class="imgSize zoom"
           src="../assets/popular-destinations/kemer.jpg"
@@ -158,7 +158,7 @@
     </div>
 
     <div class="col-md-4 q-ma-sm colSize">
-      <q-card class="my-card">
+      <q-card class="my-card" @click="routeAlanya">
         <q-img
           class="imgSize zoom"
           src="../assets/popular-destinations/alanya.jpg"
@@ -174,7 +174,7 @@
     </div>
 
     <div class="col-md-4 q-ma-sm colSize">
-      <q-card class="my-card">
+      <q-card class="my-card" @click="routeManavgat">
         <q-img
           class="imgSize zoom"
           src="../assets/popular-destinations/manavgat.jpg"
@@ -190,7 +190,7 @@
     </div>
 
     <div class="col-md-4 q-ma-sm colSize">
-      <q-card class="my-card">
+      <q-card class="my-card" @click="routeSide">
         <q-img
           class="imgSize zoom"
           src="../assets/popular-destinations/side.jpg"
@@ -206,7 +206,7 @@
     </div>
 
     <div class="col-md-4 q-ma-sm colSize">
-      <q-card class="my-card">
+      <q-card class="my-card" @click="routeAdrasan">
         <q-img
           class="imgSize zoom"
           src="../assets/popular-destinations/adrasan.jpg"
@@ -249,17 +249,37 @@
 import { defineComponent, ref } from 'vue';
 import TourCard from 'components/TourCard.vue';
 import adrasanImage from 'assets/popular-excursions/adrasan-suluada-boat-tour.jpg';
+import { useRouter } from 'vue-router';
 
 export default defineComponent({
   name: 'IndexPage',
   components: { 'tour-card': TourCard },
   setup() {
+    const router = useRouter();
     const path = '/adrasan-suluada-boat-tour';
 
     return {
       path,
       slide: ref(1),
       adrasanImage,
+      routeBelek() {
+        router.push({ name: 'belek' });
+      },
+      routeKemer() {
+        router.push({ name: 'kemer' });
+      },
+      routeAlanya() {
+        router.push({ name: 'alanya' });
+      },
+      routeManavgat() {
+        router.push({ name: 'manavgat' });
+      },
+      routeSide() {
+        router.push({ name: 'side' });
+      },
+      routeAdrasan() {
+        router.push({ name: 'adrasan' });
+      },
     };
   },
 });

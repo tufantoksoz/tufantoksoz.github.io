@@ -1,5 +1,5 @@
 <template>
-  <div class="pageContainer">
+  <div class="pageContainer q-mx-sm">
     <div class="text-center q-pa-md">
       <h1 class="my-title-font-bold text-h4">{{ categoryName }} Excursions</h1>
     </div>
