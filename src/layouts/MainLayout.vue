@@ -60,7 +60,7 @@
           </QMenuHover>
 
           <q-route-tab
-            :to="{ path: '/test' }"
+            :to="{ name: 'contact' }"
             label="Contact"
             class="text-grey-9"
           />
@@ -119,7 +119,7 @@
             </q-list>
           </q-expansion-item>
 
-          <q-item clickable v-ripple to="/contact">
+          <q-item clickable v-ripple :to="{ name: 'contact' }">
             <q-item-section avatar>
               <q-icon name="call" />
             </q-item-section>
