@@ -21,9 +21,7 @@
             label="Full name *"
             maxlength="200"
             lazy-rules
-            :rules="[
-              (val) => (val && val.length > 0) || 'Please type your full name',
-            ]"
+            :rules="[(val) => (val && val.length > 0) || '']"
           />
 
           <q-input
@@ -32,9 +30,7 @@
             type="email"
             label="E-mail *"
             maxlength="500"
-            :rules="[
-              (val) => (val && val.length > 0) || 'Please type your e-mail',
-            ]"
+            :rules="[(val) => (val && val.length > 0) || '']"
           />
 
           <q-input
@@ -42,7 +38,7 @@
             v-model="subject"
             label="Subject *"
             maxlength="1000"
-            :rules="[(val) => (val && val.length > 0) || 'Please type subject']"
+            :rules="[(val) => (val && val.length > 0) || '']"
           />
 
           <q-input
@@ -51,7 +47,7 @@
             label="Message *"
             type="textarea"
             maxlength="5000"
-            :rules="[(val) => (val && val.length > 0) || 'Please type message']"
+            :rules="[(val) => (val && val.length > 0) || '']"
           />
 
           <div>
