@@ -1,8 +1,8 @@
 <template>
   <div class="q-pa-md q-gutter-md">
     <q-intersection once transition="scale" class="card-item">
-      <q-card class="cursor-pointer" @click="routeTo" v-ripple bordered>
-        <img :src="image" />
+      <q-card class="cursor-pointer my-card" @click="routeTo" v-ripple bordered>
+        <img :src="image" height="180" />
         <q-card-section>
           <div class="row no-wrap items-center">
             <div class="col-9 my-text-font text-h5" style="font-size: 18px">
@@ -11,7 +11,7 @@
             <div class="col-3">
               <div class="row float-right">
                 <span class="text-body1 text-strike text-grey">
-                  €{{ oldPrice }}</span
+                  {{ currencyType }}{{ oldPrice }}</span
                 >
               </div>
               <div class="row float-right items-center">
@@ -100,7 +100,11 @@
 
 <style lang="sass" scoped>
 .card-item
-  height: 430px
+  height: 450px
+  width: 300px
+
+.my-card
+  height: 450px
   width: 300px
 
 .q-item__section--avatar
@@ -128,17 +132,19 @@ export default defineComponent({
     food: String,
     transfer: String,
     location: String,
-    path: { type: String, required: true },
+    routeName: { type: String, required: true },
   },
 
   setup(props) {
     const router = useRouter();
 
+    const currencyType = props.currency == 'euro' ? '€' : '$';
+
     const routeTo = () => {
-      router.push({ path: props.path });
+      router.push({ path: props.routeName });
     };
 
-    return { routeTo };
+    return { routeTo, currencyType };
   },
 });
 </script>

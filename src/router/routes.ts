@@ -14,7 +14,63 @@ const routes: RouteRecordRaw[] = [
       },
       {
         path: 'adrasan-suluada-boat-tour',
+        name: 'adrasanSuluadaBoatTour',
         component: () => import('pages/posts/adrasanSuluadaBoatTour.vue'),
+      },
+      {
+        path: 'goynuk-canyon-tour',
+        name: 'goynukCanyonTour',
+        component: () => import('pages/posts/goynukCanyonTour.vue'),
+      },
+      {
+        path: 'kemer-tekne-tour',
+        name: 'kemerTekneTour',
+        component: () => import('pages/posts/kemerTekneTour.vue'),
+      },
+      {
+        path: 'kemer-snoker-dalis-tour',
+        name: 'kemerSnokerDalisTour',
+        component: () => import('pages/posts/kemerSnokerDalis.vue'),
+      },
+      {
+        path: 'kemer-dalis-tour',
+        name: 'kemerDalisTour',
+        component: () => import('pages/posts/kemerDalis.vue'),
+      },
+      {
+        path: 'kemer-yunus-tour',
+        name: 'kemerYunusTour',
+        component: () => import('pages/posts/kemerYunusTour.vue'),
+      },
+      {
+        path: 'kemer-buggy-tour',
+        name: 'kemerBuggyTour',
+        component: () => import('pages/posts/kemerBuggyTour.vue'),
+      },
+      {
+        path: 'kemer-gun-batimi-suluada-tour',
+        name: 'kemerGunBatimiSuluadaTour',
+        component: () => import('pages/posts/kemerGunBatimiSuluada.vue'),
+      },
+      {
+        path: 'ulupinar-balik-tutma-tour',
+        name: 'uluPinarBalikTutma',
+        component: () => import('pages/posts/ulupinarBalikTutma.vue'),
+      },
+      {
+        path: 'olimpos-yanartas-ulupinar-tour',
+        name: 'olimposYanartas',
+        component: () => import('pages/posts/olimposYanartasUlupinar.vue'),
+      },
+      {
+        path: 'demre-kekova-tour',
+        name: 'demre-kekova',
+        component: () => import('pages/posts/demreKekovaTour.vue'),
+      },
+      {
+        path: 'antayla-city-tour',
+        name: 'demre-kekova',
+        component: () => import('pages/posts/antalyaSehirTuru.vue'),
       },
     ],
   },

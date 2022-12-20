@@ -14,7 +14,7 @@
         :food="food"
         :transfer="transfer"
         :location="location"
-        :path="path"
+        :routeName="path"
       />
     </div>
   </div>

@@ -240,8 +240,161 @@
       food="Dinner"
       transfer="Transfer"
       location="Adrasan"
-      :path="path"
-    ></tour-card>
+      :routeName="adrasanSuluadaPath"
+    />
+    <tour-card
+      :image="goynukImage"
+      title="Экскурсия в Каньон Гейнюк"
+      date="Every Day"
+      hours="4 Hours"
+      currency="attach_money"
+      oldPrice="18"
+      price="13"
+      food="Dinner"
+      transfer="Transfer"
+      location="Göynük"
+      :routeName="goynukCanyonPath"
+    />
+
+    <tour-card
+      :image="kemerTekneImage"
+      title="Прогулка на Корабле в Кемере"
+      date="Every Day"
+      hours="8 Hours"
+      currency="attach_money"
+      oldPrice="20"
+      price="15"
+      food="Dinner"
+      transfer="Transfer"
+      location="Kemer"
+      :routeName="kemerTeknePath"
+    />
+
+    <tour-card
+      :image="kemerSnokerDalisImage"
+      title="Снорклинг в Кемере"
+      date="Every Day"
+      hours="8 Hours"
+      currency="attach_money"
+      oldPrice="23"
+      price="20"
+      food="Dinner"
+      transfer="Transfer"
+      location="Kemer"
+      :routeName="kemerSnokerDalisPath"
+    />
+
+    <tour-card
+      :image="kemerDalisImage"
+      title="Дайвинг в Кемере"
+      date="Every Day"
+      hours="8 Hours"
+      currency="attach_money"
+      oldPrice="26"
+      price="23"
+      food="Dinner"
+      transfer="Transfer"
+      location="Kemer"
+      :routeName="kemerDalisPath"
+    />
+
+    <tour-card
+      :image="kemerYunusImage"
+      title="Дельфинарий в Кемере"
+      date="Every Day"
+      hours="5 Hours"
+      currency="attach_money"
+      oldPrice="27"
+      price="25"
+      food="Dinner"
+      transfer="Transfer"
+      location="Kemer"
+      :routeName="kemerYunusPath"
+    />
+
+    <tour-card
+      :image="kemerBuggyImage"
+      title="Дельфинарий в Кемере"
+      date="Every Day"
+      hours="5 Hours"
+      currency="attach_money"
+      oldPrice="27"
+      price="25"
+      food="Dinner"
+      transfer="Transfer"
+      location="Kemer"
+      :routeName="kemerBuggyPath"
+    />
+
+    <tour-card
+      :image="suluadaGunbatimiImage"
+      title="Экскурсия на остров Сулуада на Закате из Кемера"
+      date="Every Day"
+      hours="8 Hours"
+      currency="attach_money"
+      oldPrice="28"
+      price="25"
+      food="Dinner"
+      transfer="Transfer"
+      location="Kemer"
+      :routeName="suluadaGunbatimiPath"
+    />
+
+    <tour-card
+      :image="ulupinarBalikImage"
+      title="Рыбалка в Улупинаре — Цена 2022"
+      date="Every Day"
+      hours="4 Hours"
+      currency="attach_money"
+      oldPrice="27"
+      price="25"
+      food="Dinner"
+      transfer="Transfer"
+      location="Kemer"
+      :routeName="ulupinarBalikPath"
+    />
+
+    <tour-card
+      :image="olimposYanartasUlupinarImage"
+      title="Экскурсия в Олимпос-Химера-Улупинар из Кемера"
+      date="Every Day"
+      hours="5 Hours"
+      currency="attach_money"
+      oldPrice="27"
+      price="25"
+      food="Dinner"
+      transfer="Transfer"
+      location="Kemer"
+      :routeName="olimposYanartasUlupinarPath"
+    />
+
+    <tour-card
+      :image="demreKekovaImage"
+      title="Экскурсия в Олимпос-Химера-Улупинар из Кемера"
+      date="Every Day"
+      hours="5 Hours"
+      currency="attach_money"
+      oldPrice="27"
+      price="25"
+      food="Dinner"
+      transfer="Transfer"
+      location="Kemer"
+      :routeName="demreKekovaPath"
+    />
+
+    <tour-card
+      :image="antalyCityImage"
+      title="Обзорная Экскурсия по Анталии из Кемера"
+      date="Every Day"
+      hours="9 Hours"
+      currency="attach_money"
+      oldPrice="27"
+      price="25"
+      food="Dinner"
+      transfer="Transfer"
+      location="Kemer"
+      :routeName="antalyaCityPath"
+    />
   </div>
 </template>
 
@@ -249,6 +402,17 @@
 import { defineComponent, ref } from 'vue';
 import TourCard from 'components/TourCard.vue';
 import adrasanImage from 'assets/popular-excursions/adrasan-suluada-boat-tour.jpg';
+import goynukImage from 'assets/popular-excursions/goynuk-canyon.webp';
+import kemerTekneImage from 'assets/posts/tekne-tour/tekne-tour.jpeg';
+import kemerSnokerDalisImage from 'assets/posts/kemer-snoker-dalis/kemer-dalis-1.jpeg';
+import kemerDalisImage from 'assets/posts/kemer-dalis/kemer-dalis-1.jpeg';
+import kemerYunusImage from 'assets/posts/kemer-yunus/kemer-yunus-1.jpeg';
+import kemerBuggyImage from 'assets/posts/kemer-buggy/kemer-buggy-1.jpg';
+import suluadaGunbatimiImage from 'assets/posts/suluada-gunbatimi/suluada-gunbatimi-1.jpeg';
+import ulupinarBalikImage from 'assets/posts/ulupinar-balik-tutma/ulupinar-balik-tutma-2.jpeg';
+import olimposYanartasUlupinarImage from 'assets/posts/olimpos-yanartas-ulupinar/olimpos-ulupinar-yanartas-1.webp';
+import demreKekovaImage from 'assets/posts/demre-kekova/demre-kekova-1.jpg';
+import antalyCityImage from 'assets/posts/antalya-city/antalya-city-1.jpeg';
 import { useRouter } from 'vue-router';
 
 export default defineComponent({
@@ -256,12 +420,45 @@ export default defineComponent({
   components: { 'tour-card': TourCard },
   setup() {
     const router = useRouter();
-    const path = '/adrasan-suluada-boat-tour';
-
+    const adrasanSuluadaPath = '/adrasan-suluada-boat-tour';
+    const goynukCanyonPath = '/goynuk-canyon-tour';
+    const kemerTeknePath = '/kemer-tekne-tour';
+    const kemerSnokerDalisPath = '/kemer-snoker-dalis-tour';
+    const kemerDalisPath = '/kemer-dalis-tour';
+    const kemerYunusPath = '/kemer-yunus-tour';
+    const kemerBuggyPath = '/kemer-buggy-tour';
+    const suluadaGunbatimiPath = '/kemer-gun-batimi-suluada-tour';
+    const ulupinarBalikPath = '/ulupinar-balik-tutma-tour';
+    const olimposYanartasUlupinarPath = '/olimpos-yanartas-ulupinar-tour';
+    const demreKekovaPath = '/demre-kekova-tour';
+    const antalyaCityPath = '/antayla-city-tour';
     return {
-      path,
+      adrasanSuluadaPath,
+      goynukCanyonPath,
+      kemerTeknePath,
+      kemerSnokerDalisPath,
+      kemerDalisPath,
+      kemerYunusPath,
+      kemerBuggyPath,
+      suluadaGunbatimiPath,
+      ulupinarBalikPath,
+      olimposYanartasUlupinarPath,
+      demreKekovaPath,
+      antalyaCityPath,
       slide: ref(1),
       adrasanImage,
+      goynukImage,
+      kemerTekneImage,
+      kemerSnokerDalisImage,
+      kemerDalisImage,
+      kemerYunusImage,
+      kemerBuggyImage,
+      suluadaGunbatimiImage,
+      ulupinarBalikImage,
+      olimposYanartasUlupinarImage,
+      demreKekovaImage,
+      antalyCityImage,
+
       routeBelek() {
         router.push({ name: 'belek' });
       },

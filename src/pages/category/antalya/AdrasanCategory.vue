@@ -14,7 +14,7 @@
         :food="food"
         :transfer="transfer"
         :location="location"
-        :path="path"
+        :routeName="path"
       ></tour-card>
     </div>
   </div>

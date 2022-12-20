@@ -331,7 +331,7 @@ export default defineComponent({
     imgDesktop: String,
     imgMobile: String,
     breadCrumbsCategory: String,
-    breadCrumbsCategoryRoute: String,
+    breadCrumbsCategoryRoute: null,
     breadCrumbsTourLabel: String,
     sliderImages: Object,
     articleTitle: String,

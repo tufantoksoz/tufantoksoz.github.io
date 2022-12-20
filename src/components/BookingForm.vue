@@ -26,7 +26,7 @@
           >
           <span
             class="q-mr-md text-h6 text-strike text-grey-6 items-center vertical-middle flex"
-            >€ {{ bookingForm.oldPrice }}</span
+            >{{ currencyType }} {{ bookingForm.oldPrice }}</span
           >
           <span
             class="text-h4 items-center vertical-middle flex"
@@ -462,6 +462,8 @@ export default defineComponent({
 
     let totalPrice = ref(0);
 
+    const currencyType = props.bookingForm.currency == 'euro' ? '€' : '$';
+
     const calcAdult = (val) => {
       adultPrice = props.bookingForm.adultPrice * val;
       calculateTotalPrice();
@@ -502,6 +504,7 @@ export default defineComponent({
       calcBaby,
       calculateTotalPrice,
       totalPrice,
+      currencyType,
       sendMail,
 
       onSubmit() {

@@ -24,18 +24,18 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TourPage from 'components/TourPage.vue';
-import imgDesktop from 'assets/posts/adrasan-suluada/adrasan-suluada-desktop.jpg';
-import imgMobile from 'assets/posts/adrasan-suluada/adrasan-suluada-slider-1.jpg';
-import slider1 from 'assets/posts/adrasan-suluada/adrasan-suluada-slider-1.jpg';
-import slider2 from 'assets/posts/adrasan-suluada/adrasan-suluada-slider-2.jpg';
-import slider3 from 'assets/posts/adrasan-suluada/adrasan-suluada-slider-3.jpg';
-import articleImg from 'assets/posts/adrasan-suluada/adrasan-suluada-slider-3.jpg';
+import imgDesktop from 'assets/posts/adrasan-suluada/desktop/adrasan-suluada.jpg';
+import imgMobile from 'assets/posts/adrasan-suluada/slider/adrasan-suluada-1.jpg';
+import slider1 from 'assets/posts/adrasan-suluada/slider/adrasan-suluada-1.jpg';
+import slider2 from 'assets/posts/adrasan-suluada/slider/adrasan-suluada-2.jpg';
+import slider3 from 'assets/posts/adrasan-suluada/slider/adrasan-suluada-3.jpg';
+import articleImg from 'assets/posts/adrasan-suluada/slider/adrasan-suluada-3.jpg';
 
 export default defineComponent({
   components: { 'tour-page': TourPage },
   setup() {
     const breadCrumbsCategory = 'Adrasan';
-    const breadCrumbsCategoryRoute = '/';
+    const breadCrumbsCategoryRoute = '/adrasan';
     const breadCrumbsTourLabel = 'Adrasan Suluada Boat Tour';
     const articleTitle = 'Adrasan Suluada Boat Tour';
     const articleSummaryText =
