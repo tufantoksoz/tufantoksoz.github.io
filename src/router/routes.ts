@@ -69,7 +69,7 @@ const routes: RouteRecordRaw[] = [
       },
       {
         path: 'antayla-city-tour',
-        name: 'demre-kekova',
+        name: 'antalya-city',
         component: () => import('pages/posts/antalyaSehirTuru.vue'),
       },
     ],
