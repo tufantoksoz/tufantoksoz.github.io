@@ -25,7 +25,7 @@
 import { defineComponent } from 'vue';
 import TourPage from 'components/TourPage.vue';
 import imgDesktop from 'assets/posts/kemer-yunus/kemer-yunus-1.jpeg';
-import imgMobile from 'assets/posts/kemer-yunus/kemer-yunus-2.jpeg';
+import imgMobile from 'assets/posts/kemer-yunus/kemer-yunus-2.jpg';
 import slider1 from 'assets/posts/kemer-yunus/kemer-yunus-3.jpeg';
 import slider2 from 'assets/posts/kemer-yunus/kemer-yunus-4.jpeg';
 import slider3 from 'assets/posts/kemer-yunus/kemer-yunus-5.jpeg';
