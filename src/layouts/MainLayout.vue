@@ -18,12 +18,28 @@
           Excursions Office
         </q-toolbar-title>
 
+        <q-select
+          v-model="locale"
+          :options="localeOptions"
+          label="Language"
+          dense
+          borderless
+          emit-value
+          map-options
+          options-dense
+          style="min-width: 100px; margin-right: 10px"
+        />
+
         <q-tabs class="desktop-only" shrink stretch>
-          <q-route-tab :to="{ path: '/' }" label="Home" class="text-grey-9" />
+          <q-route-tab
+            :to="{ path: '/' }"
+            :label="$t('home')"
+            class="text-grey-9"
+          />
 
           <QMenuHover>
             <template #default="{ activatorAttr, menuAttr }">
-              <q-btn v-bind="activatorAttr" flat label="EXCURSIONS">
+              <q-btn v-bind="activatorAttr" flat :label="$t('excursions')">
                 <q-menu v-bind="menuAttr" auto-close fit>
                   <q-list class="my-text-font">
                     <q-item clickable :to="{ name: 'antalya' }">
@@ -61,7 +77,7 @@
 
           <q-route-tab
             :to="{ name: 'contact' }"
-            label="Contact"
+            :label="$t('contact')"
             class="text-grey-9"
           />
         </q-tabs>
@@ -82,12 +98,12 @@
             <q-item-section avatar>
               <q-icon name="home" />
             </q-item-section>
-            <q-item-section> Home </q-item-section>
+            <q-item-section> {{ $t('home') }} </q-item-section>
           </q-item>
 
           <q-separator size="1.5px" />
 
-          <q-expansion-item icon="tour" label="Excursions">
+          <q-expansion-item icon="tour" :label="$t('excursions')">
             <q-list class="my-text-font" separator>
               <q-item clickable :to="{ name: 'antalya' }">
                 <q-item-section>Antalya</q-item-section>
@@ -123,7 +139,7 @@
             <q-item-section avatar>
               <q-icon name="call" />
             </q-item-section>
-            <q-item-section> Contact </q-item-section>
+            <q-item-section> {{ $t('contact') }} </q-item-section>
           </q-item>
         </q-list>
       </q-scroll-area>
@@ -158,6 +174,7 @@ import { ref } from 'vue';
 import MenuHover from 'components/MenuHover.vue';
 import viberLogo from 'assets/contact-icons/viber.svg';
 import wpLogo from 'assets/contact-icons/whatsapp.svg';
+import { useI18n } from 'vue-i18n';
 
 export default {
   components: { QMenuHover: MenuHover },
@@ -167,6 +184,8 @@ export default {
     const viberPath = 'img:' + viberLogo;
     const wpPath = 'img:' + wpLogo;
 
+    const { locale } = useI18n({ useScope: 'global' });
+
     return {
       leftDrawerOpen,
       toggleLeftDrawer() {
@@ -174,6 +193,12 @@ export default {
       },
       viberPath,
       wpPath,
+
+      locale,
+      localeOptions: [
+        { value: 'en-US', label: 'English' },
+        { value: 'ru', label: 'Russian' },
+      ],
     };
   },
 };

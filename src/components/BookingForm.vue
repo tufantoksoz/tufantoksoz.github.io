@@ -6,7 +6,7 @@
           class="my-title-font-bold q-ma-none text-center"
           style="font-size: 24px"
         >
-          Book This Tour Online
+          {{ $t('bookThisTourOnline') }}
         </h2>
 
         <q-separator class="q-ma-none"></q-separator>
@@ -22,7 +22,7 @@
 
           <span
             class="q-mr-sm text-h6 text-grey-6 items-center vertical-middle flex"
-            >From</span
+            >{{ $t('from') }}</span
           >
           <span
             class="q-mr-md text-h6 text-strike text-grey-6 items-center vertical-middle flex"
@@ -40,14 +40,14 @@
         <div class="row items-center">
           <div class="col-4">
             <span class="my-text-font items-center vertical-middle flex"
-              >Tour Date :
+              >{{ $t('tourDate') }} :
             </span>
           </div>
           <div class="col-8">
             <q-input
               readonly
               outlined
-              dense=""
+              dense
               v-model="date"
               input-class="cursor-pointer"
               mask="##/##/####"
@@ -73,7 +73,7 @@
         <div class="row items-center">
           <div class="col-8">
             <span class="my-text-font items-center vertical-middle flex"
-              >Adult* (+12 Age)
+              >{{ $t('adult') }}* (+12 {{ $t('age') }})
               <q-icon class="q-pl-sm" :name="bookingForm.currency"></q-icon>
               <span class="text-bold q-mr-md">{{
                 bookingForm.adultPrice
@@ -99,7 +99,7 @@
         <div class="row items-center">
           <div class="col-8">
             <span class="my-text-font items-center vertical-middle flex"
-              >Child* (6-12 Age)
+              >{{ $t('child') }}* (6-12 {{ $t('age') }})
               <q-icon class="q-pl-sm" :name="bookingForm.currency"></q-icon>
               <span class="text-bold q-mr-md">{{
                 bookingForm.childPrice
@@ -125,7 +125,7 @@
         <div class="row items-center">
           <div class="col-8">
             <span class="my-text-font items-center vertical-middle flex"
-              >Baby* (0-5 Age)
+              >{{ $t('baby') }}* (0-5 {{ $t('age') }})
               <q-icon class="q-pl-sm" :name="bookingForm.currency"></q-icon>
               <span class="text-bold q-mr-md">{{
                 bookingForm.babyPrice
@@ -152,12 +152,12 @@
           outlined
           dense
           v-model="fullName"
-          label="Your name and surname *"
-          hint="Please type your name and surname"
+          :label="$t('yourNameAndSurname') + '*'"
+          :hint="$t('pleaseTypeYourNameAndSurname')"
           maxlength="500"
           :rules="[
             (val) =>
-              (val && val.length > 0) || 'Please type your name and surname',
+              (val && val.length > 0) || $t('pleaseTypeYourNameAndSurname'),
           ]"
         />
 
@@ -166,11 +166,11 @@
           dense
           v-model="email"
           type="email"
-          label="E-mail *"
-          hint="Please type your email"
+          :label="$t('email') + '*'"
+          :hint="$t('pleaseTypeYourEmail')"
           maxlength="500"
           :rules="[
-            (val) => (val && val.length > 0) || 'Please type your e-mail',
+            (val) => (val && val.length > 0) || $t('pleaseTypeYourEmail'),
           ]"
         />
 
@@ -179,11 +179,11 @@
           dense
           v-model="phone"
           type="tel"
-          label="Phone Number *"
-          hint="Please type your phone number"
+          :label="$t('phoneNumber') + '*'"
+          :hint="$t('pleaseTypeYourPhoneNumber')"
           mask="+## (###) ### - ####"
           :rules="[
-            (val) => (val && val.length > 0) || 'Please type your phone number',
+            (val) => (val && val.length > 0) || $t('pleaseTypeYourPhoneNumber'),
           ]"
         />
 
@@ -191,8 +191,8 @@
           outlined
           dense
           v-model="hotelName"
-          label="Hotel Name"
-          hint="If you are staying at the hotel, please type the hotel name"
+          :label="$t('hotelName')"
+          :hint="$t('ifYouAreStayingHotelPleaseTypeTheHotelName')"
           maxlength="500"
         />
 
@@ -200,8 +200,8 @@
           outlined
           dense
           v-model="roomNumber"
-          label="Room Number"
-          hint="If you are staying at the hotel, please type your room number"
+          :label="$t('roomNumber')"
+          :hint="$t('ifYouAreStayingHotelPleaseTypeTheRoomNumber')"
           maxlength="100"
         />
 
@@ -211,16 +211,16 @@
           input-style="height: 70px;"
           type="textarea"
           v-model="clientName"
-          label="First and last names"
+          :label="$t('fullName')"
           maxlength="1000"
-          hint="Type the first and last names of the people who will participate in the tour."
+          :hint="$t('namePersonJoinTour')"
         />
 
         <div
           class="row text-bold items-center text-orange-8"
           style="font-size: 18px"
         >
-          <span class="q-mr-md">Total : </span>
+          <span class="q-mr-md">{{ $t('total') }} : </span>
           <q-icon :name="bookingForm.currency" />
           <span> {{ totalPrice }}</span>
         </div>
@@ -229,7 +229,7 @@
           <q-btn
             ripple
             square
-            label="Book Now"
+            :label="$t('bookNow')"
             type="submit"
             color="positive"
             style="width: 100%"
@@ -240,14 +240,14 @@
         <q-dialog class="text-no-wrap" v-model="showSummary" persistent>
           <q-card style="width: -webkit-fill-available">
             <div class="row justify-center q-ma-md my-title-font-bold">
-              <span style="font-size: 18px">Booking Summary</span>
+              <span style="font-size: 18px">{{ $t('bookingSummary') }}</span>
             </div>
             <q-separator />
 
             <div class="row my-text-font">
               <div class="col-5">
                 <div class="row q-ml-md q-mt-md">
-                  <span class="q-mr-md">Tour Name :</span>
+                  <span class="q-mr-md">{{ $t('tourName') }} :</span>
                 </div>
               </div>
               <div class="col-7">
@@ -260,7 +260,7 @@
             <div class="row my-text-font">
               <div class="col-5">
                 <div class="row q-ml-md q-mt-md">
-                  <span class="q-mr-md">Tour Date :</span>
+                  <span class="q-mr-md">{{ $t('tourDate') }} :</span>
                 </div>
               </div>
               <div class="col-7">
@@ -273,7 +273,7 @@
             <div class="row my-text-font">
               <div class="col-5">
                 <div class="row q-ml-md q-mt-md">
-                  <span class="q-mr-md">Full Name :</span>
+                  <span class="q-mr-md">{{ $t('fullName') }} :</span>
                 </div>
               </div>
               <div class="col-7">
@@ -286,7 +286,7 @@
             <div class="row my-text-font">
               <div class="col-5">
                 <div class="row q-ml-md q-mt-md">
-                  <span class="q-mr-md">E-mail :</span>
+                  <span class="q-mr-md">{{ $t('email') }} :</span>
                 </div>
               </div>
               <div class="col-7">
@@ -299,7 +299,7 @@
             <div class="row my-text-font">
               <div class="col-5">
                 <div class="row q-ml-md q-mt-md">
-                  <span class="q-mr-md">Phone :</span>
+                  <span class="q-mr-md">{{ $t('phoneNumber') }} :</span>
                 </div>
               </div>
               <div class="col-7">
@@ -312,7 +312,7 @@
             <div class="row my-text-font">
               <div class="col-5">
                 <div class="row q-ml-md q-mt-md">
-                  <span class="q-mr-md">Adult Count :</span>
+                  <span class="q-mr-md">{{ $t('adult') }} :</span>
                 </div>
               </div>
               <div class="col-7">
@@ -325,7 +325,7 @@
             <div class="row my-text-font">
               <div class="col-5">
                 <div class="row q-ml-md q-mt-md">
-                  <span class="q-mr-md">Child Count :</span>
+                  <span class="q-mr-md">{{ $t('childCount') }} :</span>
                 </div>
               </div>
               <div class="col-7">
@@ -338,7 +338,7 @@
             <div class="row my-text-font">
               <div class="col-5">
                 <div class="row q-ml-md q-mt-md">
-                  <span class="q-mr-md">Baby Count :</span>
+                  <span class="q-mr-md">{{ $t('babyCount') }} :</span>
                 </div>
               </div>
               <div class="col-7">
@@ -353,7 +353,7 @@
             <div class="row my-text-font">
               <div class="col-5">
                 <div class="row q-ml-md q-mt-md">
-                  <span class="q-mr-md">Hotel Name :</span>
+                  <span class="q-mr-md">{{ $t('hotelName') }} :</span>
                 </div>
               </div>
               <div class="col-7">
@@ -366,7 +366,7 @@
             <div class="row my-text-font">
               <div class="col-5">
                 <div class="row q-ml-md q-mt-md">
-                  <span class="q-mr-md">Room Number :</span>
+                  <span class="q-mr-md">{{ $t('roomNumber') }} :</span>
                 </div>
               </div>
               <div class="col-7">
@@ -379,7 +379,7 @@
             <div class="row my-text-font">
               <div class="col-5">
                 <div class="row q-ml-md q-mt-md">
-                  <span class="q-mr-md">Names and surnames :</span>
+                  <span class="q-mr-md">{{ $t('fullName') }} :</span>
                 </div>
               </div>
               <div class="col-7" style="white-space: normal !important">
@@ -393,7 +393,7 @@
               class="row q-py-sm text-bold items-center justify-center text-orange-8"
               style="font-size: 24px"
             >
-              <span class="q-mr-md">Total Price : </span>
+              <span class="q-mr-md">{{ $t('totalPrice') }} :</span>
               <q-icon :name="bookingForm.currency" size="24px" />
               <span> {{ totalPrice }}</span>
             </div>

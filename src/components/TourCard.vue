@@ -49,7 +49,9 @@
                 </q-item-section>
 
                 <q-item-section>
-                  <q-item-label class="labelFont">Pay on the day</q-item-label>
+                  <q-item-label class="labelFont">{{
+                    $t('payOnTheDay')
+                  }}</q-item-label>
                 </q-item-section>
               </q-item>
             </q-list>

@@ -1,7 +1,9 @@
 <template>
   <div class="pageContainer q-mx-sm">
     <div class="text-center q-pa-md">
-      <h1 class="my-title-font-bold text-h4">{{ categoryName }} Excursions</h1>
+      <h1 class="my-title-font-bold text-h4">
+        {{ categoryName }} {{ $t('excursions') }}
+      </h1>
     </div>
 
     <div>
@@ -17,10 +19,10 @@
 
     <div class="q-ma-md text-center">
       <q-chip icon="star" text-color="secondary" color="white" size="18px">
-        Best Excursions
+        {{ $t('bestExcursions') }}
       </q-chip>
       <q-chip icon="favorite" text-color="secondary" color="white" size="18px">
-        Family Tours
+        {{ $t('familyTours') }}
       </q-chip>
       <q-chip
         icon="directions_boat"
@@ -28,7 +30,7 @@
         color="white"
         size="18px"
       >
-        Boat Trips
+        {{ $t('boatTrips') }}
       </q-chip>
       <q-chip
         icon="scuba_diving"
@@ -36,7 +38,7 @@
         color="white"
         size="18px"
       >
-        Diving Trips
+        {{ $t('divingTrips') }}
       </q-chip>
     </div>
 
@@ -44,7 +46,7 @@
 
     <div class="text-center">
       <h2 class="my-title-font-bold" style="font-size: 28px">
-        Most Popular Excursions in {{ categoryName }}
+        {{ $t('mostPopularExcursionsIn') }} {{ categoryName }}
       </h2>
       <p style="font-size: 18px">
         Mega Star boat trip, Turkish bath, Antalya city tour, quad, buggy & jeep

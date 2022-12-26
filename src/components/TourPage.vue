@@ -17,7 +17,7 @@
           <q-icon size="1.5em" name="chevron_right" color="primary" />
         </template>
 
-        <q-breadcrumbs-el label="Home" icon="home" to="/" />
+        <q-breadcrumbs-el :label="$t('home')" icon="home" to="/" />
         <q-breadcrumbs-el
           :label="breadCrumbsCategory"
           icon="category"
@@ -44,7 +44,7 @@
             color="red"
             icon="verified_user"
             text-color="white"
-            label="Insurance"
+            :label="$t('insurance')"
           >
           </q-chip>
 
@@ -53,7 +53,7 @@
             color="red"
             icon="restaurant"
             text-color="white"
-            label="Dinner"
+            :label="$t('dinner')"
           >
           </q-chip>
 
@@ -62,7 +62,7 @@
             color="red"
             icon="directions_bus"
             text-color="white"
-            label="Transfer"
+            :label="$t('transfer')"
           >
           </q-chip>
 
@@ -80,7 +80,7 @@
             color="red"
             icon="event_available"
             text-color="white"
-            label="Every Day"
+            :label="tourDetails.days"
           >
           </q-chip>
         </div>
@@ -106,21 +106,43 @@
             class="rounded-borders"
             swipeable
             animated
+            arrows
+            control-color="primary"
+            control-type="regular"
             v-model="slide"
-            navigation
+            v-model:fullscreen="fullscreen"
             infinite
             :autoplay="autoplay"
             transition-prev="slide-right"
             transition-next="slide-left"
-            @mouseenter="autoplay = false"
-            @mouseleave="autoplay = true"
           >
             <q-carousel-slide
               v-for="(item, index) in sliderImages"
               :key="index"
               :name="index"
-              :img-src="item"
-            />
+            >
+              <q-img
+                :src="item"
+                fit="contain"
+                height="inherit"
+                loading="lazy"
+                no-spinner
+              />
+            </q-carousel-slide>
+
+            <template v-slot:control>
+              <q-carousel-control position="bottom-right" :offset="[18, 18]">
+                <q-btn
+                  push
+                  round
+                  dense
+                  color="white"
+                  text-color="primary"
+                  :icon="fullscreen ? 'fullscreen_exit' : 'fullscreen'"
+                  @click="fullscreen = !fullscreen"
+                />
+              </q-carousel-control>
+            </template>
           </q-carousel>
         </div>
 
@@ -128,7 +150,7 @@
 
         <div class="q-px-md">
           <h3 class="my-title-font-heavy q-my-xs" style="font-size: 20px">
-            Price Includes
+            {{ $t('priceIncludes') }}
           </h3>
 
           <div class="row">
@@ -152,7 +174,7 @@
 
         <div class="q-px-md">
           <h3 class="my-title-font-heavy q-my-xs" style="font-size: 20px">
-            Price Excludes
+            {{ $t('priceExcludes') }}
           </h3>
 
           <div class="row">
@@ -177,13 +199,13 @@
         <!-- Tour Details Expansion Section Start -->
         <div class="q-px-md">
           <h3 class="my-title-font-heavy q-my-xs" style="font-size: 20px">
-            Tour Details
+            {{ $t('tourDetails') }}
           </h3>
 
           <q-expansion-item
             class="q-pb-sm"
             icon="info"
-            label="Tour Cost"
+            :label="$t('tourCost')"
             header-class="bg-info text-white"
             expand-icon-class="text-white"
           >
@@ -197,7 +219,7 @@
           <q-expansion-item
             class="q-pb-sm"
             icon="info"
-            label="What should you bring with you on the tour?"
+            :label="$t('itemsBring')"
             header-class="bg-info text-white"
             expand-icon-class="text-white"
           >
@@ -211,7 +233,7 @@
           <q-expansion-item
             class="q-pb-sm"
             icon="info"
-            label="Tour departure times (approximately)"
+            :label="$t('departureTimes')"
             header-class="bg-info text-white"
             expand-icon-class="text-white"
           >
@@ -230,7 +252,7 @@
           <q-expansion-item
             class="q-pb-sm"
             icon="info"
-            label="Return times from the tour (approximately)"
+            :label="$t('returnTimes')"
             header-class="bg-info text-white"
             expand-icon-class="text-white"
           >
@@ -249,16 +271,13 @@
           <q-expansion-item
             class="q-pb-sm"
             icon="info"
-            :label="tourDetails.distance.headerTitle"
+            :label="$t('distance')"
             header-class="bg-info text-white"
             expand-icon-class="text-white"
           >
             <q-card class="bg-grey-3 my-text-font">
               <q-card-section>
-                <div
-                  v-for="(item, index) in tourDetails.distance.content"
-                  :key="index"
-                >
+                <div v-for="(item, index) in tourDetails.distance" :key="index">
                   <q-icon name="chevron_right" size="24px" /> {{ item }}
                 </div>
               </q-card-section>
@@ -275,7 +294,7 @@
 
         <q-separator class="q-mt-lg" />
 
-        <h3 class="q-mb-none q-px-md">F.A.Q</h3>
+        <h3 class="q-mb-none q-px-md">{{ $t('faq') }}</h3>
 
         <div v-for="(item, index) in faq" :key="index">
           <q-expansion-item
@@ -312,7 +331,7 @@
         size="16px"
         class="full-width my-text-font"
         color="light-blue-13"
-        label="Book Now!"
+        :label="$t('bookNow')"
         square
       />
     </q-page-sticky>
@@ -358,6 +377,7 @@ export default defineComponent({
       autoplay: ref(true),
       currency,
       scrollToBookingForm,
+      fullscreen: ref(false),
     };
   },
 });
