@@ -21,16 +21,16 @@
         <q-btn
           class="q-mr-md"
           unelevated
-          size="19px"
+          size="20px"
           :icon="flagIcon()"
           dense
           stretch
         >
           <q-menu>
-            <q-list style="min-width: 100px">
+            <q-list>
               <q-item clickable v-close-popup @click="onItemClick('ru')">
                 <q-item-section avatar>
-                  <q-img src="src/assets/russia.png" no-spinner />
+                  <q-img src="~assets/russia.png" width="32px" no-spinner />
                 </q-item-section>
                 <q-item-section>
                   <q-item-label>Russian</q-item-label>
@@ -39,7 +39,11 @@
 
               <q-item clickable v-close-popup @click="onItemClick('en-US')">
                 <q-item-section avatar>
-                  <q-img src="src/assets/united-states.png" no-spinner />
+                  <q-img
+                    src="~assets/united-states.png"
+                    width="32px"
+                    no-spinner
+                  />
                 </q-item-section>
                 <q-item-section>
                   <q-item-label>English</q-item-label>
@@ -224,12 +228,6 @@ export default {
       },
       viberPath,
       wpPath,
-
-      locale,
-      localeOptions: [
-        { value: 'en-US', label: 'English' },
-        { value: 'ru', label: 'Russian' },
-      ],
       onItemClick,
       flagIcon,
     };
