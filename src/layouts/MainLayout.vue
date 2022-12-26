@@ -18,19 +18,38 @@
           Excursions Office
         </q-toolbar-title>
 
-        <q-select
-          v-model="locale"
-          :options="localeOptions"
-          label="Language"
+        <q-btn
+          class="q-mr-md"
+          unelevated
+          size="19px"
+          :icon="flagIcon()"
           dense
-          borderless
-          emit-value
-          map-options
-          options-dense
-          style="min-width: 100px; margin-right: 10px"
-        />
+          stretch
+        >
+          <q-menu>
+            <q-list style="min-width: 100px">
+              <q-item clickable v-close-popup @click="onItemClick('ru')">
+                <q-item-section avatar>
+                  <q-img src="src/assets/russia.png" no-spinner />
+                </q-item-section>
+                <q-item-section>
+                  <q-item-label>Russian</q-item-label>
+                </q-item-section>
+              </q-item>
 
-        <q-tabs class="desktop-only" shrink stretch>
+              <q-item clickable v-close-popup @click="onItemClick('en-US')">
+                <q-item-section avatar>
+                  <q-img src="src/assets/united-states.png" no-spinner />
+                </q-item-section>
+                <q-item-section>
+                  <q-item-label>English</q-item-label>
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </q-menu>
+        </q-btn>
+
+        <q-tabs class="desktop-only" shrink stretch indicator-color="red">
           <q-route-tab
             :to="{ path: '/' }"
             :label="$t('home')"
@@ -174,6 +193,8 @@ import { ref } from 'vue';
 import MenuHover from 'components/MenuHover.vue';
 import viberLogo from 'assets/contact-icons/viber.svg';
 import wpLogo from 'assets/contact-icons/whatsapp.svg';
+import russianFlag from 'assets/russia.png';
+import unitedStatesFlag from 'assets/united-states.png';
 import { useI18n } from 'vue-i18n';
 
 export default {
@@ -185,6 +206,16 @@ export default {
     const wpPath = 'img:' + wpLogo;
 
     const { locale } = useI18n({ useScope: 'global' });
+
+    const flagIcon = () => {
+      if (locale.value === 'ru') return 'img:' + russianFlag;
+
+      return 'img:' + unitedStatesFlag;
+    };
+
+    function onItemClick(langCode) {
+      if (locale.value !== langCode) locale.value = langCode;
+    }
 
     return {
       leftDrawerOpen,
@@ -199,6 +230,8 @@ export default {
         { value: 'en-US', label: 'English' },
         { value: 'ru', label: 'Russian' },
       ],
+      onItemClick,
+      flagIcon,
     };
   },
 };
