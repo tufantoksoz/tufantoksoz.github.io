@@ -129,16 +129,18 @@ module.exports = configure(function (/* ctx */) {
 
     // https://v2.quasar.dev/quasar-cli-vite/developing-ssr/configuring-ssr
     ssr: {
-      // ssrPwaHtmlFilename: 'offline.html', // do NOT use index.html as name!
+      ssrPwaHtmlFilename: 'offline.html', // do NOT use index.html as name!
       // will mess up SSR
 
-      // extendSSRWebserverConf (esbuildConf) {},
-      // extendPackageJson (json) {},
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      extendSSRWebserverConf(esbuildConf) {},
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+      extendPackageJson(json) {},
 
       pwa: false,
 
-      // manualStoreHydration: true,
-      // manualPostHydrationTrigger: true,
+      manualStoreHydration: false,
+      manualPostHydrationTrigger: false,
 
       prodPort: 3000, // The default port that the production server should use
       // (gets superseded if process.env.PORT is specified at runtime)
