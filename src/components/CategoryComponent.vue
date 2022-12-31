@@ -46,7 +46,7 @@
 
     <div class="text-center">
       <h2 class="my-title-font-bold" style="font-size: 28px">
-        {{ $t('mostPopularExcursionsIn') }} {{ categoryName }}
+        {{ $t('mostPopularExcursionsIn') }} {{ $t(categoryName) }}
       </h2>
       <p style="font-size: 18px">
         Mega Star boat trip, Turkish bath, Antalya city tour, quad, buggy & jeep
@@ -61,6 +61,6 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'CategoryComponent',
-  props: { categoryName: String },
+  props: { categoryName: { type: String, required: true } },
 });
 </script>
