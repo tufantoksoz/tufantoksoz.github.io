@@ -90,4 +90,25 @@ export default {
     'Contact us for your questions and requests. You can write whenever you want. We will contact you as soon as possible.',
   contactSubText:
     'You can also write us your questions and requests via whatsapp and viber.',
+
+  antalya: 'Antalya',
+  belek: 'Belek',
+  kemer: 'Kemer',
+  alanya: 'Alanya',
+  side: 'Side',
+  manavgat: 'Manavgat',
+  adrasan: 'Adrasan',
+
+  footer: {
+    contact: 'Contact',
+    support: 'Support',
+    destinations: 'Destinations',
+    followUsOnSocialMedia: 'Follow us on social media',
+    aboutUs: 'About us',
+    faq: 'F.A.Q',
+    belek: 'Belek',
+    kemer: 'Kemer',
+    alanya: 'Alanya',
+    side: 'Side',
+  },
 };

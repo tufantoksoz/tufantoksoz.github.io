@@ -14,7 +14,7 @@
         :food="food"
         :transfer="transfer"
         :location="location"
-        :routeName="path"
+        :routeName="routeName"
       />
     </div>
   </div>
@@ -31,7 +31,7 @@ export default {
     'tour-card': TourCard,
   },
   setup() {
-    const categoryName = 'Antalya';
+    const categoryName = 'antalya';
 
     const title = 'Adrasan Suluada Island Boat Tour';
     const date = 'Every Day';
@@ -43,7 +43,7 @@ export default {
     const food = 'Dinner';
     const transfer = 'Transfer';
     const location = 'Adrasan';
-    const path = '/adrasan-suluada-boat-tour';
+    const routeName = 'adrasanSuluadaBoatTour';
 
     return {
       categoryName,
@@ -57,7 +57,7 @@ export default {
       food,
       transfer,
       location,
-      path,
+      routeName,
     };
   },
 };

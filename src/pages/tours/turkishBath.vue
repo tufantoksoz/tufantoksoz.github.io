@@ -8,8 +8,6 @@
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
       :articleTitle="articleTitle"
-      :articleSummaryText="articleSummaryText"
-      :articleFullText="articleFullText"
       :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
@@ -17,6 +15,29 @@
       :faq="faq"
       :bookingForm="bookingForm"
     >
+      <template v-slot:articleSummary>
+        <p>
+          Турецкая баня в Кемере обладает одним важным преимуществом: в хамаме
+          царит комфортный климат. Особый температурный режим в диапазоне 30-55
+          градусов и более высокая влажность, чем в обычной сауне или бане,
+          делают хамам комфортным для людей, которые плохо переносят высокие
+          температуры, а также для гипертоников и людей с заболеваниями сосудов.
+        </p>
+      </template>
+
+      <template v-slot:articleFullText>
+        <p>
+          Хамам (турецкая баня) благотворно влияет на здоровье человека:
+          исцеляются простудные заболевания, снимаются мышечные и суставные
+          боли, очищается кожа, выводятся токсины из организма, укрепляется
+          дыхательная система, улучшается кровоток и работа пищеварительной
+          системы, проходит бессонница. Все поры раскрываются и кожа прекрасно
+          чистится: при этом сухая кожа увлажняется, не пересушиваясь, а
+          структура жирной кожи нормализуется, сужаются поры. Сильный
+          увлажняющий эффект делает турецкий хамам полезным и лечебным для
+          волос.
+        </p>
+      </template>
     </tour-page>
   </div>
 </template>
@@ -55,12 +76,12 @@ export default defineComponent({
       adultPrice: 15,
       childPrice: 13,
       babyPrice: 0,
+      adultAge: '+12',
+      childAge: '6-11',
+      babyAge: '0-5',
     };
 
     const articleTitle = 'Турецкая Баня (Хамам) в Кемере';
-
-    const articleSummaryText =
-      'Турецкая баня в Кемере обладает одним важным преимуществом: в хамаме царит комфортный климат. Особый температурный режим в диапазоне 30-55 градусов и более высокая влажность, чем в обычной сауне или бане, делают хамам комфортным для людей, которые плохо переносят высокие температуры, а также для гипертоников и людей с заболеваниями сосудов.';
 
     const sliderImages = [
       slider1,
@@ -78,9 +99,6 @@ export default defineComponent({
       slider13,
     ];
 
-    const articleFullText =
-      'Хамам (турецкая баня) благотворно влияет на здоровье человека: исцеляются простудные заболевания, снимаются мышечные и суставные боли, очищается кожа, выводятся токсины из организма, укрепляется дыхательная система, улучшается кровоток и работа пищеварительной системы, проходит бессонница. Все поры раскрываются и кожа прекрасно чистится: при этом сухая кожа увлажняется, не пересушиваясь, а структура жирной кожи нормализуется, сужаются поры. Сильный увлажняющий эффект делает турецкий хамам полезным и лечебным для волос.';
-
     const includes = [
       'Страховка',
       'Трансфер от/до отеля',
@@ -95,9 +113,8 @@ export default defineComponent({
     ];
 
     const tourDetails = {
-      tourCost:
-        "This tour is $15 for adults. It's $13 for childs ages 6-11. It is free for babies 0-5 years old.",
-      itemsBring: 'Полотенце, Купальник, Деньги на личные расходы',
+      tourCost: `This tour is ${bookingForm.adultPrice} USD for adults. It's ${bookingForm.childPrice} USD for childs ages ${bookingForm.childAge}. It is free for babies ${bookingForm.babyAge} years old.`,
+      itemsBring: ['Полотенце', 'Купальник', 'Деньги на личные расходы'],
       departureTimes: [
         'В 09:00, 10:15, 14:00, 16:00, 20:00 из отелей Кириш',
         'В 09:00, 10:00, 13:30, 15:00, 17:00, 20:00 из отелей Бельдиби 1',
@@ -149,9 +166,7 @@ export default defineComponent({
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
       articleTitle,
-      articleSummaryText,
       sliderImages,
-      articleFullText,
       articleImg,
       includes,
       excludes,

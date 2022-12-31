@@ -2,7 +2,7 @@
   <div class="pageContainer q-mx-sm">
     <div class="text-center q-pa-md">
       <h1 class="my-title-font-bold text-h4">
-        {{ categoryName }} {{ $t('excursions') }}
+        {{ $t(`${categoryName}`) }} {{ $t('excursions') }}
       </h1>
     </div>
 

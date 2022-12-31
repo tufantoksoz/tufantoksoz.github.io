@@ -49,9 +49,9 @@
                 </q-item-section>
 
                 <q-item-section>
-                  <q-item-label class="labelFont">{{
-                    $t('payOnTheDay')
-                  }}</q-item-label>
+                  <q-item-label class="labelFont"
+                    >Оплата во Время Тура</q-item-label
+                  >
                 </q-item-section>
               </q-item>
             </q-list>
@@ -143,7 +143,7 @@ export default defineComponent({
     const currencyType = props.currency == 'euro' ? '€' : '$';
 
     const routeTo = () => {
-      router.push({ path: props.routeName });
+      router.push({ name: props.routeName });
     };
 
     return { routeTo, currencyType };

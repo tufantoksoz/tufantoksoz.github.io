@@ -10,7 +10,7 @@
         <q-img
           fit="fill"
           height="500px"
-          src="../assets/index-page-slider/antalya-1.jpg"
+          src="~assets/index-page-slider/antalya-1.webp"
           no-spinner
         >
         </q-img>
@@ -19,7 +19,7 @@
         <q-img
           fit="fill"
           height="500px"
-          src="../assets/index-page-slider/antalya-2.jpg"
+          src="~assets/index-page-slider/antalya-2.webp"
           no-spinner
         >
         </q-img>
@@ -29,7 +29,7 @@
         <q-img
           fit="fill"
           height="500px"
-          src="../assets/index-page-slider/antalya-3.jpg"
+          src="~assets/index-page-slider/antalya-3.webp"
           no-spinner
         >
         </q-img>
@@ -39,7 +39,7 @@
         <q-img
           fit="fill"
           height="500px"
-          src="../assets/index-page-slider/antalya-4.jpg"
+          src="~assets/index-page-slider/antalya-4.webp"
         >
         </q-img>
       </q-carousel-slide>
@@ -54,7 +54,7 @@
       <div>
         <q-img
           class="iconSize"
-          src="../assets/homepage-icons/customer-service.png"
+          src="~assets/homepage-icons/customer-service.webp"
         />
       </div>
 
@@ -65,7 +65,7 @@
 
     <div class="col-xs-6 col-sm-4 col-md-4 q-pa-md">
       <div>
-        <q-img class="iconSize" src="../assets/homepage-icons/insurance.png" />
+        <q-img class="iconSize" src="~assets/homepage-icons/insurance.webp" />
       </div>
 
       <div class="q-pt-sm">
@@ -77,7 +77,7 @@
       <div>
         <q-img
           class="iconSize"
-          src="../assets/homepage-icons/pay-on-the-day.png"
+          src="~assets/homepage-icons/pay-on-the-day.webp"
         />
       </div>
 
@@ -88,7 +88,7 @@
 
     <div class="col-xs-6 col-sm-4 col-md-4 q-pa-md">
       <div>
-        <q-img class="iconSize" src="../assets/homepage-icons/transfer.png" />
+        <q-img class="iconSize" src="~assets/homepage-icons/transfer.webp" />
       </div>
 
       <div class="q-pt-sm">
@@ -100,7 +100,7 @@
       <div>
         <q-img
           class="iconSize"
-          src="../assets/homepage-icons/no-prepaid-booking.png"
+          src="~assets/homepage-icons/no-prepaid-booking.webp"
         />
       </div>
 
@@ -111,10 +111,7 @@
 
     <div class="col-xs-6 col-sm-4 col-md-4 q-pa-md">
       <div>
-        <q-img
-          class="iconSize"
-          src="../assets/homepage-icons/cheap-price.png"
-        />
+        <q-img class="iconSize" src="~assets/homepage-icons/cheap-price.webp" />
       </div>
 
       <div class="q-pt-sm">
@@ -139,7 +136,7 @@
           class="absolute-bottom text-center text-white text-overline q-pb-sm text-bold"
           style="font-size: 18px"
         >
-          Belek
+          {{ $t('belek') }}
         </span>
       </q-card>
     </div>
@@ -155,7 +152,7 @@
           class="absolute-bottom text-center text-white text-overline q-pb-sm text-bold"
           style="font-size: 18px"
         >
-          Kemer
+          {{ $t('kemer') }}
         </span>
       </q-card>
     </div>
@@ -171,7 +168,7 @@
           class="absolute-bottom text-center text-white text-overline q-pb-sm text-bold"
           style="font-size: 18px"
         >
-          Alanya
+          {{ $t('alanya') }}
         </span>
       </q-card>
     </div>
@@ -187,7 +184,7 @@
           class="absolute-bottom text-center text-white text-overline q-pb-sm text-bold"
           style="font-size: 18px"
         >
-          Manavgat
+          {{ $t('manavgat') }}
         </span>
       </q-card>
     </div>
@@ -203,7 +200,7 @@
           class="absolute-bottom text-center text-white text-overline q-pb-sm text-bold"
           style="font-size: 18px"
         >
-          Side
+          {{ $t('side') }}
         </span>
       </q-card>
     </div>
@@ -219,16 +216,16 @@
           class="absolute-bottom text-center text-white text-overline q-pb-sm text-bold"
           style="font-size: 18px"
         >
-          Adrasan
+          {{ $t('adrasan') }}
         </span>
       </q-card>
     </div>
   </div>
 
   <div class="text-center q-gutter-md q-pt-xl q-mb-none">
-    <h4 class="my-title-font-bold" style="margin-bottom: 0">
+    <h1 class="my-title-font-bold" style="margin-bottom: 0">
       {{ $t('popularExcursions') }}
-    </h4>
+    </h1>
   </div>
 
   <div class="row justify-center">
@@ -240,10 +237,10 @@
       currency="attach_money"
       oldPrice="27"
       price="25"
-      :food="$t('dinner')"
-      :transfer="$t('transfer')"
-      location="Adrasan"
-      :routeName="adrasanSuluadaBoatTourPath"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="adrasanSuluadaBoatTour"
     />
     <tour-card
       :image="goynukCanyonImage"
@@ -253,10 +250,10 @@
       currency="attach_money"
       oldPrice="18"
       price="13"
-      :food="$t('dinner')"
-      :transfer="$t('transfer')"
-      location="Göynük"
-      :routeName="goynukCanyonPath"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="goynukCanyonTour"
     />
 
     <tour-card
@@ -267,10 +264,10 @@
       currency="attach_money"
       oldPrice="34"
       price="30"
-      :food="$t('dinner')"
-      :transfer="$t('transfer')"
-      location="Manavgat"
-      :routeName="taziCanyonFourPackPath"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="taziCanyonFourPackTour"
     />
 
     <tour-card
@@ -281,10 +278,10 @@
       currency="attach_money"
       oldPrice="28"
       price="25"
-      :food="$t('dinner')"
-      :transfer="$t('transfer')"
-      location="Antalya"
-      :routeName="antalyaCityTourPath"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="antalyaCityTour"
     />
 
     <tour-card
@@ -295,10 +292,10 @@
       currency="attach_money"
       oldPrice="28"
       price="25"
-      :food="$t('dinner')"
-      :transfer="$t('transfer')"
-      location="Antalya"
-      :routeName="demreMyraKekovaPath"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="demreMyraKekovaTour"
     />
 
     <tour-card
@@ -309,10 +306,10 @@
       currency="attach_money"
       oldPrice="42"
       price="35"
-      :food="$t('dinner')"
-      :transfer="$t('transfer')"
-      location="Kemer"
-      :routeName="pamukkaleTourFromKemerPath"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="pamukkaleTourFromKemer"
     />
 
     <tour-card
@@ -323,10 +320,10 @@
       currency="attach_money"
       oldPrice="18"
       price="15"
-      :food="$t('dinner')"
-      :transfer="$t('transfer')"
-      location="Kemer"
-      :routeName="kemerYachtTourPath"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="yachtTourFromKemer"
     />
 
     <tour-card
@@ -337,10 +334,10 @@
       currency="attach_money"
       oldPrice="18"
       price="15"
-      :food="$t('dinner')"
-      :transfer="$t('transfer')"
-      location="Kemer"
-      :routeName="turkishBathPath"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="turkishBath"
     />
 
     <tour-card
@@ -351,10 +348,10 @@
       currency="attach_money"
       oldPrice="29"
       price="25"
-      :food="$t('dinner')"
-      :transfer="$t('transfer')"
-      location="Kemer"
-      :routeName="tahtaliJeepSafariPath"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="tahtaliJeepSafari"
     />
 
     <tour-card
@@ -365,10 +362,10 @@
       currency="attach_money"
       oldPrice="30"
       price="25"
-      :food="$t('dinner')"
-      :transfer="$t('transfer')"
-      location="Kemer"
-      :routeName="kemerDivingPath"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="kemerDiving"
     />
 
     <tour-card
@@ -379,10 +376,10 @@
       currency="attach_money"
       oldPrice="27"
       price="25"
-      :food="$t('dinner')"
-      :transfer="$t('transfer')"
-      location="Kemer"
-      :routeName="olymposTourPath"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="olymposTour"
     />
 
     <tour-card
@@ -393,10 +390,122 @@
       currency="attach_money"
       oldPrice="27"
       price="25"
-      :food="$t('dinner')"
-      :transfer="$t('transfer')"
-      location="Kemer"
-      :routeName="suluCehennemAdasiTourPath"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="suluCehennemAdasiTour"
+    />
+
+    <tour-card
+      :image="kemerAtvSafariImage"
+      title="Квадро Сафари в Кемере"
+      date="Каждый день"
+      hours="3 часа"
+      currency="attach_money"
+      oldPrice="28"
+      price="25"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="kemerAtvSafari"
+    />
+
+    <tour-card
+      :image="kemerSnorkelDivingImage"
+      title="Экскурсия Снорклинг в Кемере"
+      date="Каждый день"
+      hours="8 часов"
+      currency="attach_money"
+      oldPrice="28"
+      price="25"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="kemerSnorkelDiving"
+    />
+
+    <tour-card
+      :image="fishingInUlupinarImage"
+      title="Пикник и Рыбалка в Улупинаре"
+      date="Каждый день"
+      hours="8 часов"
+      currency="attach_money"
+      oldPrice="32"
+      price="30"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="fishingInUlupinar"
+    />
+
+    <tour-card
+      :image="kemerHorseRidingImage"
+      title="Прогулка на Лошадях в Кемере"
+      date="Каждый день"
+      hours="4 часа"
+      currency="attach_money"
+      oldPrice="34"
+      price="30"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="kemerHorseRiding"
+    />
+
+    <tour-card
+      :image="dolphinTourImage"
+      title="Шоу Дельфинов в Кемере"
+      date="Каждый день"
+      hours="4-5 часов"
+      currency="attach_money"
+      oldPrice="34"
+      price="30"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="dolphinTour"
+    />
+
+    <tour-card
+      :image="dolusuParkTourImage"
+      title="Аквапарк Долусу в Кемере"
+      date="Каждый день"
+      hours="8 часов"
+      currency="attach_money"
+      oldPrice="38"
+      price="35"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="dolusuParkTour"
+    />
+
+    <tour-card
+      :image="tahtaliTeleferikTourImage"
+      title="Канатная Дорога Тахталы из Кемера"
+      date="Каждый день"
+      hours="4 часа"
+      currency="attach_money"
+      oldPrice="50"
+      price="45"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="tahtaliTeleferikTour"
+    />
+
+    <tour-card
+      :image="seaFishingTourImage"
+      title="Морская Рыбалка в Кемере"
+      date="Каждый день"
+      hours="4 часа"
+      currency="attach_money"
+      oldPrice="60"
+      price="50"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="seaFishingTour"
     />
   </div>
 </template>
@@ -404,18 +513,26 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import TourCard from 'components/TourCard.vue';
-import adrasanSuluadaBoatTourImage from 'assets/popular-excursions/adrasan-suluada-boat-tour.jpg';
-import goynukCanyonImage from 'assets/popular-excursions/goynuk-canyon.webp';
+import adrasanSuluadaBoatTourImage from 'assets/tour-images/adrasan-suluada/card/adrasan-suluada.webp';
+import goynukCanyonImage from 'assets/tour-images/goynuk-canyon/card/goynuk-canyon.webp';
 import taziCanyonFourPackImage from 'assets/tour-images/tazi-canyon-four-pack/card/tazi-canyon-four-pack.webp';
 import antalyaCityTourImage from 'assets/tour-images/antalya-city-tour/card/antalya-city-tour.webp';
 import demreMyraKekovaImage from 'assets/tour-images/demre-myra-kekova/card/demre-myra-kekova.webp';
-import pamukkaleTourFromKemerImage from 'assets/tour-images/pamukkale-tour-from-kemer/desktop/pamukkale-tour-from-kemer.webp';
+import pamukkaleTourFromKemerImage from 'assets/tour-images/pamukkale-tour-from-kemer/card/pamukkale-tour-from-kemer.webp';
 import kemerYachtTourImage from 'assets/tour-images/kemer-yacht-tour/card/kemer-yacht-tour.webp';
 import turkishBathImage from 'assets/tour-images/turkish-bath/card/turkish-bath.webp';
 import tahtaliJeepSafariImage from 'assets/tour-images/tahtali-jeep-safari/card/tahtali-jeep-safari.webp';
 import kemerDivingImage from 'assets/tour-images/kemer-diving/card/kemer-diving.webp';
 import olymposTourImage from 'assets/tour-images/olympos-tour/card/olympos-tour.webp';
 import suluCehennemAdasiTourImage from 'assets/tour-images/sulu-cehennem-adasi/card/sulu-cehennem-adasi.webp';
+import kemerAtvSafariImage from 'assets/tour-images/kemer-atv-safari/card/kemer-atv-safari.webp';
+import kemerSnorkelDivingImage from 'assets/tour-images/kemer-snorkel-diving/card/kemer-snorkel-diving.webp';
+import fishingInUlupinarImage from 'assets/tour-images/fishing-in-ulupinar/card/fishing-in-ulupinar.webp';
+import kemerHorseRidingImage from 'assets/tour-images/kemer-horse-riding/card/kemer-horse-riding.webp';
+import dolphinTourImage from 'assets/tour-images/dolphin-tour/card/dolphin-tour.webp';
+import dolusuParkTourImage from 'assets/tour-images/dolusu-park-tour/card/dolusu-park-tour.webp';
+import tahtaliTeleferikTourImage from 'assets/tour-images/tahtali-teleferik-tour/card/tahtali-teleferik-tour.webp';
+import seaFishingTourImage from 'assets/tour-images/sea-fishing/card/sea-fishing.webp';
 
 import { useRouter } from 'vue-router';
 
@@ -424,33 +541,9 @@ export default defineComponent({
   components: { 'tour-card': TourCard },
   setup() {
     const router = useRouter();
-    const adrasanSuluadaBoatTourPath = '/adrasan-suluada-boat-tour';
-    const goynukCanyonPath = '/goynuk-canyon-tour';
-    const taziCanyonFourPackPath = '/tazi-canyon-four-pack-tour';
-    const antalyaCityTourPath = '/antalya-city-tour';
-    const demreMyraKekovaPath = '/demre-myra-kekova-tour';
-    const pamukkaleTourFromKemerPath = '/pamukkale-tour-from-kemer';
-    const kemerYachtTourPath = '/yacht-tour-from-kemer';
-    const turkishBathPath = '/turkish-bath';
-    const tahtaliJeepSafariPath = '/tahtali-jeep-safari';
-    const kemerDivingPath = '/kemer-diving';
-    const olymposTourPath = '/olympos-tour';
-    const suluCehennemAdasiTourPath = '/sulu-cehennem-adasi-tour';
+
     return {
       slide: ref(1),
-
-      adrasanSuluadaBoatTourPath,
-      goynukCanyonPath,
-      taziCanyonFourPackPath,
-      antalyaCityTourPath,
-      demreMyraKekovaPath,
-      pamukkaleTourFromKemerPath,
-      kemerYachtTourPath,
-      turkishBathPath,
-      tahtaliJeepSafariPath,
-      kemerDivingPath,
-      olymposTourPath,
-      suluCehennemAdasiTourPath,
 
       adrasanSuluadaBoatTourImage,
       goynukCanyonImage,
@@ -464,6 +557,14 @@ export default defineComponent({
       kemerDivingImage,
       olymposTourImage,
       suluCehennemAdasiTourImage,
+      kemerAtvSafariImage,
+      kemerSnorkelDivingImage,
+      fishingInUlupinarImage,
+      kemerHorseRidingImage,
+      dolphinTourImage,
+      dolusuParkTourImage,
+      tahtaliTeleferikTourImage,
+      seaFishingTourImage,
 
       routeBelek() {
         router.push({ name: 'belek' });
@@ -534,7 +635,7 @@ p
   position: absolute
   z-index: 1
   font-size: 10vw
-  font-size: 7vh
+  font-size: 6vh
   background: rgba(0, 0, 0, 0.47)
 
 .colSize

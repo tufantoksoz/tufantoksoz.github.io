@@ -73,7 +73,7 @@
         <div class="row items-center">
           <div class="col-8">
             <span class="my-text-font items-center vertical-middle flex"
-              >{{ $t('adult') }}* (+12 {{ $t('age') }})
+              >{{ $t('adult') }}* ({{ bookingForm.adultAge }} {{ $t('age') }})
               <q-icon class="q-pl-sm" :name="bookingForm.currency"></q-icon>
               <span class="text-bold q-mr-md">{{
                 bookingForm.adultPrice
@@ -99,7 +99,7 @@
         <div class="row items-center">
           <div class="col-8">
             <span class="my-text-font items-center vertical-middle flex"
-              >{{ $t('child') }}* (6-12 {{ $t('age') }})
+              >{{ $t('child') }}* ({{ bookingForm.childAge }} {{ $t('age') }})
               <q-icon class="q-pl-sm" :name="bookingForm.currency"></q-icon>
               <span class="text-bold q-mr-md">{{
                 bookingForm.childPrice
@@ -124,16 +124,22 @@
 
         <div class="row items-center">
           <div class="col-8">
-            <span class="my-text-font items-center vertical-middle flex"
-              >{{ $t('baby') }}* (0-5 {{ $t('age') }})
-              <q-icon class="q-pl-sm" :name="bookingForm.currency"></q-icon>
-              <span class="text-bold q-mr-md">{{
-                bookingForm.babyPrice
-              }}</span></span
-            >
+            <span class="my-text-font items-center vertical-middle flex">
+              <div v-if="isBabySale">
+                {{ $t('baby') }}* ({{ bookingForm.babyAge }} {{ $t('age') }})
+                <q-icon class="q-pl-sm" :name="bookingForm.currency"></q-icon>
+                <span class="text-bold q-mr-md">{{
+                  bookingForm.babyPrice
+                }}</span>
+              </div>
+              <div v-else>
+                <span>Bebeklere Satış Yoktur</span>
+              </div>
+            </span>
           </div>
           <div class="col-4">
             <q-input
+              :disable="!isBabySale"
               class="q-pa-none"
               style="width: 100%"
               v-model.number="babyCount"
@@ -438,6 +444,9 @@ export default defineComponent({
       childPrice: Number,
       babyPrice: Number,
       currency: String,
+      childAge: String,
+      babyAge: String,
+      isBabySale: { type: Boolean, required: false },
     },
   },
 
@@ -459,6 +468,12 @@ export default defineComponent({
     let adultPrice = 0;
     let childPrice = 0;
     let babyPrice = 0;
+
+    const isBabySale = ref(
+      props.bookingForm.isBabySale == undefined
+        ? true
+        : props.bookingForm.isBabySale
+    );
 
     let totalPrice = ref(0);
 
@@ -498,6 +513,7 @@ export default defineComponent({
       hotelName,
       roomNumber,
       clientName,
+      isBabySale,
       date: ref(date.formatDate(timeStamp, 'DD/MM/YYYY')),
       calcAdult,
       calcChild,

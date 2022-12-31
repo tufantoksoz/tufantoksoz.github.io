@@ -94,9 +94,10 @@
           >
             {{ articleTitle }}
           </h1>
-          <p class="articleFont">
-            {{ articleSummaryText }}
-          </p>
+
+          <div class="articleFont">
+            <slot name="articleSummary"></slot>
+          </div>
         </div>
 
         <q-separator class="q-mb-lg" />
@@ -225,7 +226,12 @@
           >
             <q-card class="bg-grey-3 my-text-font">
               <q-card-section>
-                {{ tourDetails.itemsBring }}
+                <div
+                  v-for="(item, index) in tourDetails.itemsBring"
+                  :key="index"
+                >
+                  <q-icon name="chevron_right" size="24px" /> {{ item }}
+                </div>
               </q-card-section>
             </q-card>
           </q-expansion-item>
@@ -286,7 +292,9 @@
         </div>
         <!-- Tour Details Expansion Section End -->
 
-        <p class="q-mt-md q-px-md articleFont">{{ articleFullText }}</p>
+        <div class="q-mt-md q-px-md articleFont">
+          <slot name="articleSummary"></slot>
+        </div>
 
         <div class="q-pa-sm">
           <q-img :src="articleImg" />
@@ -309,9 +317,36 @@
             </q-card>
           </q-expansion-item>
         </div>
-      </div>
 
-      <q-separator class="q-my-md" />
+        <q-separator class="q-my-md" />
+
+        <!-- <div class="row q-ma-md">
+          <div class="col-12">
+            <h3>Related Tours</h3>
+          </div>
+
+          <div class="col-6 q-mr-md relatedTourCardItem">
+            <q-card flat v-ripple>
+              <img src="https://cdn.quasar.dev/img/mountains.jpg" />
+
+              <q-card-section class="q-ma-md" horizontal>
+                <div class="text-h6">Tour Name</div>
+                <div class="text-h6 absolute-right">35 USD</div>
+              </q-card-section>
+            </q-card>
+          </div>
+          <div class="col-6 relatedTourCardItem">
+            <q-card flat v-ripple>
+              <img src="https://cdn.quasar.dev/img/mountains.jpg" />
+
+              <q-card-section class="q-ma-md" horizontal>
+                <div class="col-8 text-h6">Экскурсия в Каньон Гёйнюк</div>
+                <div class="col-4 text-h6 text-right">35 USD</div>
+              </q-card-section>
+            </q-card>
+          </div>
+        </div> -->
+      </div>
     </div>
 
     <div class="col-md-4" style="margin: 0 auto">
@@ -354,14 +389,13 @@ export default defineComponent({
     breadCrumbsTourLabel: String,
     sliderImages: Object,
     articleTitle: String,
-    articleSummaryText: String,
-    articleFullText: String,
     articleImg: String,
     includes: Array,
     excludes: Array,
     tourDetails: { type: Object, required: true },
     faq: Object,
     bookingForm: { type: Object, required: true },
+    relatedTours: { type: Object, required: false },
   },
   setup(props) {
     const currency = ref(props.bookingForm.currency == 'euro' ? '€' : '$');
@@ -396,8 +430,12 @@ p
   font-size: 22px
 
 .articleFont
-  font-size: 18px
+  font-size: 17px
   font-weight: 300
+
+.relatedTourCardItem
+  height: 300px
+  width: 300px
 
 @media (max-width: 1024px)
     .pageContainer

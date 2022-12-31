@@ -8,8 +8,6 @@
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
       :articleTitle="articleTitle"
-      :articleSummaryText="articleSummaryText"
-      :articleFullText="articleFullText"
       :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
@@ -17,6 +15,30 @@
       :faq="faq"
       :bookingForm="bookingForm"
     >
+      <template v-slot:articleSummary>
+        <p>
+          Анталия — не только центр турецкого туризма, но и старинный город с
+          богатой историей. Наша обзорная экскурсия по Анталии из Кемера
+          позволит вам убедиться в этом самостоятельно. Во время экскурсии
+          "городской тур по Анталии из Кемера" вы пройдетесь по старинным улицам
+          города, увидите его с высоты птичьего полета и насладитесь его
+          потрясающими красотами.
+        </p>
+      </template>
+
+      <template v-slot:articleFullText>
+        <p>
+          Обзорная экскурсия по Анталии из Кемера начнется утром. Наш автобус
+          заберет вас от вашего отеля в заранее назначенное время. Узнать его вы
+          сможете во время бронирования экскурсии из Кемера. Завтрак не включен
+          в стоимость экскурсии по Анталии из Кемера, поэтому мы советуем вам
+          позавтракать в отеле. В первую очередь автобус привезет вас к месту
+          посадки на канатную дорогу. Билет на нее входит в стоимость экскурсии.
+          На фуникулере вы поднимитесь на гору Тюнектепе, где у вас будет 40
+          минут свободного времени. Обратно в город вы вернетесь таким же
+          образом. Внизу вас уже будет ждать нас автобус.
+        </p>
+      </template>
     </tour-page>
   </div>
 </template>
@@ -48,15 +70,14 @@ export default defineComponent({
       adultPrice: 25,
       childPrice: 15,
       babyPrice: 0,
+      adultAge: '+12',
+      childAge: '4-11',
+      babyAge: '0-3',
     };
 
     const articleTitle = 'Экскурсия на Остров «Сулу ада» (на закате)';
 
-    const articleSummaryText = '';
-
     const sliderImages = [slider1, slider2, slider3, slider4, slider5, slider6];
-
-    const articleFullText = '';
 
     const includes = [
       'Трансфер от и до отеля',
@@ -74,10 +95,15 @@ export default defineComponent({
     ];
 
     const tourDetails = {
-      tourCost:
-        "This tour is $25 for adults. It's $15 for childs ages 4-11. It is free for babies 0-3 years old.",
-      itemsBring:
-        'Фотоаппарат, Полотенце, купальник, Солнцезащитные очки, Солнцезащитный крем, Деньги на личные расходы',
+      tourCost: `This tour is ${bookingForm.adultPrice} USD for adults. It's ${bookingForm.childPrice} USD for childs ages ${bookingForm.childAge}. It is free for babies ${bookingForm.babyAge} years old.`,
+      itemsBring: [
+        'Фотоаппарат',
+        'Полотенце',
+        'купальник',
+        'Солнцезащитные очки',
+        'Солнцезащитный крем',
+        'Деньги на личные расходы',
+      ],
       departureTimes: [
         'Beldibi: 14:00',
         'Göynük: 14:15',
@@ -125,9 +151,7 @@ export default defineComponent({
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
       articleTitle,
-      articleSummaryText,
       sliderImages,
-      articleFullText,
       articleImg,
       includes,
       excludes,

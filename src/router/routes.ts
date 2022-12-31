@@ -72,6 +72,46 @@ const routes: RouteRecordRaw[] = [
         name: 'suluCehennemAdasiTour',
         component: () => import('pages/tours/suluCehennemAdasiTour.vue'),
       },
+      {
+        path: 'kemer-atv-safari',
+        name: 'kemerAtvSafari',
+        component: () => import('pages/tours/kemerAtvSafari.vue'),
+      },
+      {
+        path: 'kemer-snorkel-diving',
+        name: 'kemerSnorkelDiving',
+        component: () => import('pages/tours/kemerSnorkelDiving.vue'),
+      },
+      {
+        path: 'fishing-in-ulupinar',
+        name: 'fishingInUlupinar',
+        component: () => import('pages/tours/fishingInUlupinar.vue'),
+      },
+      {
+        path: 'kemer-horse-riding',
+        name: 'kemerHorseRiding',
+        component: () => import('pages/tours/kemerHorseRiding.vue'),
+      },
+      {
+        path: 'dolphin-tour',
+        name: 'dolphinTour',
+        component: () => import('pages/tours/dolphinTour.vue'),
+      },
+      {
+        path: 'dolusu-park-tour',
+        name: 'dolusuParkTour',
+        component: () => import('pages/tours/dolusuParkTour.vue'),
+      },
+      {
+        path: 'tahtali-teleferik-tour',
+        name: 'tahtaliTeleferikTour',
+        component: () => import('pages/tours/tahtaliTeleferikTour.vue'),
+      },
+      {
+        path: 'sea-fishing-tour',
+        name: 'seaFishingTour',
+        component: () => import('pages/tours/seaFishingTour.vue'),
+      },
     ],
   },
   {

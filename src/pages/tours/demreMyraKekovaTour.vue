@@ -8,8 +8,6 @@
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
       :articleTitle="articleTitle"
-      :articleSummaryText="articleSummaryText"
-      :articleFullText="articleFullText"
       :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
@@ -17,6 +15,32 @@
       :faq="faq"
       :bookingForm="bookingForm"
     >
+      <template v-slot:articleSummary>
+        <p>
+          Экскурсия Демре Мира Кекова из Кемера - уникальная возможность увидеть
+          пересечение четырех древних культур – римской, византийской, ликийской
+          и эллинской! Участников экскурсии Демре Мира Кекова из Кемера ждёт
+          полное погружение в античность! Руины древнего города Мира будут
+          сопровождаться тёплыми водами Средиземноморья и его скалистыми
+          берегами! Вас так же ждёт посещение маленьких турецких аутентичных
+          деревень, в которых кажется, что время давно остановилось.
+        </p>
+      </template>
+
+      <template v-slot:articleFullText>
+        <p>
+          Античный город Мира, руины которого расположились недалеко от
+          современного города Демре. Главной достопримечательностью города Мира
+          является скальные ликийские гробницы. Строились они на вершине
+          горы,что бы быть поближе к богам, ведь именно здесь устраивали свои
+          захоронения богатые ликийцы. Мастерски вырезанные гробницы, прямо в
+          скальной породе - очень похожи на храмы и дома. Так же в городе Мира
+          хорошо сохранился ликийский амфитеатр! Много веков назад это было не
+          менее масштабное место, здесь проводили театральные представления и
+          спортивные состязания, к слову, здесь и сегодня иногда проводят
+          фестивали.
+        </p>
+      </template>
     </tour-page>
   </div>
 </template>
@@ -41,8 +65,8 @@ import articleImg from 'assets/tour-images/demre-myra-kekova/article/demre-myra-
 export default defineComponent({
   components: { 'tour-page': TourPage },
   setup() {
-    const breadCrumbsCategory = 'Kemer'; // demere kategorisi eklendğinde değişecek
-    const breadCrumbsCategoryRoute = '/antalya/kemer'; // demere kategorisi eklendğinde değişecek
+    const breadCrumbsCategory = 'Kemer';
+    const breadCrumbsCategoryRoute = '/antalya/kemer';
     const breadCrumbsTourLabel = 'Экскурсия в Демре Мира Кекова';
 
     const bookingForm = {
@@ -52,12 +76,12 @@ export default defineComponent({
       adultPrice: 25,
       childPrice: 20,
       babyPrice: 0,
+      adultAge: '+12',
+      childAge: '6-11',
+      babyAge: '0-5',
     };
 
     const articleTitle = 'Экскурсия по Анталии из Кемера';
-
-    const articleSummaryText =
-      'Экскурсия Демре Мира Кекова из Кемера  - уникальная возможность увидеть пересечение четырех древних культур – римской, византийской, ликийской и эллинской! Участников экскурсии Демре Мира Кекова из Кемера ждёт полное погружение в античность! Руины древнего города Мира будут сопровождаться тёплыми водами Средиземноморья и его скалистыми берегами! Вас так же ждёт посещение маленьких турецких аутентичных деревень, в которых кажется, что время давно остановилось.';
 
     const sliderImages = [
       slider1,
@@ -70,9 +94,6 @@ export default defineComponent({
       slider8,
       slider9,
     ];
-
-    const articleFullText =
-      'Античный город Мира, руины которого расположились недалеко от современного города Демре. Главной достопримечательностью города Мира является скальные ликийские гробницы. Строились они на вершине горы,что бы быть поближе к богам, ведь именно здесь устраивали свои захоронения богатые ликийцы. Мастерски вырезанные гробницы, прямо в скальной породе - очень похожи на храмы и дома. Так же в городе Мира хорошо сохранился ликийский амфитеатр! Много веков назад это было не менее масштабное место, здесь проводили театральные представления и спортивные состязания, к слову, здесь и сегодня иногда проводят фестивали.';
 
     const includes = [
       'Трансфер от и до отеля',
@@ -92,10 +113,15 @@ export default defineComponent({
     ];
 
     const tourDetails = {
-      tourCost:
-        "This tour is $25 for adults. It's $20 for childs ages 6-11. It is free for babies 0-5 years old.",
-      itemsBring:
-        'Фотоаппарат, Полотенце, Купальник, Крем от загара, Солнцезащитные очки, Деньги на личные расходы',
+      tourCost: `This tour is ${bookingForm.adultPrice} USD for adults. It's ${bookingForm.childPrice} USD for childs ages ${bookingForm.childAge}. It is free for babies ${bookingForm.babyAge} years old.`,
+      itemsBring: [
+        'Фотоаппарат',
+        'Полотенце',
+        'Купальник',
+        'Крем от загара',
+        'Солнцезащитные очки',
+        'Деньги на личные расходы',
+      ],
       departureTimes: [
         'В 07:10 - 07:30 из отелей Бельдиби',
         'В 07:45 из отелей Гёйнюк',
@@ -145,9 +171,7 @@ export default defineComponent({
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
       articleTitle,
-      articleSummaryText,
       sliderImages,
-      articleFullText,
       articleImg,
       includes,
       excludes,

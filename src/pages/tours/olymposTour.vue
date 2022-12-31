@@ -8,8 +8,6 @@
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
       :articleTitle="articleTitle"
-      :articleSummaryText="articleSummaryText"
-      :articleFullText="articleFullText"
       :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
@@ -17,6 +15,30 @@
       :faq="faq"
       :bookingForm="bookingForm"
     >
+      <template v-slot:articleSummary>
+        <p>
+          Древний Олимпос – одна из главных достопримечательностей Кемера.
+          Основанный в III столетии до н.э. в устье реки Гёксу, Олимпос был
+          одним из главных городов древней Ликии и частью их союза. Считается,
+          что «olympos» – догреческое слово, означающее в переводе «гора». Своё
+          название он берет в честь древней горы Олимп, которая сегодня
+          именуется Тахталы.
+        </p>
+      </template>
+
+      <template v-slot:articleFullText>
+        <p>
+          Олимпос был одним из 6 городов Ликийского союза, чеканил свои монеты.
+          Самая древняя монета датируется 2 столетием до н.э. и эта дата
+          зафиксирована в самых древних документах города. Легендарный Олимпос
+          пережил взлет и падение многих цивилизаций, оставивших свой след в
+          архитектуре. Однако примерно в XV столетии, когда османский флот
+          установил свою власть в Восточном Средиземноморье, Олимпос опустел
+          окончательно. Его последним завоевателем стала Природа, бережно
+          окружившая памятники истории прекрасными растениями и населившая их
+          сладкоголосыми птицами.
+        </p>
+      </template>
     </tour-page>
   </div>
 </template>
@@ -47,17 +69,14 @@ export default defineComponent({
       adultPrice: 25,
       childPrice: 20,
       babyPrice: 0,
+      adultAge: '+12',
+      childAge: '6-11',
+      babyAge: '0-5',
     };
 
     const articleTitle = 'Экскурсия в Олимпос - Огни Химеры - Улупинар';
 
-    const articleSummaryText =
-      'Древний Олимпос – одна из главных достопримечательностей Кемера. Основанный в III столетии до н.э. в устье реки Гёксу, Олимпос был одним из главных городов древней Ликии и частью их союза. Считается, что «olympos» – догреческое слово, означающее в переводе «гора». Своё название он берет в честь древней горы Олимп, которая сегодня именуется Тахталы.';
-
     const sliderImages = [slider1, slider2, slider3, slider4, slider5];
-
-    const articleFullText =
-      'Олимпос был одним из 6 городов Ликийского союза, чеканил свои монеты. Самая древняя монета датируется 2 столетием до н.э. и эта дата зафиксирована в самых древних документах города. Легендарный Олимпос пережил взлет и падение многих цивилизаций, оставивших свой след в архитектуре. Однако примерно в XV столетии, когда османский флот установил свою власть в Восточном Средиземноморье, Олимпос опустел окончательно. Его последним завоевателем стала Природа, бережно окружившая памятники истории прекрасными растениями и населившая их сладкоголосыми птицами.';
 
     const includes = [
       'Трансфер на джипах от и до отеля',
@@ -73,10 +92,16 @@ export default defineComponent({
     ];
 
     const tourDetails = {
-      tourCost:
-        "This tour is $25 for adults. It's $20 for childs ages 6-11. It is free for babies 0-5 years old.",
-      itemsBring:
-        'Фотоаппарат, Полотенце, купальник, Крем от загара, солнцезащитные очки, Деньги на личные расходы, Спортивную обувь',
+      tourCost: `This tour is ${bookingForm.adultPrice} USD for adults. It's ${bookingForm.childPrice} USD for childs ages ${bookingForm.childAge}. It is free for babies ${bookingForm.babyAge} years old.`,
+      itemsBring: [
+        'Фотоаппарат',
+        'Полотенце',
+        'купальник',
+        'Крем от загара',
+        'солнцезащитные очки',
+        'Деньги на личные расходы',
+        'Спортивную обувь',
+      ],
       departureTimes: [
         'В 15:20 из отелей Бельдиби',
         'В 15:45 из отелей Кириш',
@@ -125,9 +150,7 @@ export default defineComponent({
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
       articleTitle,
-      articleSummaryText,
       sliderImages,
-      articleFullText,
       articleImg,
       includes,
       excludes,

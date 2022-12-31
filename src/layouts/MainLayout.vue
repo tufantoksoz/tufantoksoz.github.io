@@ -1,6 +1,28 @@
 <template>
   <q-layout view="hHh LpR fff">
-    <q-header reveal elevated class="bg-white text-primary" height-hint="98">
+    <q-header reveal elevated class="bg-white text-primary">
+      <q-toolbar>
+        <div class="row q-gutter-sm headerInfoMobile text-no-wrap">
+          <div class="col-auto">
+            <q-icon color="dark q-mr-sm" size="20px" name="phone" />
+            <span class="text-dark">
+              {{ $t('contactInfo.phone') }}
+            </span>
+          </div>
+
+          <div class="col-auto">
+            <q-icon
+              color="dark q-mr-sm"
+              size="20px"
+              name="fa-regular fa-envelope"
+            />
+            <span class="text-dark">{{ $t('contactInfo.email') }}</span>
+          </div>
+        </div>
+      </q-toolbar>
+
+      <q-separator />
+
       <q-toolbar>
         <q-btn
           class="mobile-only"
@@ -66,31 +88,31 @@
                 <q-menu v-bind="menuAttr" auto-close fit>
                   <q-list class="my-text-font">
                     <q-item clickable :to="{ name: 'antalya' }">
-                      <q-item-section>Antalya</q-item-section>
+                      <q-item-section>{{ $t('antalya') }}</q-item-section>
                     </q-item>
 
                     <q-item clickable :to="{ name: 'belek' }">
-                      <q-item-section>Belek</q-item-section>
+                      <q-item-section>{{ $t('belek') }}</q-item-section>
                     </q-item>
 
                     <q-item clickable :to="{ name: 'kemer' }">
-                      <q-item-section>Kemer</q-item-section>
+                      <q-item-section>{{ $t('kemer') }}</q-item-section>
                     </q-item>
 
                     <q-item clickable :to="{ name: 'alanya' }">
-                      <q-item-section>Alanya</q-item-section>
+                      <q-item-section>{{ $t('alanya') }}</q-item-section>
                     </q-item>
 
                     <q-item clickable :to="{ name: 'manavgat' }">
-                      <q-item-section>Manavgat</q-item-section>
+                      <q-item-section>{{ $t('manavgat') }}</q-item-section>
                     </q-item>
 
                     <q-item clickable :to="{ name: 'side' }">
-                      <q-item-section>Side</q-item-section>
+                      <q-item-section>{{ $t('side') }}</q-item-section>
                     </q-item>
 
                     <q-item clickable :to="{ name: 'adrasan' }">
-                      <q-item-section>Adrasan</q-item-section>
+                      <q-item-section>{{ $t('adrasan') }}</q-item-section>
                     </q-item>
                   </q-list></q-menu
                 >
@@ -129,31 +151,31 @@
           <q-expansion-item icon="tour" :label="$t('excursions')">
             <q-list class="my-text-font" separator>
               <q-item clickable :to="{ name: 'antalya' }">
-                <q-item-section>Antalya</q-item-section>
+                <q-item-section>{{ $t('antalya') }}</q-item-section>
               </q-item>
 
               <q-item clickable :to="{ name: 'belek' }">
-                <q-item-section>Belek</q-item-section>
+                <q-item-section>{{ $t('belek') }}</q-item-section>
               </q-item>
 
               <q-item clickable :to="{ name: 'kemer' }">
-                <q-item-section>Kemer</q-item-section>
+                <q-item-section>{{ $t('kemer') }}</q-item-section>
               </q-item>
 
               <q-item clickable :to="{ name: 'alanya' }">
-                <q-item-section>Alanya</q-item-section>
+                <q-item-section>{{ $t('alanya') }}</q-item-section>
               </q-item>
 
               <q-item clickable :to="{ name: 'manavgat' }">
-                <q-item-section>Manavgat</q-item-section>
+                <q-item-section>{{ $t('manavgat') }}</q-item-section>
               </q-item>
 
               <q-item clickable :to="{ name: 'side' }">
-                <q-item-section>Side</q-item-section>
+                <q-item-section>{{ $t('side') }}</q-item-section>
               </q-item>
 
               <q-item clickable :to="{ name: 'adrasan' }">
-                <q-item-section>Adrasan</q-item-section>
+                <q-item-section>{{ $t('adrasan') }}</q-item-section>
               </q-item>
             </q-list>
           </q-expansion-item>
@@ -182,13 +204,155 @@
     </q-page-sticky>
     <!-- Sticky Button End -->
 
-    <q-footer elevated class="bg-grey-8 text-white">
-      <q-toolbar>
-        <q-toolbar-title>
-          <div>Excursions Office</div>
-        </q-toolbar-title>
-      </q-toolbar>
+    <!-- Footer Section Start -->
+    <q-footer elevated class="bg-dark text-white">
+      <div class="row justify-center q-ma-md">
+        <div class="col-md-2 col-sm-4 col-xs-12 q-ma-md">
+          <div class="row q-mb-md my-title-font-bold">
+            <span class="footerTitle">{{ $t('footer.contact') }}</span>
+          </div>
+
+          <div class="row q-mb-md">
+            <q-icon class="q-mr-md" size="20px" name="phone" />
+            <span>{{ $t('contactInfo.phone') }}</span>
+          </div>
+
+          <div class="row q-mb-md">
+            <q-icon class="q-mr-md" size="20px" name="fa-brands fa-whatsapp" />
+            <span class="my-text-font">{{ $t('contactInfo.whatsapp') }}</span>
+          </div>
+
+          <div class="row">
+            <q-icon class="q-mr-md" size="20px" name="fa-regular fa-envelope" />
+            <span class="my-text-font">{{ $t('contactInfo.email') }}</span>
+          </div>
+        </div>
+
+        <q-separator vertical dark inset />
+
+        <div class="col-md-2 col-sm-4 col-xs-12 q-ma-md">
+          <div class="row my-title-font-bold">
+            <span class="footerTitle q-mb-md">{{ $t('footer.support') }}</span>
+          </div>
+          <div class="row q-mb-md">
+            <span
+              class="cursor-pointer my-text-font"
+              @click="$router.push({ name: 'contact' })"
+              >{{ $t('footer.contact') }}
+            </span>
+          </div>
+
+          <div class="row q-mb-md">
+            <span
+              class="cursor-pointer my-text-font"
+              @click="$router.push({ name: 'about' })"
+              >{{ $t('footer.aboutUs') }}
+            </span>
+          </div>
+
+          <div class="row q-mb-md">
+            <span
+              class="cursor-pointer my-text-font"
+              @click="$router.push({ name: 'faq' })"
+              >{{ $t('footer.faq') }}
+            </span>
+          </div>
+        </div>
+
+        <q-separator v-if="$q.screen.width > 1024" vertical dark inset />
+
+        <div class="col-md-2 col-sm-4 col-xs-12 q-ma-md my-title-font-bold">
+          <div class="row q-mb-md">
+            <span class="footerTitle">{{ $t('footer.destinations') }}</span>
+          </div>
+          <div class="row q-mb-md">
+            <span
+              class="cursor-pointer my-text-font"
+              @click="$router.push({ name: 'belek' })"
+              >{{ $t('footer.belek') }}</span
+            >
+          </div>
+
+          <div class="row q-mb-md">
+            <span
+              class="cursor-pointer my-text-font"
+              @click="$router.push({ name: 'kemer' })"
+              >{{ $t('footer.kemer') }}</span
+            >
+          </div>
+
+          <div class="row q-mb-md">
+            <span
+              class="cursor-pointer my-text-font"
+              @click="$router.push({ name: 'side' })"
+              >{{ $t('footer.side') }}</span
+            >
+          </div>
+
+          <div class="row q-mb-md">
+            <span
+              class="cursor-pointer my-text-font"
+              @click="$router.push({ name: 'alanya' })"
+              >{{ $t('footer.alanya') }}</span
+            >
+          </div>
+        </div>
+
+        <q-separator vertical dark inset />
+
+        <div class="col-md-2 col-sm-4 col-xs-12 q-ma-md my-title-font-bold">
+          <div class="row q-mb-md">
+            <span class="footerTitle text-no-wrap">{{
+              $t('footer.followUsOnSocialMedia')
+            }}</span>
+          </div>
+
+          <div class="row q-mb-md q-gutter-md">
+            <q-btn
+              round
+              padding="0px"
+              size="16px"
+              icon="fa-brands fa-instagram"
+              href="https://www.instagram.com/"
+              target="_blank"
+            />
+
+            <q-btn
+              round
+              padding="0px"
+              size="16px"
+              icon="fa-brands fa-youtube"
+              href="https://www.youtube.com/"
+              target="_blank"
+            />
+
+            <q-btn
+              round
+              padding="0px"
+              size="16px"
+              icon="fa-brands fa-twitter"
+              href="https://twitter.com/"
+              target="_blank"
+            />
+
+            <q-btn
+              round
+              padding="0px"
+              size="16px"
+              icon="fa-brands fa-tiktok"
+              href="https://www.tiktok.com/"
+              target="_blank"
+            />
+          </div>
+        </div>
+      </div>
+      <q-separator dark />
+
+      <div class="row q-ma-md">
+        <span> Copyright © 2022 - {{ currentYear }} Excursions Office</span>
+      </div>
     </q-footer>
+    <!-- Footer Section End -->
   </q-layout>
 </template>
 
@@ -204,6 +368,8 @@ import { useI18n } from 'vue-i18n';
 export default {
   components: { QMenuHover: MenuHover },
   setup() {
+    const currentYear = ref(new Date().getFullYear());
+
     const leftDrawerOpen = ref(false);
 
     const viberPath = 'img:' + viberLogo;
@@ -230,7 +396,20 @@ export default {
       wpPath,
       onItemClick,
       flagIcon,
+      currentYear,
     };
   },
 };
 </script>
+
+<style lang="scss">
+.footerTitle {
+  font-size: 17px;
+}
+
+@media screen and (max-width: 374px) {
+  .headerInfoMobile {
+    justify-content: center;
+  }
+}
+</style>
