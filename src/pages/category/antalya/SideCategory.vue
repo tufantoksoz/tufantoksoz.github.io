@@ -23,7 +23,7 @@
 <script>
 import CategoryComponent from 'src/components/CategoryComponent.vue';
 import TourCard from 'src/components/TourCard.vue';
-import adrasanImage from 'assets/popular-excursions/adrasan-suluada-boat-tour.jpg';
+import adrasanSuluadaBoatTourImage from 'assets/tour-images/adrasan-suluada/card/adrasan-suluada.webp';
 
 export default {
   components: {
@@ -38,7 +38,7 @@ export default {
     const hours = '8 Hours';
     const currency = 'euro';
     const oldPrice = '38';
-    const image = adrasanImage;
+    const image = adrasanSuluadaBoatTourImage;
     const price = '30';
     const food = 'Dinner';
     const transfer = 'Transfer';
