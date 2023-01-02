@@ -40,7 +40,7 @@
           Excursions Office
         </q-toolbar-title>
 
-        <q-btn
+        <!-- <q-btn
           class="q-mr-md"
           unelevated
           size="20px"
@@ -77,7 +77,7 @@
               </q-item>
             </q-list>
           </q-menu>
-        </q-btn>
+        </q-btn> -->
 
         <q-tabs class="desktop-only" shrink stretch indicator-color="red">
           <q-route-tab
@@ -107,19 +107,11 @@
                       <q-item-section>{{ $t('alanya') }}</q-item-section>
                     </q-item>
 
-                    <q-item clickable :to="{ name: 'manavgat' }">
-                      <q-item-section>{{ $t('manavgat') }}</q-item-section>
-                    </q-item>
-
                     <q-item clickable :to="{ name: 'side' }">
                       <q-item-section>{{ $t('side') }}</q-item-section>
                     </q-item>
-
-                    <q-item clickable :to="{ name: 'adrasan' }">
-                      <q-item-section>{{ $t('adrasan') }}</q-item-section>
-                    </q-item>
-                  </q-list></q-menu
-                >
+                  </q-list>
+                </q-menu>
               </q-btn>
             </template>
           </QMenuHover>
@@ -170,16 +162,8 @@
                 <q-item-section>{{ $t('alanya') }}</q-item-section>
               </q-item>
 
-              <q-item clickable :to="{ name: 'manavgat' }">
-                <q-item-section>{{ $t('manavgat') }}</q-item-section>
-              </q-item>
-
               <q-item clickable :to="{ name: 'side' }">
                 <q-item-section>{{ $t('side') }}</q-item-section>
-              </q-item>
-
-              <q-item clickable :to="{ name: 'adrasan' }">
-                <q-item-section>{{ $t('adrasan') }}</q-item-section>
               </q-item>
             </q-list>
           </q-expansion-item>
@@ -365,9 +349,9 @@ import { ref } from 'vue';
 import MenuHover from 'components/MenuHover.vue';
 import viberLogo from 'assets/contact-icons/viber.svg';
 import wpLogo from 'assets/contact-icons/whatsapp.svg';
-import russianFlag from 'assets/flags/russia.png';
-import unitedStatesFlag from 'assets/flags/united-states.png';
-import { useI18n } from 'vue-i18n';
+// import russianFlag from 'assets/flags/russia.png';
+// import unitedStatesFlag from 'assets/flags/united-states.png';
+// import { useI18n } from 'vue-i18n';
 
 export default {
   components: { QMenuHover: MenuHover },
@@ -379,17 +363,17 @@ export default {
     const viberPath = 'img:' + viberLogo;
     const wpPath = 'img:' + wpLogo;
 
-    const { locale } = useI18n({ useScope: 'global' });
+    // const { locale } = useI18n({ useScope: 'global' });
 
-    const flagIcon = () => {
-      if (locale.value === 'ru') return 'img:' + russianFlag;
+    // const flagIcon = () => {
+    //   if (locale.value === 'ru') return 'img:' + russianFlag;
 
-      return 'img:' + unitedStatesFlag;
-    };
+    //   return 'img:' + unitedStatesFlag;
+    // };
 
-    function onItemClick(langCode) {
-      if (locale.value !== langCode) locale.value = langCode;
-    }
+    // function onItemClick(langCode) {
+    //   if (locale.value !== langCode) locale.value = langCode;
+    // }
 
     return {
       leftDrawerOpen,
@@ -398,8 +382,6 @@ export default {
       },
       viberPath,
       wpPath,
-      onItemClick,
-      flagIcon,
       currentYear,
     };
   },
