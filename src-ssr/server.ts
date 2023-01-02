@@ -26,6 +26,7 @@ import {
  *
  * Should NOT be async!
  */
+
 export const create = ssrCreate((/* { ... } */) => {
   const app = express();
 

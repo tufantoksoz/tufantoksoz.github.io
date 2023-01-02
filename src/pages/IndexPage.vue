@@ -129,7 +129,7 @@
       <q-card class="my-card" @click="routeBelek">
         <q-img
           class="imgSize zoom"
-          src="../assets/popular-destinations/belek.jpg"
+          src="~assets/popular-destinations/belek.webp"
         >
         </q-img>
         <span
@@ -145,7 +145,7 @@
       <q-card class="my-card" @click="routeKemer">
         <q-img
           class="imgSize zoom"
-          src="../assets/popular-destinations/kemer.jpg"
+          src="~assets/popular-destinations/kemer.webp"
         >
         </q-img>
         <span
@@ -161,7 +161,7 @@
       <q-card class="my-card" @click="routeAlanya">
         <q-img
           class="imgSize zoom"
-          src="../assets/popular-destinations/alanya.jpg"
+          src="~assets/popular-destinations/alanya.webp"
         >
         </q-img>
         <span
@@ -177,7 +177,7 @@
       <q-card class="my-card" @click="routeManavgat">
         <q-img
           class="imgSize zoom"
-          src="../assets/popular-destinations/manavgat.jpg"
+          src="~assets/popular-destinations/manavgat.webp"
         >
         </q-img>
         <span
@@ -193,7 +193,7 @@
       <q-card class="my-card" @click="routeSide">
         <q-img
           class="imgSize zoom"
-          src="../assets/popular-destinations/side.jpg"
+          src="~assets/popular-destinations/side.webp"
         >
         </q-img>
         <span
@@ -209,7 +209,7 @@
       <q-card class="my-card" @click="routeAdrasan">
         <q-img
           class="imgSize zoom"
-          src="../assets/popular-destinations/adrasan.jpg"
+          src="~assets/popular-destinations/adrasan.webp"
         >
         </q-img>
         <span
@@ -507,6 +507,118 @@
       location="Кемер"
       routeName="seaFishingTour"
     />
+
+    <tour-card
+      :image="kapadokyaTourImage"
+      title="Экскурсия в Каппадокию (Все Включено)"
+      date="Пн. Вт. Чт. Сб. Вс."
+      hours="2 дня"
+      currency="attach_money"
+      oldPrice="90"
+      price="80"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="ikiGunlukKapadokyaTuruHerseyDahil"
+    />
+
+    <tour-card
+      :image="adrasanYamacParasutu"
+      title="Параглайдинг в Кемере Адрасан (1300m)"
+      date="Каждый день"
+      hours="6 часов"
+      currency="attach_money"
+      oldPrice="165"
+      price="150"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="adrasanYamacParasutu"
+    />
+
+    <tour-card
+      :image="pamukkaleSicakHavaBalonuImage"
+      title="Полёт на Воздушном Шаре в Памуккале"
+      date="Пон. Четв."
+      hours="13-14 часов"
+      currency="attach_money"
+      oldPrice="230"
+      price="210"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="pamukkaleSicakHavaBalonu"
+    />
+
+    <tour-card
+      :image="kemerdenIstanbulTuruImage"
+      title="Экскурсия в Стамбул из Кемера"
+      date="Уточняйте у менеджера"
+      hours="22 часа"
+      currency="attach_money"
+      oldPrice="219"
+      price="199"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="kemerdenIstanbulTuru"
+    />
+
+    <tour-card
+      :image="tahtaliYamacParasutuImage"
+      title="Параглайдинг с Горы Тахталы 2365m"
+      date="Каждый день"
+      hours="5 часов"
+      currency="attach_money"
+      oldPrice="270"
+      price="250"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="tahtaliYamacParasutu"
+    />
+
+    <tour-card
+      :image="kemerdenAkvarayumTuruImage"
+      title="Экскурсия в Аквариум из Кемера"
+      date="Уточнить"
+      hours="4 часа"
+      currency="attach_money"
+      oldPrice="60"
+      price="55"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="kemerdenAkvarayumTuru"
+    />
+
+    <tour-card
+      :image="landOfLegendsImage"
+      title="Аквапарк The Land of Legends из Кемера"
+      date="Пн. Вт. Ср. Чт. Пт. Сб."
+      hours="10 часов"
+      currency="attach_money"
+      oldPrice="75"
+      price="70"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="kemerdenLandOfLegends"
+    />
+
+    <tour-card
+      :image="kemerDinoParkTourImage"
+      title="Экскурсия в Динопарк в Кемере"
+      date="Каждый день"
+      hours="3 часа"
+      currency="attach_money"
+      oldPrice="34"
+      price="30"
+      food="Ужин"
+      transfer="Трансфер"
+      location="Кемер"
+      routeName="kemerDinoParkTour"
+    />
   </div>
 </template>
 
@@ -533,7 +645,14 @@ import dolphinTourImage from 'assets/tour-images/dolphin-tour/card/dolphin-tour.
 import dolusuParkTourImage from 'assets/tour-images/dolusu-park-tour/card/dolusu-park-tour.webp';
 import tahtaliTeleferikTourImage from 'assets/tour-images/tahtali-teleferik-tour/card/tahtali-teleferik-tour.webp';
 import seaFishingTourImage from 'assets/tour-images/sea-fishing/card/sea-fishing.webp';
-
+import kapadokyaTourImage from 'assets/tour-images/cappadocia-tour/card/cappadocia-tour.webp';
+import adrasanYamacParasutu from 'assets/tour-images/adrasan-yamac-parasutu/card/yamac-parasutu.webp';
+import pamukkaleSicakHavaBalonuImage from 'assets/tour-images/pamukkale-sicak-hava-balonu/card/pamukkale-sicak-hava-balonu.webp';
+import kemerdenIstanbulTuruImage from 'assets/tour-images/istanbul-tour/card/istanbul-tour.webp';
+import tahtaliYamacParasutuImage from 'assets/tour-images/tahtali-yamac-parasutu/card/yamac-parasutu.webp';
+import kemerdenAkvarayumTuruImage from 'assets/tour-images/akvaryum-turu/card/antalya-akvaryum.webp';
+import landOfLegendsImage from 'assets/tour-images/land-of-legends/card/land-of-legends.webp';
+import kemerDinoParkTourImage from 'assets/tour-images/dino-park/card/kemer-dino-park.webp';
 import { useRouter } from 'vue-router';
 
 export default defineComponent({
@@ -565,6 +684,14 @@ export default defineComponent({
       dolusuParkTourImage,
       tahtaliTeleferikTourImage,
       seaFishingTourImage,
+      kapadokyaTourImage,
+      adrasanYamacParasutu,
+      pamukkaleSicakHavaBalonuImage,
+      kemerdenIstanbulTuruImage,
+      tahtaliYamacParasutuImage,
+      kemerdenAkvarayumTuruImage,
+      landOfLegendsImage,
+      kemerDinoParkTourImage,
 
       routeBelek() {
         router.push({ name: 'belek' });

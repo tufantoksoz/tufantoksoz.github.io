@@ -52,7 +52,11 @@
             <q-list>
               <q-item clickable v-close-popup @click="onItemClick('ru')">
                 <q-item-section avatar>
-                  <q-img src="~assets/russia.png" width="32px" no-spinner />
+                  <q-img
+                    src="~assets/flags/russia.png"
+                    width="32px"
+                    no-spinner
+                  />
                 </q-item-section>
                 <q-item-section>
                   <q-item-label>Russian</q-item-label>
@@ -62,7 +66,7 @@
               <q-item clickable v-close-popup @click="onItemClick('en-US')">
                 <q-item-section avatar>
                   <q-img
-                    src="~assets/united-states.png"
+                    src="~assets/flags/united-states.png"
                     width="32px"
                     no-spinner
                   />
@@ -361,8 +365,8 @@ import { ref } from 'vue';
 import MenuHover from 'components/MenuHover.vue';
 import viberLogo from 'assets/contact-icons/viber.svg';
 import wpLogo from 'assets/contact-icons/whatsapp.svg';
-import russianFlag from 'assets/russia.png';
-import unitedStatesFlag from 'assets/united-states.png';
+import russianFlag from 'assets/flags/russia.png';
+import unitedStatesFlag from 'assets/flags/united-states.png';
 import { useI18n } from 'vue-i18n';
 
 export default {

@@ -112,6 +112,47 @@ const routes: RouteRecordRaw[] = [
         name: 'seaFishingTour',
         component: () => import('pages/tours/seaFishingTour.vue'),
       },
+      {
+        path: 'two-day-cappadocia-tour-all-inclusive',
+        name: 'ikiGunlukKapadokyaTuruHerseyDahil',
+        component: () =>
+          import('pages/tours/ikiGunlukKapadokyaTuruHerseyDahil.vue'),
+      },
+      {
+        path: 'adrasan-yamac-parasutu-turu',
+        name: 'adrasanYamacParasutu',
+        component: () => import('pages/tours/adrasanYamacParasutu.vue'),
+      },
+      {
+        path: 'pamukkale-sicak-hava-balonu-turu',
+        name: 'pamukkaleSicakHavaBalonu',
+        component: () => import('pages/tours/pamukkaleSicakHavaBalonu.vue'),
+      },
+      {
+        path: 'kemerden-istanbul-turu',
+        name: 'kemerdenIstanbulTuru',
+        component: () => import('pages/tours/kemerdenIstanbulTuru.vue'),
+      },
+      {
+        path: 'tahtali-yamac-parasutu',
+        name: 'tahtaliYamacParasutu',
+        component: () => import('pages/tours/tahtaliYamacParasutu.vue'),
+      },
+      {
+        path: 'kemerden-akvaryum-turu',
+        name: 'kemerdenAkvarayumTuru',
+        component: () => import('pages/tours/kemerdenAkvaryumTuru.vue'),
+      },
+      {
+        path: 'land-of-legends-tour',
+        name: 'kemerdenLandOfLegends',
+        component: () => import('pages/tours/kemerdenLandOfLegends.vue'),
+      },
+      {
+        path: 'dino-park-tour',
+        name: 'kemerDinoParkTour',
+        component: () => import('pages/tours/kemerDinoPark.vue'),
+      },
     ],
   },
   {

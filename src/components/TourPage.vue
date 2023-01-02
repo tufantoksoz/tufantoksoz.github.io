@@ -293,7 +293,7 @@
         <!-- Tour Details Expansion Section End -->
 
         <div class="q-mt-md q-px-md articleFont">
-          <slot name="articleSummary"></slot>
+          <slot name="articleFullText"></slot>
         </div>
 
         <div class="q-pa-sm">
