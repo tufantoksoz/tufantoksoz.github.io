@@ -1,0 +1,72 @@
+{
+    "breadCrumbsCategory": "Кемер",
+    "breadCrumbsCategoryRoute": "/antalya/kemer",
+    "breadCrumbsTourLabel": "Параглайдинг в Кемере Адрасан (1300m)",
+    "bookingForm": {
+        "tourName": "Параглайдинг в Кемере Адрасан (1300m)",
+        "currency": "attach_money",
+        "oldPrice": 165,
+        "adultPrice": 150,
+        "childPrice": 150,
+        "babyPrice": 0,
+        "adultAge": "+13",
+        "childAge": "7-11",
+        "babyAge": "0-6",
+        "isBabySale": false
+    },
+    "articleTitle": "Параглайдинг в Кемере Адрасан (1300m)",
+    "includes": [
+        "Все наши туристи застрахованы на сумму в 40000$",
+        "Необходимое снаряжение для полета на параплане",
+        "Услуга трансфера от и до отеля"
+    ],
+    "excludes": [
+        "CD c видео и фотографиями",
+        "Любые личные расходы"
+    ],
+    "tourDetails": {
+        "tourProgram": [
+            "Сбор туристов из отелей по регионам",
+            "Прибытие в Адрасан",
+            "Инструктаж по параплану",
+            "Выдача необходимого снаряжения для полета",
+            "Время полета 25-30 минут ",
+            "Приземление на пляж Адрасан",
+            "Купание в море",
+            "Возвращение в отели"
+        ],
+        "itemsBring": [
+            "Фотоаппарат",
+            "Вода",
+            "Полотенце",
+            "Купальник",
+            "Спортивную обувь",
+            "Солнцезащитные очки",
+            "Фотоаппарат"
+        ],
+        "departureTimes": [],
+        "returnTimes": [],
+        "distance": [
+            "от Кемера - 47 км",
+            "от Анталии - 0 км",
+            "от Сиде - 73 км",
+            "от Алании - 133 км"
+        ],
+        "hours": "6 часов",
+        "days": "Каждый день"
+    },
+    "faq": [
+        {
+            "label": "Question One",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        },
+        {
+            "label": "Question Two",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        },
+        {
+            "label": "Question Three",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+        }
+    ]
+}

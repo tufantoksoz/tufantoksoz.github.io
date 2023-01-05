@@ -15,143 +15,155 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'adrasan-suluada-boat-tour',
         name: 'adrasanSuluadaBoatTour',
-        component: () => import('pages/tours/adrasanSuluadaBoatTour.vue'),
+        component: () =>
+          import('src/pages/tours/kemer/adrasanSuluadaBoatTour.vue'),
       },
       {
         path: 'goynuk-canyon-tour',
         name: 'goynukCanyonTour',
-        component: () => import('pages/tours/goynukCanyonTour.vue'),
+        component: () => import('src/pages/tours/kemer/goynukCanyonTour.vue'),
       },
       {
         path: 'tazi-canyon-four-pack-tour',
         name: 'taziCanyonFourPackTour',
-        component: () => import('pages/tours/taziCanyon4PackTour.vue'),
+        component: () =>
+          import('src/pages/tours/kemer/taziCanyon4PackTour.vue'),
       },
       {
         path: 'antalya-city-tour',
         name: 'antalyaCityTour',
-        component: () => import('pages/tours/antalyaCityTour.vue'),
+        component: () => import('src/pages/tours/kemer/antalyaCityTour.vue'),
       },
       {
         path: 'demre-myra-kekova-tour',
         name: 'demreMyraKekovaTour',
-        component: () => import('pages/tours/demreMyraKekovaTour.vue'),
+        component: () =>
+          import('src/pages/tours/kemer/demreMyraKekovaTour.vue'),
       },
       {
         path: 'pamukkale-tour-from-kemer',
         name: 'pamukkaleTourFromKemer',
-        component: () => import('pages/tours/pamukkaleTourFromKemer.vue'),
+        component: () =>
+          import('src/pages/tours/kemer/pamukkaleTourFromKemer.vue'),
       },
       {
         path: 'yacht-tour-from-kemer',
         name: 'yachtTourFromKemer',
-        component: () => import('pages/tours/yachtTour.vue'),
+        component: () => import('src/pages/tours/kemer/yachtTour.vue'),
       },
       {
         path: 'turkish-bath',
         name: 'turkishBath',
-        component: () => import('pages/tours/turkishBath.vue'),
+        component: () => import('src/pages/tours/kemer/turkishBath.vue'),
       },
       {
         path: 'tahtali-jeep-safari',
         name: 'tahtaliJeepSafari',
-        component: () => import('pages/tours/tahtaliJeepSafari.vue'),
+        component: () => import('src/pages/tours/kemer/tahtaliJeepSafari.vue'),
       },
       {
-        path: 'kemer-diving',
-        name: 'kemerDiving',
-        component: () => import('pages/tours/kemerDiving.vue'),
+        path: 'kemer-diving-tour',
+        name: 'kemerDivingTour',
+        component: () => import('src/pages/tours/kemer/kemerDiving.vue'),
       },
       {
         path: 'olympos-tour',
         name: 'olymposTour',
-        component: () => import('pages/tours/olymposTour.vue'),
+        component: () => import('src/pages/tours/kemer/olymposTour.vue'),
       },
       {
         path: 'sulu-cehennem-adasi-tour',
         name: 'suluCehennemAdasiTour',
-        component: () => import('pages/tours/suluCehennemAdasiTour.vue'),
+        component: () =>
+          import('src/pages/tours/kemer/suluCehennemAdasiTour.vue'),
       },
       {
         path: 'kemer-atv-safari',
         name: 'kemerAtvSafari',
-        component: () => import('pages/tours/kemerAtvSafari.vue'),
+        component: () => import('src/pages/tours/kemer/kemerAtvSafari.vue'),
       },
       {
         path: 'kemer-snorkel-diving',
         name: 'kemerSnorkelDiving',
-        component: () => import('pages/tours/kemerSnorkelDiving.vue'),
+        component: () => import('src/pages/tours/kemer/kemerSnorkelDiving.vue'),
       },
       {
         path: 'fishing-in-ulupinar',
         name: 'fishingInUlupinar',
-        component: () => import('pages/tours/fishingInUlupinar.vue'),
+        component: () => import('src/pages/tours/kemer/fishingInUlupinar.vue'),
       },
       {
         path: 'kemer-horse-riding',
         name: 'kemerHorseRiding',
-        component: () => import('pages/tours/kemerHorseRiding.vue'),
+        component: () => import('src/pages/tours/kemer/kemerHorseRiding.vue'),
       },
       {
         path: 'dolphin-tour',
         name: 'dolphinTour',
-        component: () => import('pages/tours/dolphinTour.vue'),
+        component: () => import('src/pages/tours/kemer/dolphinTour.vue'),
       },
       {
         path: 'dolusu-park-tour',
         name: 'dolusuParkTour',
-        component: () => import('pages/tours/dolusuParkTour.vue'),
+        component: () => import('src/pages/tours/kemer/dolusuParkTour.vue'),
       },
       {
         path: 'tahtali-teleferik-tour',
         name: 'tahtaliTeleferikTour',
-        component: () => import('pages/tours/tahtaliTeleferikTour.vue'),
+        component: () =>
+          import('src/pages/tours/kemer/tahtaliTeleferikTour.vue'),
       },
       {
         path: 'sea-fishing-tour',
         name: 'seaFishingTour',
-        component: () => import('pages/tours/seaFishingTour.vue'),
+        component: () => import('src/pages/tours/kemer/seaFishingTour.vue'),
       },
       {
         path: 'two-day-cappadocia-tour-all-inclusive',
         name: 'ikiGunlukKapadokyaTuruHerseyDahil',
         component: () =>
-          import('pages/tours/ikiGunlukKapadokyaTuruHerseyDahil.vue'),
+          import('src/pages/tours/kemer/ikiGunlukKapadokyaTuruHerseyDahil.vue'),
       },
       {
         path: 'adrasan-yamac-parasutu-turu',
         name: 'adrasanYamacParasutu',
-        component: () => import('pages/tours/adrasanYamacParasutu.vue'),
+        component: () =>
+          import('src/pages/tours/kemer/adrasanYamacParasutu.vue'),
       },
       {
         path: 'pamukkale-sicak-hava-balonu-turu',
         name: 'pamukkaleSicakHavaBalonu',
-        component: () => import('pages/tours/pamukkaleSicakHavaBalonu.vue'),
+        component: () =>
+          import('src/pages/tours/kemer/pamukkaleSicakHavaBalonu.vue'),
       },
       {
         path: 'kemerden-istanbul-turu',
         name: 'kemerdenIstanbulTuru',
-        component: () => import('pages/tours/kemerdenIstanbulTuru.vue'),
+        component: () =>
+          import('src/pages/tours/kemer/kemerdenIstanbulTuru.vue'),
       },
       {
         path: 'tahtali-yamac-parasutu',
         name: 'tahtaliYamacParasutu',
-        component: () => import('pages/tours/tahtaliYamacParasutu.vue'),
+        component: () =>
+          import('src/pages/tours/kemer/tahtaliYamacParasutu.vue'),
       },
       {
         path: 'kemerden-akvaryum-turu',
         name: 'kemerdenAkvarayumTuru',
-        component: () => import('pages/tours/kemerdenAkvaryumTuru.vue'),
+        component: () =>
+          import('src/pages/tours/kemer/kemerdenAkvaryumTuru.vue'),
       },
       {
         path: 'land-of-legends-tour',
         name: 'kemerdenLandOfLegends',
-        component: () => import('pages/tours/kemerdenLandOfLegends.vue'),
+        component: () =>
+          import('src/pages/tours/kemer/kemerdenLandOfLegends.vue'),
       },
       {
         path: 'dino-park-tour',
         name: 'kemerDinoParkTour',
-        component: () => import('pages/tours/kemerDinoPark.vue'),
+        component: () => import('src/pages/tours/kemer/kemerDinoPark.vue'),
       },
     ],
   },

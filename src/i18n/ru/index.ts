@@ -66,6 +66,7 @@ export default {
 
   insurance: 'Страховка',
   tourDetails: 'Детали Экскурсии',
+  tourProgram: 'Программа Экскурсии',
   tourCost: 'Стоимость Экскурсии',
   itemsBring: 'Что Взять с Собой?',
   departureTimes: 'Время Сбора по Отелям (Приблизительно)',

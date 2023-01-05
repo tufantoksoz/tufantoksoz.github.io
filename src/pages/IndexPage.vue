@@ -365,7 +365,7 @@
       food="Ужин"
       transfer="Трансфер"
       location="Кемер"
-      routeName="kemerDiving"
+      routeName="kemerDivingTour"
     />
 
     <tour-card

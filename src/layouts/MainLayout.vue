@@ -24,6 +24,10 @@
       <q-separator />
 
       <q-toolbar>
+        <q-toolbar-title>
+          <q-img width="130px" height="60px" :src="logo"></q-img>
+        </q-toolbar-title>
+
         <q-btn
           class="mobile-only"
           dense
@@ -32,13 +36,6 @@
           icon="menu"
           @click="toggleLeftDrawer"
         />
-
-        <q-toolbar-title
-          class="text-center"
-          style="font-family: Arial, Helvetica, sans-serif; font-weight: 600"
-        >
-          Excursions Office
-        </q-toolbar-title>
 
         <!-- <q-btn
           class="q-mr-md"
@@ -135,14 +132,12 @@
     >
       <q-scroll-area class="fit">
         <q-list>
-          <q-item clickable v-ripple to="/">
+          <q-item clickable :active="false" v-ripple to="/">
             <q-item-section avatar>
               <q-icon name="home" />
             </q-item-section>
             <q-item-section> {{ $t('home') }} </q-item-section>
           </q-item>
-
-          <q-separator size="1.5px" />
 
           <q-expansion-item icon="tour" :label="$t('excursions')">
             <q-list class="my-text-font" separator>
@@ -193,7 +188,7 @@
     <!-- Sticky Button End -->
 
     <!-- Footer Section Start -->
-    <q-footer elevated class="bg-dark text-white">
+    <q-footer elevated class="text-white" style="background-color: #202f59">
       <div class="row justify-center q-ma-md">
         <div class="col-md-2 col-sm-4 col-xs-12 q-ma-md">
           <div class="row q-mb-md my-title-font-bold">
@@ -256,16 +251,24 @@
           <div class="row q-mb-md">
             <span
               class="cursor-pointer my-text-font"
-              @click="$router.push({ name: 'belek' })"
-              >{{ $t('footer.belek') }}</span
+              @click="$router.push({ name: 'kemer' })"
+              >Экскурсии в Кемере</span
             >
           </div>
 
           <div class="row q-mb-md">
             <span
               class="cursor-pointer my-text-font"
-              @click="$router.push({ name: 'kemer' })"
-              >{{ $t('footer.kemer') }}</span
+              @click="$router.push({ name: 'antalya' })"
+              >Экскурсии в Анталии</span
+            >
+          </div>
+
+          <div class="row q-mb-md">
+            <span
+              class="cursor-pointer my-text-font"
+              @click="$router.push({ name: 'belek' })"
+              >Экскурсии в Белеке</span
             >
           </div>
 
@@ -273,7 +276,7 @@
             <span
               class="cursor-pointer my-text-font"
               @click="$router.push({ name: 'side' })"
-              >{{ $t('footer.side') }}</span
+              >Экскурсии в Сиде</span
             >
           </div>
 
@@ -281,7 +284,7 @@
             <span
               class="cursor-pointer my-text-font"
               @click="$router.push({ name: 'alanya' })"
-              >{{ $t('footer.alanya') }}</span
+              >Экскурсии в Алании</span
             >
           </div>
         </div>
@@ -337,7 +340,10 @@
       <q-separator dark />
 
       <div class="row q-ma-md">
-        <span> Copyright © 2022 - {{ currentYear }} Excursions Office</span>
+        <span
+          >Авторское право © 2022 — {{ currentYear }} excursionsoffice.com™ Все
+          права защищены.</span
+        >
       </div>
     </q-footer>
     <!-- Footer Section End -->
@@ -349,6 +355,7 @@ import { ref } from 'vue';
 import MenuHover from 'components/MenuHover.vue';
 import viberLogo from 'assets/contact-icons/viber.svg';
 import wpLogo from 'assets/contact-icons/whatsapp.svg';
+import logo from 'assets/logo/excursions-office-logo.png';
 // import russianFlag from 'assets/flags/russia.png';
 // import unitedStatesFlag from 'assets/flags/united-states.png';
 // import { useI18n } from 'vue-i18n';
@@ -383,6 +390,7 @@ export default {
       viberPath,
       wpPath,
       currentYear,
+      logo,
     };
   },
 };

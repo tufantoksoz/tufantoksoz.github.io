@@ -66,6 +66,7 @@ export default {
 
   insurance: 'Insurance',
   tourDetails: 'Tour Details',
+  tourProgram: 'Tour Program',
   tourCost: 'Tour Cost',
   itemsBring: 'What should you bring with you on the tour?',
   departureTimes: 'Tour departure times (approximately)',
@@ -110,5 +111,11 @@ export default {
     kemer: 'Kemer',
     alanya: 'Alanya',
     side: 'Side',
+  },
+
+  contactInfo: {
+    phone: '+90 500 100 10 10',
+    whatsapp: '+90 500 100 10 10',
+    email: "info{'@'}excursionsoffice.com",
   },
 };

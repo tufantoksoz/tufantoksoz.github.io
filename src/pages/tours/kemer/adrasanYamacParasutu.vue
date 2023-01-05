@@ -3,17 +3,17 @@
     <tour-page
       :imgDesktop="imgDesktop"
       :imgMobile="imgMobile"
-      :breadCrumbsCategory="breadCrumbsCategory"
-      :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
-      :breadCrumbsTourLabel="breadCrumbsTourLabel"
+      :breadCrumbsCategory="api.breadCrumbsCategory"
+      :breadCrumbsCategoryRoute="api.breadCrumbsCategoryRoute"
+      :breadCrumbsTourLabel="api.breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
+      :articleTitle="api.articleTitle"
       :articleImg="articleImg"
-      :includes="includes"
-      :excludes="excludes"
-      :tourDetails="tourDetails"
-      :faq="faq"
-      :bookingForm="bookingForm"
+      :includes="api.includes"
+      :excludes="api.excludes"
+      :tourDetails="api.tourDetails"
+      :faq="api.faq"
+      :bookingForm="api.bookingForm"
     >
       <template v-slot:articleSummary>
         <p></p>
@@ -63,28 +63,11 @@ import slider13 from 'assets/tour-images/adrasan-yamac-parasutu/slider/yamac-par
 import slider14 from 'assets/tour-images/adrasan-yamac-parasutu/slider/yamac-parasutu-14.webp';
 import articleImg from 'assets/tour-images/adrasan-yamac-parasutu/article/yamac-parasutu.webp';
 
+import api from 'src/static/api/tours/kemer/adrasan-yamac-parasutu.json';
+
 export default defineComponent({
   components: { 'tour-page': TourPage },
   setup() {
-    const breadCrumbsCategory = 'Kemer';
-    const breadCrumbsCategoryRoute = '/antalya/kemer';
-    const breadCrumbsTourLabel = 'Параглайдинг в Кемере Адрасан (1300m)';
-
-    const bookingForm = {
-      tourName: 'Параглайдинг в Кемере Адрасан (1300m)',
-      currency: 'attach_money',
-      oldPrice: 165,
-      adultPrice: 150,
-      childPrice: 150,
-      babyPrice: 0,
-      adultAge: '+13',
-      childAge: '7-11',
-      babyAge: '0-6',
-      isBabySale: false,
-    };
-
-    const articleTitle = 'Параглайдинг в Кемере';
-
     const sliderImages = [
       slider1,
       slider2,
@@ -102,67 +85,12 @@ export default defineComponent({
       slider14,
     ];
 
-    const includes = [
-      'Все наши туристи застрахованы на сумму в 40000$',
-      'Необходимое снаряжение для полета на параплане',
-      'Услуга трансфера от и до отеля',
-    ];
-
-    const excludes = ['CD c видео и фотографиями', 'Любые личные расходы'];
-
-    const tourDetails = {
-      tourCost: `This tour is ${bookingForm.adultPrice} USD for adults. It's ${bookingForm.childPrice} USD for childs ages ${bookingForm.childAge}.`,
-      itemsBring: [
-        'Фотоаппарат',
-        'Вода',
-        'Полотенце',
-        'Купальник',
-        'Спортивную обувь',
-        'Солнцезащитные очки',
-        'Фотоаппарат',
-      ],
-      departureTimes: [],
-      returnTimes: [],
-      distance: [
-        'от Кемера - 47 км',
-        'от Анталии - 0 км',
-        'от Сиде - 73 км',
-        'от Алании - 133 км',
-      ],
-
-      hours: '6 часов',
-      days: 'Каждый день',
-    };
-
-    const faq = [
-      {
-        label: 'Question One',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-      },
-      {
-        label: 'Question Two',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-      },
-      {
-        label: 'Question Three',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-      },
-    ];
-
     return {
       imgDesktop,
       imgMobile,
-      breadCrumbsCategory,
-      breadCrumbsCategoryRoute,
-      breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
-      includes,
-      excludes,
-      faq,
-      bookingForm,
-      tourDetails,
+      api,
     };
   },
 });

@@ -89,8 +89,8 @@
       <div>
         <div class="q-px-md">
           <h1
-            class="my-title-font-heavy"
-            style="line-height: 3rem; font-size: 6vw; font-size: 3vh"
+            class="my-title-font-heavy text-red-6"
+            style="line-height: 3rem; font-size: 6vw; font-size: 4vh"
           >
             {{ articleTitle }}
           </h1>
@@ -205,21 +205,56 @@
 
           <q-expansion-item
             class="q-pb-sm"
-            icon="info"
-            :label="$t('tourCost')"
+            icon="flag"
+            :label="$t('tourProgram')"
             header-class="bg-info text-white"
             expand-icon-class="text-white"
           >
             <q-card class="bg-grey-3 my-text-font">
               <q-card-section>
-                {{ tourDetails.tourCost }}
+                <div
+                  v-for="(item, index) in tourDetails.tourProgram"
+                  :key="index"
+                >
+                  <q-icon name="chevron_right" size="24px" /> {{ item }}
+                </div>
               </q-card-section>
             </q-card>
           </q-expansion-item>
 
           <q-expansion-item
             class="q-pb-sm"
-            icon="info"
+            icon="payments"
+            :label="$t('tourCost')"
+            header-class="bg-info text-white"
+            expand-icon-class="text-white"
+          >
+            <q-card class="bg-grey-3 my-text-font">
+              <q-card-section>
+                <div>
+                  <q-icon name="chevron_right" size="24px" />
+                  Цена для взрослых ({{ bookingForm.adultAge }}) :
+                  {{ bookingForm.adultPrice }} {{ currency }}
+                </div>
+
+                <div>
+                  <q-icon name="chevron_right" size="24px" /> Цена для детей ({{
+                    bookingForm.childAge
+                  }}) : {{ bookingForm.childPrice }} {{ currency }}
+                </div>
+
+                <div>
+                  <q-icon name="chevron_right" size="24px" /> Цена для детей ({{
+                    bookingForm.babyAge
+                  }}) : {{ bookingForm.babyPrice }} {{ currency }}
+                </div>
+              </q-card-section>
+            </q-card>
+          </q-expansion-item>
+
+          <q-expansion-item
+            class="q-pb-sm"
+            icon="backpack"
             :label="$t('itemsBring')"
             header-class="bg-info text-white"
             expand-icon-class="text-white"
@@ -238,7 +273,7 @@
 
           <q-expansion-item
             class="q-pb-sm"
-            icon="info"
+            icon="departure_board"
             :label="$t('departureTimes')"
             header-class="bg-info text-white"
             expand-icon-class="text-white"
@@ -257,7 +292,7 @@
 
           <q-expansion-item
             class="q-pb-sm"
-            icon="info"
+            icon="keyboard_return"
             :label="$t('returnTimes')"
             header-class="bg-info text-white"
             expand-icon-class="text-white"
@@ -276,7 +311,7 @@
 
           <q-expansion-item
             class="q-pb-sm"
-            icon="info"
+            icon="fa-solid fa-map-location-dot"
             :label="$t('distance')"
             header-class="bg-info text-white"
             expand-icon-class="text-white"
@@ -398,7 +433,7 @@ export default defineComponent({
     relatedTours: { type: Object, required: false },
   },
   setup(props) {
-    const currency = ref(props.bookingForm.currency == 'euro' ? '€' : '$');
+    const currency = ref(props.bookingForm.currency == 'euro' ? 'Euro' : 'USD');
 
     const scrollToBookingForm = () => {
       document
@@ -425,9 +460,6 @@ h1
 h3
   font-size: 24px
   font-weight: bold
-
-p
-  font-size: 22px
 
 .articleFont
   font-size: 17px
