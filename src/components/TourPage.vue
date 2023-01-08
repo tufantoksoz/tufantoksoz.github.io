@@ -150,7 +150,10 @@
         <q-separator class="q-mt-lg" />
 
         <div class="q-px-md">
-          <h3 class="my-title-font-heavy q-my-xs" style="font-size: 20px">
+          <h3
+            class="my-title-font-heavy q-my-xs text-indigo-10"
+            style="font-size: 20px"
+          >
             {{ $t('priceIncludes') }}
           </h3>
 
@@ -174,7 +177,10 @@
         <q-separator class="q-mt-lg" />
 
         <div class="q-px-md">
-          <h3 class="my-title-font-heavy q-my-xs" style="font-size: 20px">
+          <h3
+            class="my-title-font-heavy q-my-xs text-indigo-10"
+            style="font-size: 20px"
+          >
             {{ $t('priceExcludes') }}
           </h3>
 
@@ -337,7 +343,7 @@
 
         <q-separator class="q-mt-lg" />
 
-        <h3 class="q-mb-none q-px-md">{{ $t('faq') }}</h3>
+        <h3 class="q-mb-none q-px-md text-indigo-10">{{ $t('faq') }}</h3>
 
         <div v-for="(item, index) in faq" :key="index">
           <q-expansion-item

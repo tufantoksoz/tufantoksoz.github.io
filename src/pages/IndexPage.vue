@@ -58,7 +58,7 @@
         />
       </div>
 
-      <div class="q-pt-sm">
+      <div class="q-pt-sm text-indigo-10">
         <span>{{ $t('724Support') }}</span>
       </div>
     </div>
@@ -68,7 +68,7 @@
         <q-img class="iconSize" src="~assets/homepage-icons/insurance.webp" />
       </div>
 
-      <div class="q-pt-sm">
+      <div class="q-pt-sm text-indigo-10">
         <span>{{ $t('freeInsurance') }}</span>
       </div>
     </div>
@@ -81,7 +81,7 @@
         />
       </div>
 
-      <div class="q-pt-sm">
+      <div class="q-pt-sm text-indigo-10">
         <span>{{ $t('payOnTheDay') }}</span>
       </div>
     </div>
@@ -91,7 +91,7 @@
         <q-img class="iconSize" src="~assets/homepage-icons/transfer.webp" />
       </div>
 
-      <div class="q-pt-sm">
+      <div class="q-pt-sm text-indigo-10">
         <span>{{ $t('freeTransfer') }}</span>
       </div>
     </div>
@@ -104,7 +104,7 @@
         />
       </div>
 
-      <div class="q-pt-sm">
+      <div class="q-pt-sm text-indigo-10">
         <span>{{ $t('noPrePaidBooking') }}</span>
       </div>
     </div>
@@ -114,14 +114,16 @@
         <q-img class="iconSize" src="~assets/homepage-icons/cheap-price.webp" />
       </div>
 
-      <div class="q-pt-sm">
+      <div class="q-pt-sm text-indigo-10">
         <span>{{ $t('bestPriceQuarantee') }}</span>
       </div>
     </div>
   </div>
 
   <div class="text-center">
-    <h1 class="q-ma-xs my-title-font-bold">{{ $t('popularDestinations') }}</h1>
+    <h1 class="q-ma-xs my-title-font-bold text-indigo-10">
+      {{ $t('popularDestinations') }}
+    </h1>
   </div>
 
   <div class="myContainer row justify-center">
@@ -223,7 +225,7 @@
   </div>
 
   <div class="text-center q-gutter-md q-pt-xl q-mb-none">
-    <h1 class="my-title-font-bold" style="margin-bottom: 0">
+    <h1 class="my-title-font-bold text-indigo-10" style="margin-bottom: 0">
       {{ $t('popularExcursions') }}
     </h1>
   </div>
