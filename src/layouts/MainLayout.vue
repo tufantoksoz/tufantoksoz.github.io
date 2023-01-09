@@ -34,6 +34,7 @@
           flat
           round
           icon="menu"
+          color="indigo-10"
           @click="toggleLeftDrawer"
         />
 
@@ -80,14 +81,19 @@
           <q-route-tab
             :to="{ path: '/' }"
             :label="$t('home')"
-            class="text-grey-9"
+            class="text-indigo-10"
           />
 
           <QMenuHover>
             <template #default="{ activatorAttr, menuAttr }">
-              <q-btn v-bind="activatorAttr" flat :label="$t('excursions')">
+              <q-btn
+                v-bind="activatorAttr"
+                :label="$t('excursions')"
+                flat
+                text-color="indigo-10"
+              >
                 <q-menu v-bind="menuAttr" auto-close fit>
-                  <q-list class="my-text-font">
+                  <q-list class="my-text-font text-indigo-10">
                     <q-item clickable :to="{ name: 'antalya' }">
                       <q-item-section>{{ $t('antalya') }}</q-item-section>
                     </q-item>
@@ -116,7 +122,7 @@
           <q-route-tab
             :to="{ name: 'contact' }"
             :label="$t('contact')"
-            class="text-grey-9"
+            class="text-indigo-10"
           />
         </q-tabs>
       </q-toolbar>
@@ -130,7 +136,7 @@
       behavior="mobile"
       bordered
     >
-      <q-scroll-area class="fit">
+      <q-scroll-area class="fit text-indigo-10">
         <q-list>
           <q-item clickable :active="false" v-ripple to="/">
             <q-item-section avatar>

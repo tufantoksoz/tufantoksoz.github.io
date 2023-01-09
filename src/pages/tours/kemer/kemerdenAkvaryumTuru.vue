@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
-      :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
       :tourDetails="tourDetails"
@@ -16,6 +14,7 @@
       :bookingForm="bookingForm"
     >
       <template v-slot:articleSummary>
+        <h1 class="text-red text-h4">Экскурсия в Аквариум из Кемера</h1>
         <p>
           Если вы отправились на отдых в Турцию с маленькими детьми, то навряд
           ли у вас получится поездить с ними на многочасовые экскурсии по горам,
@@ -83,8 +82,6 @@ export default defineComponent({
       childAge: '4-12',
       babyAge: '0-3',
     };
-
-    const articleTitle = 'Экскурсия в Аквариум из Кемера';
 
     const sliderImages = [
       slider1,
@@ -174,7 +171,6 @@ export default defineComponent({
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
       includes,

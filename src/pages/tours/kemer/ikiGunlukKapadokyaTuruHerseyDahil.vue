@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
-      :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
       :tourDetails="tourDetails"
@@ -16,12 +14,12 @@
       :bookingForm="bookingForm"
     >
       <template v-slot:articleSummary>
-        <p></p>
+        <h1 class="text-red text-h4">
+          Детали Экскурсии в Каппадокию (Все Включено)
+        </h1>
       </template>
 
-      <template v-slot:articleFullText>
-        <p></p>
-      </template>
+      <template v-slot:articleFullText> </template>
     </tour-page>
   </div>
 </template>
@@ -190,7 +188,6 @@ export default defineComponent({
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
       includes,

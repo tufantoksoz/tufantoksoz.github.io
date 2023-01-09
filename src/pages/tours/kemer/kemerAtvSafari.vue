@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
-      :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
       :tourDetails="tourDetails"
@@ -16,6 +14,7 @@
       :bookingForm="bookingForm"
     >
       <template v-slot:articleSummary>
+        <h1 class="text-red text-h4">Квадро Сафари в Кемере</h1>
         <p>
           Мы объединяем приключения и адреналин с сафари на квадроциклах в
           Кемере! Хотите совершить незабываемое сафари на квадроциклах в Кемере
@@ -79,8 +78,6 @@ export default defineComponent({
       babyAge: '0-5',
       isBabySale: false,
     };
-
-    const articleTitle = 'Квадро Сафари в Кемере';
 
     const sliderImages = [slider1, slider2, slider3, slider4, slider5, slider6];
 
@@ -149,7 +146,6 @@ export default defineComponent({
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
       includes,

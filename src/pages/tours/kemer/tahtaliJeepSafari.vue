@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
-      :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
       :tourDetails="tourDetails"
@@ -16,6 +14,10 @@
       :bookingForm="bookingForm"
     >
       <template v-slot:articleSummary>
+        <h1 class="text-red text-h4">
+          Экскурсия на Гору Тахталы на Джипах на Высоту 2200 м
+        </h1>
+
         <p>
           Тахталы - Эта самая высокая гора на Анталийском побережье. Конечно,
           поход на 2365 метров лишь с большой натяжкой можно назвать
@@ -165,7 +167,6 @@ export default defineComponent({
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
       includes,

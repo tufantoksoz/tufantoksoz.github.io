@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
-      :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
       :tourDetails="tourDetails"
@@ -16,6 +14,7 @@
       :bookingForm="bookingForm"
     >
       <template v-slot:articleSummary>
+        <h1 class="text-red text-h4">Прогулка на Яхте в Кемере</h1>
         <p>
           Экскурсия прогулка на яхте в Кемере начинается каждый день в 10:00 от
           пристани кемера продолжается до 16:30 вечера. Во время нашего тура
@@ -77,8 +76,6 @@ export default defineComponent({
       childAge: '6-11',
       babyAge: '0-5',
     };
-
-    const articleTitle = 'Прогулка на Яхте в Кемере';
 
     const sliderImages = [
       slider1,
@@ -163,7 +160,6 @@ export default defineComponent({
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
       includes,

@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
-      :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
       :tourDetails="tourDetails"
@@ -16,12 +14,10 @@
       :bookingForm="bookingForm"
     >
       <template v-slot:articleSummary>
-        <p></p>
+        <h1 class="text-red text-h4">Полёт на Воздушном Шаре в Памуккале</h1>
       </template>
 
-      <template v-slot:articleFullText>
-        <p></p>
-      </template>
+      <template v-slot:articleFullText> </template>
     </tour-page>
   </div>
 </template>
@@ -59,8 +55,6 @@ export default defineComponent({
       childAge: '4-11',
       babyAge: '0-3',
     };
-
-    const articleTitle = 'Полёт на Воздушном Шаре в Памуккале';
 
     const sliderImages = [
       slider1,
@@ -153,7 +147,6 @@ export default defineComponent({
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
       includes,

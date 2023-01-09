@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
-      :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
       :tourDetails="tourDetails"
@@ -16,6 +14,7 @@
       :bookingForm="bookingForm"
     >
       <template v-slot:articleSummary>
+        <h1 class="text-red text-h4">Аквапарк The Land of Legends из Кемера</h1>
         <p>
           Экскурсия в аквапарк The land of legends из Кемера - это возможность
           посетить самый большой парк развлечений и отдыха в Кемере, в Турции.
@@ -85,8 +84,6 @@ export default defineComponent({
       childAge: '2-11',
       babyAge: '0-2',
     };
-
-    const articleTitle = 'Аквапарк The Land of Legends из Кемера';
 
     const sliderImages = [
       slider1,
@@ -187,7 +184,6 @@ export default defineComponent({
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
       includes,

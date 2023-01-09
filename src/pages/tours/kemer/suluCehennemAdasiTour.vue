@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
-      :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
       :tourDetails="tourDetails"
@@ -16,6 +14,10 @@
       :bookingForm="bookingForm"
     >
       <template v-slot:articleSummary>
+        <h1 class="text-red text-h4">
+          Экскурсия на Остров «Сулу ада» (на закате)
+        </h1>
+
         <p>
           Анталия — не только центр турецкого туризма, но и старинный город с
           богатой историей. Наша обзорная экскурсия по Анталии из Кемера
@@ -74,8 +76,6 @@ export default defineComponent({
       childAge: '4-11',
       babyAge: '0-3',
     };
-
-    const articleTitle = 'Экскурсия на Остров «Сулу ада» (на закате)';
 
     const sliderImages = [slider1, slider2, slider3, slider4, slider5, slider6];
 
@@ -150,7 +150,6 @@ export default defineComponent({
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
       includes,

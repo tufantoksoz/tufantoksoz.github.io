@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
-      :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
       :tourDetails="tourDetails"
@@ -16,6 +14,8 @@
       :bookingForm="bookingForm"
     >
       <template v-slot:articleSummary>
+        <h1 class="text-red text-h4">Экскурсия в Каньон Гёйнюк</h1>
+
         <p>
           Ещё одно прекраснейшее место в Кемере! Каньон Гейнюк! Где красивейшая
           бирюзовая вода горной реки сочетается в великолепными видами гор!
@@ -108,8 +108,6 @@ export default defineComponent({
       babyAge: '0-5',
     };
 
-    const articleTitle = 'Экскурсия в Каньон Гёйнюк';
-
     const sliderImages = [slider1, slider2, slider3];
 
     const includes = [
@@ -186,7 +184,6 @@ export default defineComponent({
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
       includes,

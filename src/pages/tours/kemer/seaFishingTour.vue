@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
-      :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
       :tourDetails="tourDetails"
@@ -16,6 +14,7 @@
       :bookingForm="bookingForm"
     >
       <template v-slot:articleSummary>
+        <h1 class="text-red text-h4">Морская Рыбалка в Кемере</h1>
         <p>
           Для всех кто любит порыбачить и проситель с удочкой в тишине и покое -
           морская рыбалка в Кемере будет настоящим подарком! Средиземное море
@@ -77,8 +76,6 @@ export default defineComponent({
       childAge: '6-11',
       babyAge: '0-5',
     };
-
-    const articleTitle = 'Морская Рыбалка в Кемере';
 
     const sliderImages = [
       slider1,
@@ -156,7 +153,6 @@ export default defineComponent({
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
       includes,

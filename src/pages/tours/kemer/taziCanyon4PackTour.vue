@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
-      :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
       :tourDetails="tourDetails"
@@ -16,6 +14,10 @@
       :bookingForm="bookingForm"
     >
       <template v-slot:articleSummary>
+        <h1 class="text-red text-h4">
+          Экскурсия в Тазы каньон - Рафтинг - Зиплайн - Джип Сафари
+        </h1>
+
         <p>
           Хотите увидеть Марсианские красоты? И чтобы это было недалеко от
           Анталии? Тогда вам определённо нужно посетить каньон Тазы из Кемера -
@@ -77,9 +79,6 @@ export default defineComponent({
       childAge: '6-11',
       babyAge: '0-5',
     };
-
-    const articleTitle =
-      'Экскурсия в Тазы каньон - Рафтинг - Зиплайн - Джип Сафари';
 
     const sliderImages = [
       slider1,
@@ -168,7 +167,6 @@ export default defineComponent({
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
       includes,

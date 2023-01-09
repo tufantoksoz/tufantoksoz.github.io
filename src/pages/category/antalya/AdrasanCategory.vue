@@ -2,7 +2,7 @@
   <div>
     <category-component :categoryName="categoryName"> </category-component>
 
-    <div class="row pageContainer">
+    <div class="row container">
       <tour-card
         :title="title"
         :date="date"

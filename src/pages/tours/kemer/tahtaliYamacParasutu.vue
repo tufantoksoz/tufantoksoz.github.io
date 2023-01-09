@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
-      :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
       :tourDetails="tourDetails"
@@ -16,12 +14,10 @@
       :bookingForm="bookingForm"
     >
       <template v-slot:articleSummary>
-        <p></p>
+        <h1 class="text-red text-h4">Параглайдинг с Горы Тахталы 2365m</h1>
       </template>
 
-      <template v-slot:articleFullText>
-        <p></p>
-      </template>
+      <template v-slot:articleFullText> </template>
     </tour-page>
   </div>
 </template>
@@ -62,8 +58,6 @@ export default defineComponent({
       babyAge: '0-5',
       isBabySale: false,
     };
-
-    const articleTitle = 'Параглайдинг с Горы Тахталы 2365m';
 
     const sliderImages = [
       slider1,
@@ -126,7 +120,6 @@ export default defineComponent({
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
       includes,

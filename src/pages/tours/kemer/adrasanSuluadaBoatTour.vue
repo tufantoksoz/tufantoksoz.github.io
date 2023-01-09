@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="api.breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="api.breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="api.articleTitle"
-      :articleImg="articleImg"
       :includes="api.includes"
       :excludes="api.excludes"
       :tourDetails="api.tourDetails"
@@ -16,6 +14,8 @@
       :bookingForm="api.bookingForm"
     >
       <template v-slot:articleSummary>
+        <h1 class="text-red text-h4">Экскурсия на Остров Сулуада из Кемера</h1>
+
         <p>
           Как вы думаете, можно ли в наши дни на средиземноморском побережье
           Анталии найти необитаемый остров? Оказывается - можно! Экскурсия на

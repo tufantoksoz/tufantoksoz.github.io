@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
-      :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
       :tourDetails="tourDetails"
@@ -16,6 +14,8 @@
       :bookingForm="bookingForm"
     >
       <template v-slot:articleSummary>
+        <h1 class="text-red text-h4">Экскурсия в Дельфинарий в Кемере</h1>
+
         <p>
           Добро пожаловать в Дельфинарий в Кемере - Шоу Дельфинов в Кемере.
           Волшебная атмосфера мира удивительных дельфинов и милых ластоногих
@@ -71,8 +71,6 @@ export default defineComponent({
       childAge: '3-12',
       babyAge: '0-2',
     };
-
-    const articleTitle = 'Экскурсия в Дельфинарий в Кемере';
 
     const sliderImages = [slider1, slider2, slider3, slider4, slider5, slider6];
 
@@ -139,7 +137,6 @@ export default defineComponent({
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
       includes,

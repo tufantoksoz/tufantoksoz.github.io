@@ -1,16 +1,22 @@
 <template>
-  <q-img
-    class="bannerSizeDesktop desktop-only"
-    :src="imgDesktop"
-    fit="fill"
-  ></q-img>
-  <q-img
-    class="bannerSizeMobile mobile-only"
-    :src="imgMobile"
-    fit="fill"
-  ></q-img>
+  <swiper
+    :modules="swiperModules"
+    :slides-per-view="2"
+    :space-between="8"
+    loop
+    autoplay
+    navigation
+    :breakpoints="{ 800: { slidesPerView: 2 }, 0: { slidesPerView: 1 } }"
+  >
+    <swiper-slide
+      v-for="(item, index) in sliderImages"
+      :key="index"
+      :name="index"
+      ><q-img :height="$q.screen.width >= 800 ? '500px' : '350px'" :src="item"
+    /></swiper-slide>
+  </swiper>
 
-  <div class="row pageContainer">
+  <div class="row container">
     <div class="col-md-8 col-sm-12">
       <q-breadcrumbs class="text-brown q-pa-md q-gutter-sm desktop-only">
         <template v-slot:separator>
@@ -32,128 +38,65 @@
         <div class="q-gutter-sm text-center">
           <q-chip
             :ripple="false"
-            color="red"
+            color="orange"
             icon="payments"
             text-color="white"
-            :label="currency + ' ' + bookingForm.adultPrice"
-          >
-          </q-chip>
+            :label="bookingForm.adultPrice + ' ' + currency"
+          />
 
           <q-chip
             :ripple="false"
-            color="red"
+            color="orange"
             icon="verified_user"
             text-color="white"
             :label="$t('insurance')"
-          >
-          </q-chip>
+          />
 
           <q-chip
             :ripple="false"
-            color="red"
+            color="orange"
             icon="restaurant"
             text-color="white"
             :label="$t('dinner')"
-          >
-          </q-chip>
+          />
 
           <q-chip
             :ripple="false"
-            color="red"
+            color="orange"
             icon="directions_bus"
             text-color="white"
             :label="$t('transfer')"
-          >
-          </q-chip>
+          />
 
           <q-chip
             :ripple="false"
-            color="red"
+            color="orange"
             icon="schedule"
             text-color="white"
             :label="tourDetails.hours"
-          >
-          </q-chip>
+          />
 
           <q-chip
             :ripple="false"
-            color="red"
+            color="orange"
             icon="event_available"
             text-color="white"
             :label="tourDetails.days"
-          >
-          </q-chip>
+          />
         </div>
       </div>
 
       <div>
         <div class="q-px-md">
-          <h1
-            class="my-title-font-heavy text-red-6"
-            style="line-height: 3rem; font-size: 6vw; font-size: 4vh"
-          >
-            {{ articleTitle }}
-          </h1>
-
           <div class="articleFont">
             <slot name="articleSummary"></slot>
           </div>
         </div>
 
-        <q-separator class="q-mb-lg" />
-
-        <div class="q-pa-sm">
-          <q-carousel
-            class="rounded-borders"
-            swipeable
-            animated
-            arrows
-            control-color="primary"
-            control-type="regular"
-            v-model="slide"
-            v-model:fullscreen="fullscreen"
-            infinite
-            :autoplay="autoplay"
-            transition-prev="slide-right"
-            transition-next="slide-left"
-          >
-            <q-carousel-slide
-              v-for="(item, index) in sliderImages"
-              :key="index"
-              :name="index"
-            >
-              <q-img
-                :src="item"
-                fit="contain"
-                height="inherit"
-                loading="lazy"
-                no-spinner
-              />
-            </q-carousel-slide>
-
-            <template v-slot:control>
-              <q-carousel-control position="bottom-right" :offset="[18, 18]">
-                <q-btn
-                  push
-                  round
-                  dense
-                  color="white"
-                  text-color="primary"
-                  :icon="fullscreen ? 'fullscreen_exit' : 'fullscreen'"
-                  @click="fullscreen = !fullscreen"
-                />
-              </q-carousel-control>
-            </template>
-          </q-carousel>
-        </div>
-
-        <q-separator class="q-mt-lg" />
+        <q-separator class="q-mx-md" />
 
         <div class="q-px-md">
-          <h3
-            class="my-title-font-heavy q-my-xs text-indigo-10"
-            style="font-size: 20px"
-          >
+          <h3 class="q-my-xs text-indigo-10" style="font-size: 20px">
             {{ $t('priceIncludes') }}
           </h3>
 
@@ -177,10 +120,7 @@
         <q-separator class="q-mt-lg" />
 
         <div class="q-px-md">
-          <h3
-            class="my-title-font-heavy q-my-xs text-indigo-10"
-            style="font-size: 20px"
-          >
+          <h3 class="q-my-xs text-indigo-10" style="font-size: 20px">
             {{ $t('priceExcludes') }}
           </h3>
 
@@ -205,7 +145,7 @@
 
         <!-- Tour Details Expansion Section Start -->
         <div class="q-px-md">
-          <h3 class="my-title-font-heavy q-my-xs" style="font-size: 20px">
+          <h3 class="q-my-xs text-indigo-10" style="font-size: 20px">
             {{ $t('tourDetails') }}
           </h3>
 
@@ -337,11 +277,7 @@
           <slot name="articleFullText"></slot>
         </div>
 
-        <div class="q-pa-sm">
-          <q-img :src="articleImg" />
-        </div>
-
-        <q-separator class="q-mt-lg" />
+        <q-separator class="q-my-md" />
 
         <h3 class="q-mb-none q-px-md text-indigo-10">{{ $t('faq') }}</h3>
 
@@ -419,9 +355,15 @@
 import { defineComponent, ref } from 'vue';
 import BookingForm from './BookingForm.vue';
 
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay, Navigation } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/navigation';
+
 export default defineComponent({
   name: 'TourPage',
-  components: { 'booking-form': BookingForm },
+  components: { 'booking-form': BookingForm, Swiper, SwiperSlide },
   props: {
     imgDesktop: String,
     imgMobile: String,
@@ -429,8 +371,6 @@ export default defineComponent({
     breadCrumbsCategoryRoute: null,
     breadCrumbsTourLabel: String,
     sliderImages: Object,
-    articleTitle: String,
-    articleImg: String,
     includes: Array,
     excludes: Array,
     tourDetails: { type: Object, required: true },
@@ -438,6 +378,7 @@ export default defineComponent({
     bookingForm: { type: Object, required: true },
     relatedTours: { type: Object, required: false },
   },
+
   setup(props) {
     const currency = ref(props.bookingForm.currency == 'euro' ? 'Euro' : 'USD');
 
@@ -452,17 +393,13 @@ export default defineComponent({
       autoplay: ref(true),
       currency,
       scrollToBookingForm,
-      fullscreen: ref(false),
+      swiperModules: [Autoplay, Navigation],
     };
   },
 });
 </script>
 
 <style lang="sass" scoped>
-h1
-  font-size: 28px
-  font-weight: bold
-
 h3
   font-size: 24px
   font-weight: bold
@@ -474,9 +411,4 @@ h3
 .relatedTourCardItem
   height: 300px
   width: 300px
-
-@media (max-width: 1024px)
-    .pageContainer
-      padding-left: 0%
-      padding-right: 0%
 </style>

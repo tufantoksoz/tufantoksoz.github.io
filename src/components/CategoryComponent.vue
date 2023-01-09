@@ -1,5 +1,5 @@
 <template>
-  <div class="pageContainer q-mx-sm">
+  <div class="container q-mx-sm">
     <div class="text-center q-pa-md">
       <h1 class="my-title-font-bold text-h4">
         {{ $t(`${categoryName}`) }} {{ $t('excursions') }}

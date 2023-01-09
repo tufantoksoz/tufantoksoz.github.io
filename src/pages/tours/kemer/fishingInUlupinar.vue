@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
-      :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
       :tourDetails="tourDetails"
@@ -16,6 +14,8 @@
       :bookingForm="bookingForm"
     >
       <template v-slot:articleSummary>
+        <h1 class="text-red text-h4">Пикник и Рыбалка в Улупинаре</h1>
+
         <p>
           Представляем вашему вниманию экскурсию рыбалка в Улупинаре - это
           прекрасный уголок Анталии расположенный в регионе Кемер, на склонах
@@ -70,8 +70,6 @@ export default defineComponent({
       childAge: '5-11',
       babyAge: '0-4',
     };
-
-    const articleTitle = 'Пикник и Рыбалка в Улупинаре';
 
     const sliderImages = [
       slider1,
@@ -155,7 +153,6 @@ export default defineComponent({
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
       includes,

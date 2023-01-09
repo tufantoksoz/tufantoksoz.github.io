@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
-      :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
       :tourDetails="tourDetails"
@@ -16,6 +14,7 @@
       :bookingForm="bookingForm"
     >
       <template v-slot:articleSummary>
+        <h1 class="text-red text-h4">Прогулка на Лошадях в Кемере</h1>
         <p>
           Экскурсия прогулка на лошадях в Кемере - идеальный выбор для тех, кто
           хочет провести активный день и при этом подружиться с лошадьми,
@@ -77,8 +76,6 @@ export default defineComponent({
       childAge: '4-12',
       babyAge: '0-3',
     };
-
-    const articleTitle = 'Прогулка на Лошадях в Кемере';
 
     const sliderImages = [slider1, slider2, slider3, slider4, slider5, slider6];
 
@@ -146,7 +143,6 @@ export default defineComponent({
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
       includes,

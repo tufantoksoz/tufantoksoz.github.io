@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
-      :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
       :tourDetails="tourDetails"
@@ -16,7 +14,7 @@
       :bookingForm="bookingForm"
     >
       <template v-slot:articleSummary>
-        <p></p>
+        <h1 class="text-red text-h4">Экскурсия в Динопарк в Кемере</h1>
       </template>
 
       <template v-slot:articleFullText>
@@ -75,8 +73,6 @@ export default defineComponent({
       childAge: '3-12',
       babyAge: '0-2',
     };
-
-    const articleTitle = 'Экскурсия в Динопарк в Кемере';
 
     const sliderImages = [
       slider1,
@@ -156,7 +152,6 @@ export default defineComponent({
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
       includes,

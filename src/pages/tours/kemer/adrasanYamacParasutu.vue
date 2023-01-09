@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="api.breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="api.breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="api.articleTitle"
-      :articleImg="articleImg"
       :includes="api.includes"
       :excludes="api.excludes"
       :tourDetails="api.tourDetails"
@@ -16,7 +14,7 @@
       :bookingForm="api.bookingForm"
     >
       <template v-slot:articleSummary>
-        <p></p>
+        <h1 class="text-red text-h4">Параглайдинг в Кемере Адрасан (1300m)</h1>
       </template>
 
       <template v-slot:articleFullText>

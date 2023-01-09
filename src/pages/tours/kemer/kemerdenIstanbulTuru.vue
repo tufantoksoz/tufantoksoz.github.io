@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
-      :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
       :tourDetails="tourDetails"
@@ -16,6 +14,7 @@
       :bookingForm="bookingForm"
     >
       <template v-slot:articleSummary>
+        <h1 class="text-red text-h4">Экскурсия в Стамбул из Кемера</h1>
         <p>
           Этот город переименовывали несколько раз, Византия, затем
           Константинополь, сейчас же название города всем известно – Стамбул. Во
@@ -90,8 +89,6 @@ export default defineComponent({
       babyAge: '0-2',
     };
 
-    const articleTitle = 'Экскурсия в Стамбул из Кемера';
-
     const sliderImages = [
       slider1,
       slider2,
@@ -160,7 +157,6 @@ export default defineComponent({
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
       includes,

@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
-      :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
       :tourDetails="tourDetails"
@@ -16,6 +14,8 @@
       :bookingForm="bookingForm"
     >
       <template v-slot:articleSummary>
+        <h1 class="text-red text-h4">Аквапарк Долусу в Кемере</h1>
+
         <p>
           Откройте для себя аквапарк в Кемере (DoluSu Park). Это один из
           крупнейших аквапарков под открытым небом на Анталийском побережье.
@@ -69,8 +69,6 @@ export default defineComponent({
       childAge: '5-11',
       babyAge: '0-4',
     };
-
-    const articleTitle = 'Аквапарк Долусу в Кемере';
 
     const sliderImages = [
       slider1,
@@ -152,7 +150,6 @@ export default defineComponent({
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
       includes,

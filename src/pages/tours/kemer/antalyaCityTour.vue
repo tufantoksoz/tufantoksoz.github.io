@@ -7,8 +7,6 @@
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :articleTitle="articleTitle"
-      :articleImg="articleImg"
       :includes="includes"
       :excludes="excludes"
       :tourDetails="tourDetails"
@@ -16,6 +14,10 @@
       :bookingForm="bookingForm"
     >
       <template v-slot:articleSummary>
+        <h1 class="text-red text-h4">
+          Обзорная Экскурсия по Анталии из Кемера
+        </h1>
+
         <p>
           Вы отдыхаете в Кемере и окрестностях и хотели бы увидеть самые
           посещаемые, красивые, богатые историей
@@ -244,8 +246,6 @@ export default defineComponent({
       babyAge: '0-5',
     };
 
-    const articleTitle = 'Обзорная Экскурсия по Анталии из Кемера';
-
     const sliderImages = [
       slider1,
       slider2,
@@ -327,7 +327,6 @@ export default defineComponent({
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
-      articleTitle,
       sliderImages,
       articleImg,
       includes,
