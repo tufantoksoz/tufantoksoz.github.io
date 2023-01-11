@@ -1,8 +1,6 @@
 <template>
   <div>
     <tour-page
-      :imgDesktop="imgDesktop"
-      :imgMobile="imgMobile"
       :breadCrumbsCategory="breadCrumbsCategory"
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
@@ -41,8 +39,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TourPage from 'components/TourPage.vue';
-import imgDesktop from 'assets/tour-images/sea-fishing/desktop/sea-fishing.webp';
-import imgMobile from 'assets/tour-images/sea-fishing/mobile/sea-fishing.webp';
 import slider1 from 'assets/tour-images/sea-fishing/slider/sea-fishing-1.webp';
 import slider2 from 'assets/tour-images/sea-fishing/slider/sea-fishing-2.webp';
 import slider3 from 'assets/tour-images/sea-fishing/slider/sea-fishing-3.webp';
@@ -56,7 +52,6 @@ import slider10 from 'assets/tour-images/sea-fishing/slider/sea-fishing-10.webp'
 import slider11 from 'assets/tour-images/sea-fishing/slider/sea-fishing-11.webp';
 import slider12 from 'assets/tour-images/sea-fishing/slider/sea-fishing-12.webp';
 import slider13 from 'assets/tour-images/sea-fishing/slider/sea-fishing-13.webp';
-import articleImg from 'assets/tour-images/sea-fishing/article/sea-fishing.webp';
 
 export default defineComponent({
   components: { 'tour-page': TourPage },
@@ -148,13 +143,10 @@ export default defineComponent({
     ];
 
     return {
-      imgDesktop,
-      imgMobile,
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
       sliderImages,
-      articleImg,
       includes,
       excludes,
       faq,

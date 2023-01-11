@@ -1,8 +1,6 @@
 <template>
   <div>
     <tour-page
-      :imgDesktop="imgDesktop"
-      :imgMobile="imgMobile"
       :breadCrumbsCategory="breadCrumbsCategory"
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
@@ -27,8 +25,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TourPage from 'components/TourPage.vue';
-import imgDesktop from 'assets/tour-images/cappadocia-tour/desktop/cappadocia-tour.webp';
-import imgMobile from 'assets/tour-images/cappadocia-tour/mobile/cappadocia-tour.webp';
 import slider1 from 'assets/tour-images/cappadocia-tour/slider/cappadocia-tour-1.webp';
 import slider2 from 'assets/tour-images/cappadocia-tour/slider/cappadocia-tour-2.webp';
 import slider3 from 'assets/tour-images/cappadocia-tour/slider/cappadocia-tour-3.webp';
@@ -56,8 +52,6 @@ import slider24 from 'assets/tour-images/cappadocia-tour/slider/cappadocia-tour-
 import slider25 from 'assets/tour-images/cappadocia-tour/slider/cappadocia-tour-25.webp';
 import slider26 from 'assets/tour-images/cappadocia-tour/slider/cappadocia-tour-26.webp';
 
-import articleImg from 'assets/tour-images/cappadocia-tour/article/cappadocia-tour.webp';
-
 export default defineComponent({
   components: { 'tour-page': TourPage },
   setup() {
@@ -76,8 +70,6 @@ export default defineComponent({
       childAge: '4-7',
       babyAge: '0-3',
     };
-
-    const articleTitle = 'Детали Экскурсии в Каппадокию (Все Включено)';
 
     const sliderImages = [
       slider1,
@@ -183,13 +175,10 @@ export default defineComponent({
     ];
 
     return {
-      imgDesktop,
-      imgMobile,
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
       sliderImages,
-      articleImg,
       includes,
       excludes,
       faq,

@@ -8,6 +8,10 @@ const routes: RouteRecordRaw[] = [
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
       {
+        path: 'test',
+        component: () => import('pages/testPage.vue'),
+      },
+      {
         path: 'contact',
         name: 'contact',
         component: () => import('pages/ContactPage.vue'),
@@ -192,19 +196,9 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/category/antalya/AlanyaCategory.vue'),
       },
       {
-        path: 'manavgat',
-        name: 'manavgat',
-        component: () => import('pages/category/antalya/ManavgatCategory.vue'),
-      },
-      {
         path: 'side',
         name: 'side',
         component: () => import('pages/category/antalya/SideCategory.vue'),
-      },
-      {
-        path: 'adrasan',
-        name: 'adrasan',
-        component: () => import('pages/category/antalya/AdrasanCategory.vue'),
       },
     ],
   },

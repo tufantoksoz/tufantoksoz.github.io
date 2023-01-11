@@ -335,7 +335,7 @@
       class="stickyBtn"
       position="bottom"
       expand
-      v-if="$q.platform.is.mobile"
+      v-if="$q.screen.width <= 1024"
     >
       <q-btn
         @click="scrollToBookingForm"
@@ -353,20 +353,18 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
+import { useMeta } from 'quasar';
 import BookingForm from './BookingForm.vue';
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay, Navigation } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import 'swiper/css/navigation';
+
+import 'swiper/swiper-bundle.min.css';
 
 export default defineComponent({
   name: 'TourPage',
   components: { 'booking-form': BookingForm, Swiper, SwiperSlide },
   props: {
-    imgDesktop: String,
-    imgMobile: String,
     breadCrumbsCategory: String,
     breadCrumbsCategoryRoute: null,
     breadCrumbsTourLabel: String,
@@ -377,9 +375,12 @@ export default defineComponent({
     faq: Object,
     bookingForm: { type: Object, required: true },
     relatedTours: { type: Object, required: false },
+    meta: { type: null, required: false },
   },
 
   setup(props) {
+    useMeta(props.meta);
+
     const currency = ref(props.bookingForm.currency == 'euro' ? 'Euro' : 'USD');
 
     const scrollToBookingForm = () => {

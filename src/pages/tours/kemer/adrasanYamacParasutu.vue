@@ -1,8 +1,6 @@
 <template>
   <div>
     <tour-page
-      :imgDesktop="imgDesktop"
-      :imgMobile="imgMobile"
       :breadCrumbsCategory="api.breadCrumbsCategory"
       :breadCrumbsCategoryRoute="api.breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="api.breadCrumbsTourLabel"
@@ -43,8 +41,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TourPage from 'components/TourPage.vue';
-import imgDesktop from 'assets/tour-images/adrasan-yamac-parasutu/desktop/yamac-parasutu.webp';
-import imgMobile from 'assets/tour-images/adrasan-yamac-parasutu/mobile/yamac-parasutu.webp';
 import slider1 from 'assets/tour-images/adrasan-yamac-parasutu/slider/yamac-parasutu-1.webp';
 import slider2 from 'assets/tour-images/adrasan-yamac-parasutu/slider/yamac-parasutu-2.webp';
 import slider3 from 'assets/tour-images/adrasan-yamac-parasutu/slider/yamac-parasutu-3.webp';
@@ -59,7 +55,6 @@ import slider11 from 'assets/tour-images/adrasan-yamac-parasutu/slider/yamac-par
 import slider12 from 'assets/tour-images/adrasan-yamac-parasutu/slider/yamac-parasutu-12.webp';
 import slider13 from 'assets/tour-images/adrasan-yamac-parasutu/slider/yamac-parasutu-13.webp';
 import slider14 from 'assets/tour-images/adrasan-yamac-parasutu/slider/yamac-parasutu-14.webp';
-import articleImg from 'assets/tour-images/adrasan-yamac-parasutu/article/yamac-parasutu.webp';
 
 import api from 'src/static/api/tours/kemer/adrasan-yamac-parasutu.json';
 
@@ -84,10 +79,7 @@ export default defineComponent({
     ];
 
     return {
-      imgDesktop,
-      imgMobile,
       sliderImages,
-      articleImg,
       api,
     };
   },

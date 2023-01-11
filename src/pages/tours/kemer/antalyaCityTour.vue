@@ -1,17 +1,16 @@
 <template>
   <div>
     <tour-page
-      :imgDesktop="imgDesktop"
-      :imgMobile="imgMobile"
-      :breadCrumbsCategory="breadCrumbsCategory"
-      :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
-      :breadCrumbsTourLabel="breadCrumbsTourLabel"
+      :breadCrumbsCategory="api.breadCrumbsCategory"
+      :breadCrumbsCategoryRoute="api.breadCrumbsCategoryRoute"
+      :breadCrumbsTourLabel="api.breadCrumbsTourLabel"
       :sliderImages="sliderImages"
-      :includes="includes"
-      :excludes="excludes"
-      :tourDetails="tourDetails"
-      :faq="faq"
-      :bookingForm="bookingForm"
+      :includes="api.includes"
+      :excludes="api.excludes"
+      :tourDetails="api.tourDetails"
+      :faq="api.faq"
+      :bookingForm="api.bookingForm"
+      :meta="api.metaData"
     >
       <template v-slot:articleSummary>
         <h1 class="text-red text-h4">
@@ -213,39 +212,20 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TourPage from 'components/TourPage.vue';
-import imgDesktop from 'assets/tour-images/antalya-city-tour/desktop/antalya-city-tour.webp';
-import imgMobile from 'assets/tour-images/antalya-city-tour/mobile/antalya-city-tour.webp';
+
 import slider1 from 'assets/tour-images/antalya-city-tour/slider/antalya-city-tour-1.webp';
 import slider2 from 'assets/tour-images/antalya-city-tour/slider/antalya-city-tour-2.webp';
 import slider3 from 'assets/tour-images/antalya-city-tour/slider/antalya-city-tour-3.webp';
-
 import slider4 from 'assets/tour-images/antalya-city-tour/slider/antalya-city-tour-4.webp';
 import slider5 from 'assets/tour-images/antalya-city-tour/slider/antalya-city-tour-5.webp';
 import slider6 from 'assets/tour-images/antalya-city-tour/slider/antalya-city-tour-6.webp';
 import slider7 from 'assets/tour-images/antalya-city-tour/slider/antalya-city-tour-7.webp';
 import slider8 from 'assets/tour-images/antalya-city-tour/slider/antalya-city-tour-8.webp';
-
-import articleImg from 'assets/tour-images/antalya-city-tour/article/antalya-city-tour.webp';
+import api from 'src/static/api/tours/kemer/antalya-city-tour.json';
 
 export default defineComponent({
   components: { 'tour-page': TourPage },
   setup() {
-    const breadCrumbsCategory = 'Kemer';
-    const breadCrumbsCategoryRoute = '/antalya/kemer';
-    const breadCrumbsTourLabel = 'Обзорная Экскурсия по Анталии';
-
-    const bookingForm = {
-      tourName: 'Обзорная Экскурсия по Анталии из Кемера',
-      currency: 'attach_money',
-      oldPrice: 28,
-      adultPrice: 25,
-      childPrice: 20,
-      babyPrice: 0,
-      adultAge: '+12',
-      childAge: '6-11',
-      babyAge: '0-5',
-    };
-
     const sliderImages = [
       slider1,
       slider2,
@@ -257,83 +237,9 @@ export default defineComponent({
       slider8,
     ];
 
-    const includes = [
-      'Трансфер (Мы забираем вас из вашего отеля и обротно отвозим в ваш отель)',
-      'Aвтобус с кондиционером',
-      'Страховка',
-      'Услуга гида',
-      'Обед',
-      'Входной билет в Тюнектепе фуникулёр',
-    ];
-
-    const excludes = [
-      'Любые личные расходы (фотографии, сувениры и т.д.)',
-      'Любые напитки во время экскурсии',
-      'Прогулка на яхте (по желанию)',
-    ];
-
-    const tourDetails = {
-      tourCost: `This tour is ${bookingForm.adultPrice} USD for adults. It's ${bookingForm.childPrice} USD for childs ages ${bookingForm.childAge}. It is free for babies ${bookingForm.babyAge} years old.`,
-      itemsBring: [
-        'Фотоаппарат',
-        'Солнцезащитные очки',
-        'Деньги на личные расходы',
-      ],
-      departureTimes: [
-        'В 08:15 из отелей Текирова',
-        'В 08:30 из отелей Чамюва',
-        'В 08:45 из отелей Кириш',
-        'В 09:00 из отелей Кемер',
-        'В 09:15 из отелей Гейнюк',
-        'В 09:20-09:30 из отелей Бельдибы',
-      ],
-      returnTimes: [
-        'В 17:00-18:00 из отелей Бельдибы',
-        'В 17:00-18:00 из отелей Гейнюк',
-        'В 17:00-18:00 из отелей Кемер',
-        'В 17:00-18:00 из отелей Кириш',
-        'В 17:00-18:00 из отелей Чамюва',
-        'В 17:00-18:00 из отелей Текирова',
-      ],
-      distance: [
-        'от Кемера - 47 км',
-        'от Анталии - 0 км',
-        'от Сиде - 73 км',
-        'от Алании - 133 км',
-      ],
-
-      hours: '9 часов',
-      days: 'Вт. Пт. Вс.',
-    };
-
-    const faq = [
-      {
-        label: 'Question One',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-      },
-      {
-        label: 'Question Two',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-      },
-      {
-        label: 'Question Three',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-      },
-    ];
-
     return {
-      imgDesktop,
-      imgMobile,
-      breadCrumbsCategory,
-      breadCrumbsCategoryRoute,
-      breadCrumbsTourLabel,
       sliderImages,
-      articleImg,
-      includes,
-      excludes,
-      faq,
-      bookingForm,
-      tourDetails,
+      api,
     };
   },
 });

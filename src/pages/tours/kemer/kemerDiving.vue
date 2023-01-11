@@ -1,8 +1,6 @@
 <template>
   <div>
     <tour-page
-      :imgDesktop="imgDesktop"
-      :imgMobile="imgMobile"
       :breadCrumbsCategory="breadCrumbsCategory"
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
@@ -48,8 +46,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TourPage from 'components/TourPage.vue';
-import imgDesktop from 'assets/tour-images/kemer-diving/desktop/kemer-diving.webp';
-import imgMobile from 'assets/tour-images/kemer-diving/mobile/kemer-diving.webp';
 import slider1 from 'assets/tour-images/kemer-diving/slider/kemer-diving-1.webp';
 import slider2 from 'assets/tour-images/kemer-diving/slider/kemer-diving-2.webp';
 import slider3 from 'assets/tour-images/kemer-diving/slider/kemer-diving-3.webp';
@@ -58,7 +54,6 @@ import slider5 from 'assets/tour-images/kemer-diving/slider/kemer-diving-5.webp'
 import slider6 from 'assets/tour-images/kemer-diving/slider/kemer-diving-6.webp';
 import slider7 from 'assets/tour-images/kemer-diving/slider/kemer-diving-7.webp';
 import slider8 from 'assets/tour-images/kemer-diving/slider/kemer-diving-8.webp';
-import articleImg from 'assets/tour-images/kemer-diving/article/kemer-diving.webp';
 
 export default defineComponent({
   components: { 'tour-page': TourPage },
@@ -157,13 +152,10 @@ export default defineComponent({
     ];
 
     return {
-      imgDesktop,
-      imgMobile,
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
       sliderImages,
-      articleImg,
       includes,
       excludes,
       faq,

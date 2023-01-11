@@ -29,7 +29,7 @@
         </q-toolbar-title>
 
         <q-btn
-          class="mobile-only"
+          class="drawer-btn hidden"
           dense
           flat
           round
@@ -77,7 +77,7 @@
           </q-menu>
         </q-btn> -->
 
-        <q-tabs class="desktop-only" shrink stretch indicator-color="red">
+        <q-tabs class="desktop-menu" shrink stretch indicator-color="red">
           <q-route-tab
             :to="{ path: '/' }"
             :label="$t('home')"
@@ -129,7 +129,6 @@
     </q-header>
 
     <q-drawer
-      class="mobile-only"
       v-model="leftDrawerOpen"
       side="left"
       overlay
@@ -410,6 +409,15 @@ export default {
 @media screen and (max-width: 374px) {
   .headerInfoMobile {
     justify-content: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .drawer-btn {
+    display: flex !important;
+  }
+  .desktop-menu {
+    display: none;
   }
 }
 </style>

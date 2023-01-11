@@ -1,8 +1,6 @@
 <template>
   <div>
     <tour-page
-      :imgDesktop="imgDesktop"
-      :imgMobile="imgMobile"
       :breadCrumbsCategory="api.breadCrumbsCategory"
       :breadCrumbsCategoryRoute="api.breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="api.breadCrumbsTourLabel"
@@ -242,8 +240,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TourPage from 'components/TourPage.vue';
-import imgDesktop from 'assets/tour-images/demre-myra-kekova/desktop/demre-myra-kekova-tour.webp';
-import imgMobile from 'assets/tour-images/demre-myra-kekova/mobile/demre-myra-kekova-tour.webp';
+
 import slider1 from 'assets/tour-images/demre-myra-kekova/slider/demre-myra-kekova-tour-1.webp';
 import slider2 from 'assets/tour-images/demre-myra-kekova/slider/demre-myra-kekova-tour-2.webp';
 import slider3 from 'assets/tour-images/demre-myra-kekova/slider/demre-myra-kekova-tour-3.webp';
@@ -253,7 +250,7 @@ import slider6 from 'assets/tour-images/demre-myra-kekova/slider/demre-myra-keko
 import slider7 from 'assets/tour-images/demre-myra-kekova/slider/demre-myra-kekova-tour-7.webp';
 import slider8 from 'assets/tour-images/demre-myra-kekova/slider/demre-myra-kekova-tour-8.webp';
 import slider9 from 'assets/tour-images/demre-myra-kekova/slider/demre-myra-kekova-tour-9.webp';
-import articleImg from 'assets/tour-images/demre-myra-kekova/article/demre-myra-kekova-tour.webp';
+
 import api from 'src/static/api/tours/kemer/demre-myra-kekova-tour.json';
 
 export default defineComponent({
@@ -272,10 +269,8 @@ export default defineComponent({
     ];
 
     return {
-      imgDesktop,
-      imgMobile,
       sliderImages,
-      articleImg,
+
       api,
     };
   },

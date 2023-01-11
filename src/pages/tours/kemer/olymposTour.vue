@@ -1,8 +1,6 @@
 <template>
   <div>
     <tour-page
-      :imgDesktop="imgDesktop"
-      :imgMobile="imgMobile"
       :breadCrumbsCategory="breadCrumbsCategory"
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
@@ -48,14 +46,11 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TourPage from 'components/TourPage.vue';
-import imgDesktop from 'assets/tour-images/olympos-tour/desktop/olympos-tour.webp';
-import imgMobile from 'assets/tour-images/olympos-tour/mobile/olympos-tour.webp';
 import slider1 from 'assets/tour-images/olympos-tour/slider/olympos-tour-1.webp';
 import slider2 from 'assets/tour-images/olympos-tour/slider/olympos-tour-2.webp';
 import slider3 from 'assets/tour-images/olympos-tour/slider/olympos-tour-3.webp';
 import slider4 from 'assets/tour-images/olympos-tour/slider/olympos-tour-4.webp';
 import slider5 from 'assets/tour-images/olympos-tour/slider/olympos-tour-5.webp';
-import articleImg from 'assets/tour-images/olympos-tour/article/olympos-tour.webp';
 
 export default defineComponent({
   components: { 'tour-page': TourPage },
@@ -144,13 +139,10 @@ export default defineComponent({
     ];
 
     return {
-      imgDesktop,
-      imgMobile,
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
       sliderImages,
-      articleImg,
       includes,
       excludes,
       faq,

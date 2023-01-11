@@ -1,16 +1,75 @@
 // app global css in SCSS form
 
-.container {
-  padding-left: 12%;
-  padding-right: 12%;
+// breakpoint variable, from https://quasar.dev/style/breakpoints
+$xs-breakpoint: 600px;
+$sm-breakpoint: 1024px;
+$md-breakpoint: 1248px;
+$lg-breakpoint: 1920px;
+
+.container,
+.container-xs,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-@media (max-width: 1024px) {
-  .container {
-    padding-left: 0%;
-    padding-right: 0%;
+@media (max-width: $xs-breakpoint) {
+  .container,
+  .container-xs {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
+
+@media (min-width: $xs-breakpoint) {
+  .container,
+  .container-sm {
+    max-width: 580px;
+  }
+}
+
+@media (min-width: $sm-breakpoint) {
+  .container,
+  .container-sm,
+  .container-md {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: $md-breakpoint) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg {
+    max-width: 1248px;
+  }
+}
+
+@media (min-width: $lg-breakpoint) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+    max-width: 1440px;
+  }
+}
+
+// .container {
+//   padding-left: 12%;
+//   padding-right: 12%;
+// }
+
+// @media (max-width: 1024px) {
+//   .container {
+//     padding-left: 0%;
+//     padding-right: 0%;
+//   }
+// }
 
 @font-face {
   font-family: myTitleFontBold;

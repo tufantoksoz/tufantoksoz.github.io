@@ -1,8 +1,6 @@
 <template>
   <div>
     <tour-page
-      :imgDesktop="imgDesktop"
-      :imgMobile="imgMobile"
       :breadCrumbsCategory="breadCrumbsCategory"
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
@@ -40,8 +38,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TourPage from 'components/TourPage.vue';
-import imgDesktop from 'assets/tour-images/akvaryum-turu/desktop/antalya-akvaryum.webp';
-import imgMobile from 'assets/tour-images/akvaryum-turu/mobile/antalya-akvaryum.webp';
 import slider1 from 'assets/tour-images/akvaryum-turu/slider/antalya-akvaryum-1.webp';
 import slider2 from 'assets/tour-images/akvaryum-turu/slider/antalya-akvaryum-2.webp';
 import slider3 from 'assets/tour-images/akvaryum-turu/slider/antalya-akvaryum-3.webp';
@@ -62,7 +58,6 @@ import slider17 from 'assets/tour-images/akvaryum-turu/slider/antalya-akvaryum-1
 import slider18 from 'assets/tour-images/akvaryum-turu/slider/antalya-akvaryum-18.webp';
 import slider19 from 'assets/tour-images/akvaryum-turu/slider/antalya-akvaryum-19.webp';
 import slider20 from 'assets/tour-images/akvaryum-turu/slider/antalya-akvaryum-20.webp';
-import articleImg from 'assets/tour-images/akvaryum-turu/article/antalya-akvaryum.webp';
 
 export default defineComponent({
   components: { 'tour-page': TourPage },
@@ -166,13 +161,10 @@ export default defineComponent({
     ];
 
     return {
-      imgDesktop,
-      imgMobile,
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
       sliderImages,
-      articleImg,
       includes,
       excludes,
       faq,

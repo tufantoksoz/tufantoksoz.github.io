@@ -1,8 +1,6 @@
 <template>
   <div>
     <tour-page
-      :imgDesktop="imgDesktop"
-      :imgMobile="imgMobile"
       :breadCrumbsCategory="breadCrumbsCategory"
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
@@ -48,15 +46,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TourPage from 'components/TourPage.vue';
-import imgDesktop from 'assets/tour-images/sulu-cehennem-adasi/desktop/sulu-cehennem-adasi.webp';
-import imgMobile from 'assets/tour-images/sulu-cehennem-adasi/mobile/sulu-cehennem-adasi.webp';
 import slider1 from 'assets/tour-images/sulu-cehennem-adasi/slider/sulu-cehennem-adasi-1.webp';
 import slider2 from 'assets/tour-images/sulu-cehennem-adasi/slider/sulu-cehennem-adasi-2.webp';
 import slider3 from 'assets/tour-images/sulu-cehennem-adasi/slider/sulu-cehennem-adasi-3.webp';
 import slider4 from 'assets/tour-images/sulu-cehennem-adasi/slider/sulu-cehennem-adasi-4.webp';
 import slider5 from 'assets/tour-images/sulu-cehennem-adasi/slider/sulu-cehennem-adasi-5.webp';
 import slider6 from 'assets/tour-images/sulu-cehennem-adasi/slider/sulu-cehennem-adasi-6.webp';
-import articleImg from 'assets/tour-images/sulu-cehennem-adasi/article/sulu-cehennem-adasi.webp';
 
 export default defineComponent({
   components: { 'tour-page': TourPage },
@@ -145,13 +140,10 @@ export default defineComponent({
     ];
 
     return {
-      imgDesktop,
-      imgMobile,
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
       sliderImages,
-      articleImg,
       includes,
       excludes,
       faq,

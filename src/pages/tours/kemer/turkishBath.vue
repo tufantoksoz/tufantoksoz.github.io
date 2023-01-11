@@ -1,8 +1,6 @@
 <template>
   <div>
     <tour-page
-      :imgDesktop="imgDesktop"
-      :imgMobile="imgMobile"
       :breadCrumbsCategory="breadCrumbsCategory"
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
@@ -44,8 +42,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TourPage from 'components/TourPage.vue';
-import imgDesktop from 'assets/tour-images/turkish-bath/desktop/turkish-bath.webp';
-import imgMobile from 'assets/tour-images/turkish-bath/mobile/turkish-bath.webp';
 import slider1 from 'assets/tour-images/turkish-bath/slider/turkish-bath-1.webp';
 import slider2 from 'assets/tour-images/turkish-bath/slider/turkish-bath-2.webp';
 import slider3 from 'assets/tour-images/turkish-bath/slider/turkish-bath-3.webp';
@@ -59,7 +55,6 @@ import slider10 from 'assets/tour-images/turkish-bath/slider/turkish-bath-10.web
 import slider11 from 'assets/tour-images/turkish-bath/slider/turkish-bath-11.webp';
 import slider12 from 'assets/tour-images/turkish-bath/slider/turkish-bath-12.webp';
 import slider13 from 'assets/tour-images/turkish-bath/slider/turkish-bath-13.webp';
-import articleImg from 'assets/tour-images/turkish-bath/article/turkish-bath.webp';
 
 export default defineComponent({
   components: { 'tour-page': TourPage },
@@ -79,8 +74,6 @@ export default defineComponent({
       childAge: '6-11',
       babyAge: '0-5',
     };
-
-    const articleTitle = 'Турецкая Баня (Хамам) в Кемере';
 
     const sliderImages = [
       slider1,
@@ -159,13 +152,10 @@ export default defineComponent({
     ];
 
     return {
-      imgDesktop,
-      imgMobile,
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
       sliderImages,
-      articleImg,
       includes,
       excludes,
       faq,

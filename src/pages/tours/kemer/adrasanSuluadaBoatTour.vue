@@ -1,8 +1,6 @@
 <template>
   <div>
     <tour-page
-      :imgDesktop="imgDesktop"
-      :imgMobile="imgMobile"
       :breadCrumbsCategory="api.breadCrumbsCategory"
       :breadCrumbsCategoryRoute="api.breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="api.breadCrumbsTourLabel"
@@ -46,12 +44,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TourPage from 'components/TourPage.vue';
-import imgDesktop from 'assets/tour-images/adrasan-suluada/desktop/adrasan-suluada.webp';
-import imgMobile from 'assets/tour-images/adrasan-suluada/mobile/adrasan-suluada.webp';
 import slider1 from 'assets/tour-images/adrasan-suluada/slider/adrasan-suluada-1.webp';
 import slider2 from 'assets/tour-images/adrasan-suluada/slider/adrasan-suluada-2.webp';
 import slider3 from 'assets/tour-images/adrasan-suluada/slider/adrasan-suluada-3.webp';
-import articleImg from 'assets/tour-images/adrasan-suluada/article/adrasan-suluada.webp';
 import api from 'src/static/api/tours/kemer/adrasan-suluada-boat-tour.json';
 
 export default defineComponent({
@@ -60,10 +55,7 @@ export default defineComponent({
     const sliderImages = [slider1, slider2, slider3];
 
     return {
-      imgDesktop,
-      imgMobile,
       sliderImages,
-      articleImg,
       api,
     };
   },

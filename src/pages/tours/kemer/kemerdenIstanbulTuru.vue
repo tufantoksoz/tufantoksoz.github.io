@@ -1,8 +1,6 @@
 <template>
   <div>
     <tour-page
-      :imgDesktop="imgDesktop"
-      :imgMobile="imgMobile"
       :breadCrumbsCategory="breadCrumbsCategory"
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
@@ -57,8 +55,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TourPage from 'components/TourPage.vue';
-import imgDesktop from 'assets/tour-images/istanbul-tour/desktop/istanbul-tour.webp';
-import imgMobile from 'assets/tour-images/istanbul-tour/mobile/istanbul-tour.webp';
 import slider1 from 'assets/tour-images/istanbul-tour/slider/istanbul-tour-1.webp';
 import slider2 from 'assets/tour-images/istanbul-tour/slider/istanbul-tour-2.webp';
 import slider3 from 'assets/tour-images/istanbul-tour/slider/istanbul-tour-3.webp';
@@ -68,7 +64,6 @@ import slider6 from 'assets/tour-images/istanbul-tour/slider/istanbul-tour-6.web
 import slider7 from 'assets/tour-images/istanbul-tour/slider/istanbul-tour-7.webp';
 import slider8 from 'assets/tour-images/istanbul-tour/slider/istanbul-tour-8.webp';
 import slider9 from 'assets/tour-images/istanbul-tour/slider/istanbul-tour-9.webp';
-import articleImg from 'assets/tour-images/istanbul-tour/article/istanbul-tour.webp';
 
 export default defineComponent({
   components: { 'tour-page': TourPage },
@@ -152,13 +147,10 @@ export default defineComponent({
     ];
 
     return {
-      imgDesktop,
-      imgMobile,
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
       sliderImages,
-      articleImg,
       includes,
       excludes,
       faq,

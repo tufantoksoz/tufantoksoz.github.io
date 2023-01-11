@@ -1,8 +1,6 @@
 <template>
   <div>
     <tour-page
-      :imgDesktop="imgDesktop"
-      :imgMobile="imgMobile"
       :breadCrumbsCategory="breadCrumbsCategory"
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
@@ -48,15 +46,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TourPage from 'components/TourPage.vue';
-import imgDesktop from 'assets/tour-images/kemer-horse-riding/desktop/kemer-horse-riding.webp';
-import imgMobile from 'assets/tour-images/kemer-horse-riding/mobile/kemer-horse-riding.webp';
 import slider1 from 'assets/tour-images/kemer-horse-riding/slider/kemer-horse-riding-1.webp';
 import slider2 from 'assets/tour-images/kemer-horse-riding/slider/kemer-horse-riding-2.webp';
 import slider3 from 'assets/tour-images/kemer-horse-riding/slider/kemer-horse-riding-3.webp';
 import slider4 from 'assets/tour-images/kemer-horse-riding/slider/kemer-horse-riding-4.webp';
 import slider5 from 'assets/tour-images/kemer-horse-riding/slider/kemer-horse-riding-5.webp';
 import slider6 from 'assets/tour-images/kemer-horse-riding/slider/kemer-horse-riding-6.webp';
-import articleImg from 'assets/tour-images/kemer-horse-riding/article/kemer-horse-riding.webp';
 
 export default defineComponent({
   components: { 'tour-page': TourPage },
@@ -138,13 +133,10 @@ export default defineComponent({
     ];
 
     return {
-      imgDesktop,
-      imgMobile,
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
       sliderImages,
-      articleImg,
       includes,
       excludes,
       faq,

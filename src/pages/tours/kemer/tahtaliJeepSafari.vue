@@ -1,8 +1,6 @@
 <template>
   <div>
     <tour-page
-      :imgDesktop="imgDesktop"
-      :imgMobile="imgMobile"
       :breadCrumbsCategory="breadCrumbsCategory"
       :breadCrumbsCategoryRoute="breadCrumbsCategoryRoute"
       :breadCrumbsTourLabel="breadCrumbsTourLabel"
@@ -50,8 +48,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TourPage from 'components/TourPage.vue';
-import imgDesktop from 'assets/tour-images/tahtali-jeep-safari/desktop/tahtali-jeep-safari.webp';
-import imgMobile from 'assets/tour-images/tahtali-jeep-safari/mobile/tahtali-jeep-safari.webp';
 import slider1 from 'assets/tour-images/tahtali-jeep-safari/slider/tahtali-jeep-safari-1.webp';
 import slider2 from 'assets/tour-images/tahtali-jeep-safari/slider/tahtali-jeep-safari-2.webp';
 import slider3 from 'assets/tour-images/tahtali-jeep-safari/slider/tahtali-jeep-safari-3.webp';
@@ -61,7 +57,6 @@ import slider6 from 'assets/tour-images/tahtali-jeep-safari/slider/tahtali-jeep-
 import slider7 from 'assets/tour-images/tahtali-jeep-safari/slider/tahtali-jeep-safari-7.webp';
 import slider8 from 'assets/tour-images/tahtali-jeep-safari/slider/tahtali-jeep-safari-8.webp';
 import slider9 from 'assets/tour-images/tahtali-jeep-safari/slider/tahtali-jeep-safari-9.webp';
-import articleImg from 'assets/tour-images/tahtali-jeep-safari/article/tahtali-jeep-safari.webp';
 
 export default defineComponent({
   components: { 'tour-page': TourPage },
@@ -81,8 +76,6 @@ export default defineComponent({
       childAge: '6-11',
       babyAge: '0-5',
     };
-
-    const articleTitle = 'Экскурсия на Гору Тахталы на Джипах на Высоту 2200 м';
 
     const sliderImages = [
       slider1,
@@ -162,13 +155,10 @@ export default defineComponent({
     ];
 
     return {
-      imgDesktop,
-      imgMobile,
       breadCrumbsCategory,
       breadCrumbsCategoryRoute,
       breadCrumbsTourLabel,
       sliderImages,
-      articleImg,
       includes,
       excludes,
       faq,
